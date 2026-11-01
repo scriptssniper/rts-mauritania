@@ -1,3 +1,6 @@
 *.tmp
 *.swp
 rts_research/
+
+art/historical/*
+!art/historical/MANIFEST.md

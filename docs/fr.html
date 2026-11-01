@@ -150,6 +150,27 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 .resrc a{color:inherit}
 .resrc .lead{font-size:1.02rem;font-style:italic;margin-bottom:22px;color:var(--mod);max-width:760px}
 
+/* Historical photographs */
+.hist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;margin:14px 0 8px}
+.hist figure{position:relative;margin:0}
+.hist img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:2px solid rgba(232,220,195,.55);filter:sepia(.22) saturate(.78)}
+.hist figure::before,.hist figure::after{content:"";position:absolute;width:9px;height:9px;background:var(--gold);transform:rotate(45deg);z-index:2}
+.hist figure::before{top:-5px;left:-5px}
+.hist figure::after{bottom:-5px;right:-5px}
+.hist figcaption{padding:10px 4px 0;font-size:.8rem;line-height:1.5;color:var(--mol)}
+.hist figcaption b{color:var(--tod)}
+.duo{display:grid;grid-template-columns:1fr 1fr}
+.duo img{aspect-ratio:1/1}
+.ph-credit{font-size:.7rem;letter-spacing:.05em;color:var(--gold-d);margin:0 0 8px}
+.freal{position:absolute;top:8px;left:8px;width:74px;background:var(--sand);border:2px solid var(--gold);padding:3px;z-index:2;box-shadow:0 2px 10px rgba(10,18,32,.5)}
+.freal img{display:block;width:100%;filter:sepia(.2) saturate(.8)}
+.freal span{display:block;font-size:.58rem;line-height:1.3;padding-top:3px;color:var(--tol)}
+.histmap{margin:30px auto 0;max-width:680px}
+.histmap img{width:100%;display:block;border:2px solid rgba(232,220,195,.55);filter:sepia(.15) saturate(.8)}
+.histmap figcaption{padding:10px 4px 0;font-size:.8rem;color:var(--mol);line-height:1.5}
+.fcred{font-size:.78rem;color:var(--mod);padding:4px 24px 14px;text-align:center}
+.fcred a{color:var(--gold-l)}
+
 /* Arms & Men + The Land */
 .ucards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin:26px 0}
 .ucard{position:relative;background:rgba(232,220,195,.06);border:1px solid var(--lined);border-radius:4px;padding:16px 18px}
@@ -322,6 +343,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
   <div class="wrap">
     <div class="feature">
       <div class="fimg">
+        <span class="freal" style="top:auto;bottom:12px"><img src="art/historical/elhiba_real.jpg" alt="La seule photographie connue d'Ahmed al-Hiba"><span>la seule photographie connue<br>Askalais, CC BY-SA 4.0</span></span>
         <img src="art/portraits/el_hiba_hd.png" alt="Portrait d'Ahmed al-Hiba, le Sultan bleu" style="width:100%;height:100%;object-fit:cover;display:block">
       </div>
       <div class="fbody">
@@ -566,14 +588,14 @@ section.light .resrc li{border-bottom-color:var(--linel)}
   <div class="wrap chars">
     <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><img src="art/portraits/ma_el_ainin_hd.png" alt="Portrait de Ma El Aïnin"><div class="body"><h3>Ma El Aïnin</h3><div class="dates">1831 – 1910</div><p>Le Saint de Smara. Une bannière vivante dont la baraka rend les unités proches inébranlables — et dont la mort déclenche l'effondrement de la faction.</p><span class="tag res">Résistance</span></div></div>
     <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><img src="art/portraits/sidi_seghir_hd.png" alt="Portrait de Sidi Seghir"><div class="body"><h3>Sidi Seghir</h3><div class="dates">† 1905</div><p>L'assassin au vœu de songe. Une mission d'infiltration, vingt-sept guerriers, cinq minutes à la livraison du lait.</p><span class="tag res">Résistance</span></div></div>
-    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><img src="art/portraits/el_hiba_hd.png" alt="Portrait d'Ahmed al-Hiba"><div class="body"><h3>Ahmed al-Hiba</h3><div class="dates">v. 1876 – 1919</div><p>Le Sultan bleu. Lève des armées de masse et prend Marrakech — puis perd deux mille hommes en un après-midi.</p><span class="tag res">Résistance</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><span class="freal"><img src="art/historical/elhiba_real.jpg" alt="La seule photographie connue d'Ahmed al-Hiba"><span>la seule photographie connue</span></span><img src="art/portraits/el_hiba_hd.png" alt="Portrait concept d'Ahmed al-Hiba"><div class="body"><div class="ph-credit">Photo : Askalais, CC BY-SA 4.0, via Wikimedia Commons</div><h3>Ahmed al-Hiba</h3><div class="dates">v. 1876 – 1919</div><p>Le Sultan bleu. Lève des armées de masse et prend Marrakech — puis perd deux mille hommes en un après-midi.</p><span class="tag res">Résistance</span></div></div>
     <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Portrait placeholder d'Agdaf"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">AG</text></svg><div class="body"><h3>Agdaf</h3><div class="dates">actif en 1913</div><p>La vengeance de la cité brûlée. Après la chute de Smara, ses représailles tuèrent environ quarante Français — puis vint l'année des trois désastres.</p><span class="tag res">Résistance</span></div></div>
     <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Portrait placeholder de l'émir Sidi Ahmed Ould Ahmed Ayda"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EA</text></svg><div class="body"><h3>Sidi Ahmed Ould Ahmed Ayda</h3><div class="dates">r. 1909 – 1932</div><p>Le fantoche qui fit défection. Sa jauge d'allégeance bascule les règles de toute la région de l'Adrar — installé, capturé, restauré, et perdu au désert.</p><span class="tag res">Résistance</span></div></div>
     <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Portrait placeholder de Merebbi Rebbu"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">MR</text></svg><div class="body"><h3>Merebbi Rebbu</h3><div class="dates">† après 1919</div><p>Gardien du reste. Donneur de quêtes des raids tardifs — Port-Étienne, et le dernier grand rezzou de 6 000 km.</p><span class="tag res">Résistance</span></div></div>
     <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Portrait placeholder de Cheikh Saad Bouh"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SB</text></svg><div class="body"><h3>Cheikh Saad Bouh</h3><div class="dates">1848 – 1917</div><p>L'autre frère. Réfuta le jihad dans une lettre ouverte à celui qui le menait. Une famille, une confrérie — deux guerres.</p><span class="tag fr">Allié de la France</span></div></div>
     <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Portrait placeholder de Cheikh Sidiya Baba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SIB</text></svg><div class="body"><h3>Cheikh Sidiya Baba</h3><div class="dates">XIXᵉ – XXᵉ s.</div><p>Le faiseur de rois. Par lui passèrent les soumissions du Trarza, du Brakna et du Tagant — l'arbre technologique de la « pénétration pacifique » en personne.</p><span class="tag fr">Allié de la France</span></div></div>
-    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><img src="art/portraits/coppolani_hd.png" alt="Portrait de Xavier Coppolani"><div class="body"><h3>Xavier Coppolani</h3><div class="dates">1866 – 1905</div><p>Le conquérant pacifique. Convertit les tribus sans tirer un coup. Son tombeau porte, en arabe : « l'ami des musulmans ».</p><span class="tag fr">France</span></div></div>
-    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><img src="art/portraits/gouraud_hd.png" alt="Portrait du Col. Henri Gouraud"><div class="body"><h3>Col. Henri Gouraud</h3><div class="dates">1867 – 1946</div><p>La Colonne. Doctrine : « non l'occupation permanente… mais une colonne de police pour purger le pays ». Logistique chamelière, discipline de l'eau, contre-rezzou.</p><span class="tag fr">France</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><div class="duo"><img src="art/portraits/coppolani_hd.png" alt="Portrait concept de Xavier Coppolani"><img src="art/historical/coppolani_real.jpg" alt="Photographie de Xavier Coppolani, Agence Rol, 1908"></div><div class="body"><div class="ph-credit">Photographie : Agence Rol, 1908</div><h3>Xavier Coppolani</h3><div class="dates">1866 – 1905</div><p>Le conquérant pacifique. Convertit les tribus sans tirer un coup. Son tombeau porte, en arabe : « l'ami des musulmans ».</p><span class="tag fr">France</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><div class="duo"><img src="art/portraits/gouraud_hd.png" alt="Portrait concept du Col. Henri Gouraud"><img src="art/historical/gouraud_real.jpg" alt="Autochrome du général Henri Gouraud, Léon Auguste, 1919"></div><div class="body"><div class="ph-credit">Photographie : Léon Auguste, 1919, musée Albert-Kahn · CC0</div><h3>Col. Henri Gouraud</h3><div class="dates">1867 – 1946</div><p>La Colonne. Doctrine : « non l'occupation permanente… mais une colonne de police pour purger le pays ». Logistique chamelière, discipline de l'eau, contre-rezzou.</p><span class="tag fr">France</span></div></div>
     <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Portrait placeholder du Capt. Frèrejean"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">FJ</text></svg><div class="body"><h3>Capt. Frèrejean</h3><div class="dates">actif 1904 – 1909</div><p>Bâtisseur de la toile des borjs. Il planta le poste qui devint Nouakchott ; la carte des forts est son monument.</p><span class="tag fr">France</span></div></div>
     <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Portrait placeholder du Lt. Etiévent"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EV</text></svg><div class="body"><h3>Lt. Etiévent</h3><div class="dates">actif en 1905</div><p>Le vengeur. Deux coups de revolver achevèrent l'assassin dans la palmeraie. Un caméo, inoubliable.</p><span class="tag fr">France</span></div></div>
   </div>
@@ -582,6 +604,24 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 <section class="dark" id="gallery">
   <div class="wrap sec-head">
     <h2>Galerie</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <h3 class="subhead">La guerre en photographies</h3>
+    <p class="flagnote">Documents d'époque, 1894–1930 — la guerre telle que ses appareils l'ont vue. Sources et licences complètes dans le <a href="art/historical/MANIFEST.md">manifeste photographique</a>.</p>
+    <div class="hist">
+      <figure><img src="art/historical/gouraud_meharistes_real.jpg" alt="Le colonel Gouraud à la tête d'une colonne de méharistes, 1909" loading="lazy"><figcaption><b>Gouraud à la tête d'une colonne de méharistes, 1909.</b> Auteur inconnu, collection Gouraud · domaine public</figcaption></figure>
+      <figure><img src="art/historical/cannon_camel_real.jpg" alt="Essai de transport de canon à dos de chameau, décembre 1908" loading="lazy"><figcaption><b>Canon à dos de chameau — essai de pacification, décembre 1908.</b> Agence Rol · domaine public</figcaption></figure>
+      <figure><img src="art/historical/tirailleurs_real.jpg" alt="Tirailleurs sénégalais en campagne, 1908" loading="lazy"><figcaption><b>Tirailleurs sénégalais en campagne, 1908.</b> Présumé Jean du Taillis pour l'Agence Rol · domaine public</figcaption></figure>
+      <figure><img src="art/historical/atar_officers_real.jpg" alt="Officiers français posant à Atar, 1909" loading="lazy"><figcaption><b>Officiers à Atar après l'occupation, 1909 — le colonel Gouraud parmi eux.</b> Collection Gouraud · domaine public</figcaption></figure>
+      <figure><img src="art/historical/tidjikja_real.jpg" alt="Tidjikja vue du nord, 1908" loading="lazy"><figcaption><b>Tidjikja vue du nord, 1908 — la ville où Coppolani mourut.</b> Agence Rol · domaine public</figcaption></figure>
+      <figure><img src="art/historical/chinguetti_1911_real.jpg" alt="Vue sur Chinguetti, 1911" loading="lazy"><figcaption><b>Chinguetti depuis les hauteurs, 1911.</b> Anonyme · CC0</figcaption></figure>
+      <figure><img src="art/historical/smara_real.jpg" alt="La zaouia de Ma El Aïnin à Smara, 1930" loading="lazy"><figcaption><b>Smara, 1930 — les premières photographies sorties en contrebande de la ville interdite.</b> Michel Vieuchange · domaine public</figcaption></figure>
+      <figure><img src="art/historical/reguibat_chief_real.jpg" alt="Chef reguibat Mohamed O. El-Khalil, 1915" loading="lazy"><figcaption><b>Un chef reguibat — Mohamed O. El-Khalil, Ouled Moussa, 1915.</b> Paul Marty · domaine public</figcaption></figure>
+      <figure><img src="art/historical/caravan_real.jpg" alt="Caravane saharienne arrivant de Ghât, 1894" loading="lazy"><figcaption><b>Une caravane saharienne arrivant de Ghât, 1894 — le monde de l'azalaï en marche.</b> Fernand Foureau · domaine public</figcaption></figure>
+      <figure><img src="art/historical/elhiba_uprising_1912_real.jpg" alt="Une du Petit Journal sur le soulèvement d'al-Hiba, septembre 1912" loading="lazy"><figcaption><b>Le soulèvement de 1912 — une du Petit Journal, 1er septembre 1912.</b> Domaine public</figcaption></figure>
+      <figure><img src="art/historical/elhiba_army_real.jpg" alt="L'armée d'Ahmed al-Hiba" loading="lazy"><figcaption><b>L'armée d'Ahmed al-Hiba.</b> Askalais, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
+    </div>
+    <h3 class="subhead" style="margin-top:40px">Concept art</h3>
   </div>
   <div class="wrap gal">
     <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Placeholder concept rezzou"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">RZ</text></svg><figcaption>Un rezzou hassane en marche — la mécanique signature du jeu.</figcaption></figure>
@@ -666,6 +706,10 @@ section.light .resrc li{border-bottom-color:var(--linel)}
         <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#8FA6C4" stroke-width="1.5" stroke-dasharray="8 5"/></svg><i>limite du Sahara espagnol</i></span>
       </figcaption>
     </figure>
+    <figure class="histmap">
+      <a href="art/historical/map_real.jpg" target="_blank"><img src="art/historical/map_real.jpg" alt="Carte d'état-major française du nord de la Mauritanie d'après les itinéraires de la colonne de l'Adrar, 1910" loading="lazy"></a>
+      <figcaption><b>La carte historique.</b> Carte d'état-major du théâtre de la colonne de l'Adrar, dressée d'après ses itinéraires, déc. 1908 – déc. 1909 — cap. Gerhardt, Service géographique des colonies, 1910 · domaine public. Cliquer pour agrandir.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -748,6 +792,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 <footer>
   <svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
   <div class="ftext">LA TERRE JAMAIS VAINCUE · Stade conceptuel — développement non commencé · Portraits : premières esquisses</div>
+  <div class="fcred">Photographies historiques : contributeurs de Wikimedia Commons — crédits complets dans le <a href="art/historical/MANIFEST.md">manifeste</a>.</div>
 </footer>
 
 </body>
