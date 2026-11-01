@@ -149,6 +149,19 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 .resrc a{color:inherit}
 .resrc .lead{font-size:1.02rem;font-style:italic;margin-bottom:22px;color:var(--mod);max-width:760px}
 
+/* Arms & Men + The Land */
+.ucards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin:26px 0}
+.ucard{position:relative;background:rgba(232,220,195,.06);border:1px solid var(--lined);border-radius:4px;padding:16px 18px}
+.ucard h3{font-size:1.02rem;margin:0 0 6px;color:var(--mol)}
+.ucard p{font-size:.88rem;line-height:1.55;color:var(--mol);margin:0}
+.ucard .sw{display:flex;height:14px;border-radius:2px;overflow:hidden;margin-bottom:10px;border:1px solid rgba(232,220,195,.25)}
+.ucard .sw i{flex:1}
+.biomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:26px}
+.biome{background:var(--bt);border:1px solid rgba(25,21,18,.15);border-top:3px solid var(--gold);border-radius:3px;padding:16px 18px;color:var(--tod)}
+.biome .term{display:block;font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--indigo)}
+.biome p{font-size:.87rem;line-height:1.55;margin:0 0 7px;color:var(--tod)}
+.biome .tac{font-style:italic;margin-bottom:0}
+
 /* Poets' War manuscript frames */
 .poems{display:grid;gap:30px;margin-top:34px}
 .poem{position:relative;background:#F1E9D7;border:3px double var(--gold);padding:26px 32px 18px;margin:0;box-shadow:0 1px 0 rgba(25,21,18,.08)}
@@ -159,9 +172,9 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 .poem blockquote{margin:0;font-size:1.1rem;line-height:1.7;color:var(--tol)}
 .poem blockquote.gloss{margin-top:10px;font-size:.95rem;font-style:italic;color:#5B4A33}
 .poem figcaption{margin-top:14px;font-size:.85rem;line-height:1.5;color:#5B4A33}
-.poem .badge{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.13em;padding:3px 8px;border-radius:2px;margin-right:0;margin-left:8px;vertical-align:1px}
-.poem .badge.v{background:var(--gold);color:#fff}
-.poem .badge.a{background:var(--steel);color:#10233F}
+.poem .badge,.arms .badge,.land .badge{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.13em;padding:3px 8px;border-radius:2px;margin-right:0;margin-left:8px;vertical-align:1px}
+.poem .badge.v,.arms .badge.v,.land .badge.v{background:var(--gold);color:#fff}
+.poem .badge.a,.arms .badge.a,.land .badge.a{background:var(--steel);color:#10233F}
 
 /* Flags & crest */
 .lang svg{width:18px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:5px;border:1px solid rgba(232,220,195,.4);opacity:.6}
@@ -411,6 +424,58 @@ section.light .resrc li{border-bottom-color:var(--linel)}
   </div>
 </section>
 
+<section class="dark arms" id="arms">
+  <div class="wrap sec-head">
+    <span class="kicker">نظام المعركة</span>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg><svg class="mark" width="26" height="17" aria-hidden="true"><use href="#fl-fr"/></svg>السلاح والرجال</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <div class="vs">
+      <div class="col res">
+        <header><h3><svg class="qmark" width="15" height="15" aria-hidden="true"><use href="#crest"/></svg>المقاومة</h3><div class="who">بنادق تجارة وبنادق غنيم، ولا ذخيرة تكفي</div></header>
+        <ul>
+          <li><b>ريمينغتون رولينغ بلوك</b> — بندقية التجارة الصحراوية، عيار .43 إسباني، تصعد مع قوافل المغرب. <span class="badge v">موثَّق</span></li>
+          <li><b>غراس غنائم وفائض</b> — ما سقط بأيدي المقاتلين (نيملان، دمانَ، ليبورات) وفائض الفرنسيين المُسرَّب شمالًا من سان-لويس بعد ١٨٨٦: العيار ١١ ملم ذاته الذي تحمله خطهم الثاني. <span class="badge a">محتمل</span></li>
+          <li><b>المخلاة الصوانية</b> — ما زالت فتيلة التحميل الفموي مع المحاربين الفقراء ومجنّدي الواحات. <span class="badge a">محتمل</span></li>
+          <li><b>الرماح والتكوبة والنمشة</b> — الرمح سلاح معركة الغزوة؛ والتكوبة تُظهر الرتبة — النبلاء يحملون السيوف، والتبع الرماح. <span class="badge v">موثَّق</span></li>
+          <li><b>لا مدفعية. أبدًا.</b> لا قطار حصار: المور يحاصرون البروج ولا يقتحمونها تقريبًا قط. <span class="badge v">موثَّق</span></li>
+          <li><b>الذخيرة هي عنق الزجاجة الحقيقي</b> — الخراطيش تسير مع قوافل السلاح ذاتها؛ الفصائل تطلق ببطء وتقتصد. <span class="badge v">موثَّق</span></li>
+        </ul>
+      </div>
+      <div class="col fr">
+        <header><h3><svg class="qmark" width="15" height="10" aria-hidden="true"><use href="#fl-fr"/></svg>فرنسا</h3><div class="who">ترسانة وزارة مستعمرات فقيرة</div></header>
+        <ul>
+          <li><b>غراس طراز ١٨٧٤</b> — ١١ ملم طلقة واحدة، بارود أسود؛ القوات الاستعمارية ورثت فائضه طويلًا بعد جيش الوطن الأم. حُمل حتى ١٩٠٧. <span class="badge v">موثَّق</span></li>
+          <li><b>بيرتييه طراز ١٩٠٧</b> — اعتُمد للرماة السنغاليين سنة ١٩٠٧: مخزن ٣ طلقات، ٨ ملم بلا دخان. حدث الشجرة التقنية للحملة كلها — بعد ١٩٠٧ ينتهي التعادل. <span class="badge v">موثَّق</span></li>
+          <li><b>مسدس طراز ١٨٩٢</b> — سلاح الضابط الشخصي. <span class="badge a">محتمل</span></li>
+          <li><b>مدفعا جبل ٦٥ ملم طراز ١٩٠٦ + فئة رشاشين</b> — يُنقلان بالحمولة؛ كنز العمود، والفجوة التقنية الحقيقية. <span class="badge a">محتمل</span></li>
+          <li><b>الحراب والسيوف</b> — حراب سيفية؛ سيوف فرسان خفيفة للسباهية. <span class="badge a">محتمل</span></li>
+          <li><b>لا ليبيل، ولا الفيلق الأجنبي</b> — الوحدات الاستعمارية تتبع وزارة المستعمرات لا وزارة الحرب. <span class="badge v">موثَّق</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="lead">خلاصة التصميم: قبل ١٩٠٧ هذه حرب <strong>تكافؤ</strong> في السلاح الخفيف — طلقة واحدة لكلا الطرفين، بارود أسود، مدى عملي ~٢٠٠ م. اللاتناظر الحقيقي لم يكن البندقية قط. كان اللوجستيات والماء و٧٠٠ جمل خلف كل عمود فرنسي.</p>
+    <div class="ucards">
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><span class="sw"><i style="background:#28324F"></i><i style="background:#B33A3A"></i><i style="background:#28324F"></i></span><h3>الرامي السنغالي</h3><p>سترة وبنطال أزرق داكن، حزام أحمر، شاشية حمراء؛ كاكي ميداني منذ ١٨٩٨. مشاته حافية شهيرة. العمود الفقري لكل عمود.</p></div>
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><span class="sw"><i style="background:#B49B6B"></i><i style="background:#E8E2D2"></i><i style="background:#B49B6B"></i></span><h3>المهاري</h3><p>كاكي أو قماش أبيض، سراويل واسعة، شاشية أو طاقية مغطاة — والشاش: جمالة فرنسية تتعصب كالرجال الزرق الذين تطاردهم.</p></div>
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><span class="sw"><i style="background:#B33A3A"></i><i style="background:#B49B6B"></i><i style="background:#B33A3A"></i></span><h3>السباهية السنغاليون</h3><p>البرنس الأحمر فوق الكاكي — تكالور من الحرس الأحمر القديم؛ سرب فورن قاتل في حملات ١٩٠٨.</p></div>
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><span class="sw"><i style="background:#E8E2D2"></i><i style="background:#B49B6B"></i><i style="background:#E8E2D2"></i></span><h3>الضابط الفرنسي</h3><p>أبيض استعماري أو كاكي، خوذة فلين، شاش في الصحراء. صفوة صغيرة عمدًا في المقدمة — ومقصودة بالقنص عمدًا.</p></div>
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><span class="sw"><i style="background:#26456E"></i><i style="background:#1B2F4C"></i><i style="background:#26456E"></i></span><h3>المحارب الحساني</h3><p>تغلمست نيلية على الفم والجبهة، ببو نيلي فوق سرويل قصير. الصباغة تغرز في الجلد: «الرجال الزرق». لا دروع — المسافة هي الدرع.</p></div>
+    </div>
+    <p class="flagnote"><svg width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> الفرسان الجزائريون بإطار صريح: <em>السرب الثاني من السباهية الجزائريين</em> ركب في الأعمدة الطائرة ١٩٠٨–٠٩ <span class="badge v">موثَّق</span> — وشركات الشعانبة المهارية في الصحراء الجزائرية (١٩٠٢) كانت <em>النموذج</em> لحرب الجمال، لا رجالًا منتدبين إلى موريتانيا. شركات موريتانيا المهارية صناعة محلية: غورو ركّب أقسام رماة سودانيين على الجمال منذ ١٩٠٢–٠٣. أيقونة المهاري بالطاقية البيضاء بعد الحرب العالمية الثانية لا تنتمي لهذه الحرب.</p>
+    <div class="ucards">
+      <div class="ucard"><h3>عقيدة الرزّو <span class="badge v">موثَّق</span></h3><p>أعمدة جمالية تتقارب، ضربة فجر، خذ القطعان والأسرى — لا المواقع — ثم تذوب في الفراغ. القالب: غاندون ١٨٥٧. الصورة الأخيرة: الغزوة الرجيباتية الكبرى، ٦٠٠٠ كم، ١٩٣٤.</p></div>
+      <div class="ucard"><h3>الرزّو المضاد <span class="badge v">موثَّق</span></h3><p>جواب غورو: تكتيك الغزوة ذاته تحت علم. أعمدة جمالية بوصفها شرطة الصحراء — اضبط الآبار، هدّد القطعان، فاوض قبيلة قبيلة.</p></div>
+      <div class="ucard"><h3>تشريح العمود <span class="badge v">موثَّق</span></h3><p>+٧٠٠ جمل لوجستيات، ترتيب السقي، مسيرات بئرًا إلى بئر، ٣٠–٤٠ كم يوميًا. نوارماش، ٢٤ يوليو ١٩٠٨: معركة منتصرة — ثم أحد عشر راميًا ماتوا عطشًا.</p></div>
+      <div class="ucard"><h3>دفاع البرج <span class="badge v">موثَّق</span></h3><p>مراكز حجرية مربعة وزرائب ليلية. الحاميات الصغيرة تصمد: عريف وسبعة رجال أوقفوا غزوة غاندون. حصار كثير، اقتحام نادر.</p></div>
+      <div class="ucard"><h3>قنص الضباط <span class="badge v">موثَّق</span></h3><p>الصفوة الأوروبية صغيرة وعمدًا في المقدمة — كل خسارة فيها حقيقية. نيملان ١٩٠٧، دمانَ ١٩٠٨، ليبورات ١٩١٣: ستون قتيلًا في صباح.</p></div>
+      <div class="ucard"><h3>ثقافة التفاوض <span class="badge v">موثَّق</span></h3><p>الحصارات تنتهي بالمساومة أكثر مما بالاقتحام، والقبائل تنقلب مقابل الجزية. سُنّة «الأربعين فرسًا» سابقة ما قبل استعمارية من القرن ١٨ — تجري على القبائل، لا على الأعمدة قط.</p></div>
+    </div>
+  </div>
+</section>
+
+<svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+
 <section class="dark" id="pillars">
   <div class="wrap sec-head">
     <h2>ركائز اللعب</h2><div class="rule"></div>
@@ -598,6 +663,28 @@ section.light .resrc li{border-bottom-color:var(--linel)}
   </div>
 </section>
 
+<section class="light land" id="land">
+  <div class="wrap sec-head">
+    <span class="kicker">الخريطة هي العدو</span>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg>الأرض</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p class="lead">كل بلاطة أدناه تضاريسٌ وقاعدة حركة وتكتيك في آن. أسماء الحسّانية هي معجم خريطة اللعبة.</p>
+    <div class="biomes">
+      <div class="biome" style="--bt:#E3D2AC"><b class="term">العِرق · بحر الرمال</b><p>كثبان عالية، لا ماء سطحي، شوك متفرق على الأطراف.</p><p class="tac">للجمال وحدها. الأعمدة تلتف على الحواف؛ الغزوات تتبخر فيه. فجوات العطش كنوارماش تنفتح حيث يفصل العرق بين الآبار.</p></div>
+      <div class="biome" style="--bt:#DDD3B6"><b class="term">الرَّڭ</b><p>سهل حصى صلب، طلح متفرق.</p><p class="tac">سريع للجميع — بلاطة اللقاءات. الطرفان يريان بعيدًا؛ لا ستر.</p></div>
+      <div class="biome" style="--bt:#D3C6B2"><b class="term">الحمادة</b><p>هضبة حجرية عارية، بلا ماء، تشع حرًّا.</p><p class="tac">أرض ميتة — سطح الأدرار. لا حياة فوق حافة الجرف بلا آبار.</p></div>
+      <div class="biome" style="--bt:#D8D2B4"><b class="term">الوادي</b><p>مجرى جاف: صفوف طلح ونخيل، حفر ماء بعد المطر، آبار ضحلة.</p><p class="tac">ممرّ الكمائن. النبات ساتر — تضاريس اغتيال النخيل، تجكجة ١٩٠٥.</p></div>
+      <div class="biome" style="--bt:#C6CFE2"><b class="term">السبخة</b><p>حوض طين ملحي، ماء موسمي أحيانًا — كله غير صالح للشرب، وحل بعد المطر.</p><p class="tac">بلاطة الفخ: تشبه الماء وتقتل العطشان. لا تُعبر مبللة.</p></div>
+      <div class="biome" style="--bt:#D8C3AE"><b class="term">الجروف والممرات</b><p>أحزمة مناخر قليلة: أموكجر، جوك، حمدون.</p><p class="tac">مخانق. من يقبض الممر يملك الهضبة — حمدون، ٨ يناير ١٩٠٩.</p></div>
+      <div class="biome" style="--bt:#D5DCB8"><b class="term">واحة النخيل</b><p>بساتين ونخيل، آبار دائمة، وبرج حجري — تجكجة، أطار، شنقيط، أوجفت.</p><p class="tac">أهداف سيطرة: آبار، وستر كمائن في النخيل الكثيف، ومخطوطات وزوايا.</p></div>
+      <div class="biome" style="--bt:#C8D9B4"><b class="term">الشيمّا · حزام النهر</b><p>زراعة انحسار الفيض ومدن ضفة السنغال — باكل، بودور، ريتشارد تول. حزام ذباب التسي-تسي.</p><p class="tac">قاعدة فرنسا الخلفية: البواخر النهرية عمودها اللوجستي — والجمال تمرض هنا. جيش يحجبه البيئة.</p></div>
+      <div class="biome" style="--bt:#DAD9AE"><b class="term">حزام الساحل الجنوبي</b><p>سافانا شوكية؛ عشب بعد الوسمي، وآبار دائمة على محور كيفة–العيون.</p><p class="tac">بلاطة الترحال: تصعد القطعان مع المطر شمالًا — وقطعان متراكزة مغناطيس غزوات.</p></div>
+      <div class="biome" style="--bt:#D9D2B0"><b class="term">حوض الأوكار</b><p>منخفض بحيرة قديمة بين جروف تكانت وضهر النيمة؛ مراعي موسم بارد خصبة وبرك موسمية.</p><p class="tac">قلب اقتصاد الغزو — قطعان الحوض تُطعم لوجستيات الطرفين.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="dark resrc" id="resources">
   <div class="wrap sec-head">
     <h2>المصادر</h2><div class="rule"></div>
@@ -611,6 +698,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_campaign_history.md">بحث تاريخ الحملة (١٩٠٢–١٩٣٤)</a> — التسلسل الزمني والفصائل وسجل التعارضات</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_precolonial.md">بحث ما قبل الاستعمار (١٤٨٠–١٨٩٠)</a> — الإمارات وشار بوبّا واقتصاد التجارة</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_poetry.md">مدونة شعر المقاومة (١٩٠٢–١٩٣٤)</a> — نصوص الكاف خلف «حرب الشعراء»</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_armies.md">بحث السلاح والزي والتكتيك والتضاريس</a> — المرجع خلف «السلاح والرجال» و«الأرض»</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/CHARACTERS.md">دليل تصميم الشخصيات</a></li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/art/PROMPTS.md">ملاحظات أوامر الرسم</a></li>
         </ul>

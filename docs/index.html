@@ -166,6 +166,20 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 .resrc a{color:inherit}
 .resrc .lead{font-size:1.02rem;font-style:italic;margin-bottom:22px;color:var(--mod);max-width:760px}
 
+/* Arms & Men + The Land */
+.ucards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin:26px 0}
+.ucard{position:relative;background:rgba(232,220,195,.06);border:1px solid var(--lined);border-radius:4px;padding:16px 18px}
+.ucard h3{font-size:1.02rem;margin:0 0 6px;color:var(--mol)}
+.ucard p{font-size:.88rem;line-height:1.55;color:var(--mol);margin:0}
+.ucard .sw{display:flex;height:14px;border-radius:2px;overflow:hidden;margin-bottom:10px;border:1px solid rgba(232,220,195,.25)}
+.ucard .sw i{flex:1}
+.biomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:26px}
+.biome{background:var(--bt);border:1px solid rgba(25,21,18,.15);border-top:3px solid var(--gold);border-radius:3px;padding:16px 18px;color:var(--tod)}
+.biome .term{display:block;font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--indigo)}
+.biome .term i{font-style:italic;font-weight:400;font-size:.88rem}
+.biome p{font-size:.87rem;line-height:1.55;margin:0 0 7px;color:var(--tod)}
+.biome .tac{font-style:italic;margin-bottom:0}
+
 /* Poets' War manuscript frames */
 .poems{display:grid;gap:30px;margin-top:34px}
 .poem{position:relative;background:#F1E9D7;border:3px double var(--gold);padding:26px 32px 18px;margin:0;box-shadow:0 1px 0 rgba(25,21,18,.08)}
@@ -177,9 +191,9 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 .poem blockquote{margin:0;font-size:1.1rem;line-height:1.7;color:var(--tol)}
 .poem blockquote.gloss{margin-top:10px;font-size:.95rem;font-style:italic;color:#5B4A33}
 .poem figcaption{margin-top:14px;font-size:.85rem;line-height:1.5;color:#5B4A33}
-.poem .badge{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-right:8px;vertical-align:1px}
-.poem .badge.v{background:var(--gold);color:#fff}
-.poem .badge.a{background:var(--steel);color:#10233F}
+.poem .badge,.arms .badge,.land .badge{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-right:8px;vertical-align:1px}
+.poem .badge.v,.arms .badge.v,.land .badge.v{background:var(--gold);color:#fff}
+.poem .badge.a,.arms .badge.a,.land .badge.a{background:var(--steel);color:#10233F}
 [dir="rtl"] .badge{margin-right:0;margin-left:8px}
 
 /* Flags & crest */
@@ -436,6 +450,58 @@ section.light .resrc li{border-bottom-color:var(--linel)}
   </div>
 </section>
 
+<section class="dark arms" id="arms">
+  <div class="wrap sec-head">
+    <span class="kicker">Order of Battle</span>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg><svg class="mark" width="26" height="17" aria-hidden="true"><use href="#fl-fr"/></svg>Arms &amp; Men</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <div class="vs">
+      <div class="col res">
+        <header><h3><svg class="qmark" width="15" height="15" aria-hidden="true"><use href="#crest"/></svg>The Resistance</h3><div class="who">trade guns, taken guns, no guns to spare</div></header>
+        <ul>
+          <li><b>Remington Rolling Block</b> — the trade rifle of the Sahara, .43 Spanish, bought up the Morocco caravan lane. <span class="badge v">Verified</span></li>
+          <li><b>Captured and surplus Gras</b> — battlefield pick-ups (Niémilane, Damané, Liboirat) and post-1886 French surplus sold north from Saint-Louis: same 11mm cartridge as the enemy's own second line. <span class="badge a">Plausible</span></li>
+          <li><b>Moukhala flintlocks</b> — the muzzle-loader still rides with poorer warriors and oasis levies. <span class="badge a">Plausible</span></li>
+          <li><b>Lances, takouba, nimcha</b> — the camel lance is the rezzou's battle arm; the takouba broadsword is rank made visible — nobles carry swords, tributaries carry spears. <span class="badge v">Verified</span></li>
+          <li><b>No artillery. Ever.</b> No siege train: Moors besiege borjs but almost never storm them. <span class="badge v">Verified</span></li>
+          <li><b>Ammunition is the true bottleneck</b> — cartridges ride the same caravans as the guns; warbands fire slow and conserve. <span class="badge v">Verified</span></li>
+        </ul>
+      </div>
+      <div class="col fr">
+        <header><h3><svg class="qmark" width="15" height="10" aria-hidden="true"><use href="#fl-fr"/></svg>France</h3><div class="who">a poor colonial ministry's arsenal</div></header>
+        <ul>
+          <li><b>Gras Mle 1874</b> — 11mm single-shot, black powder; colonial troops drew surplus Gras long after the metropolitan army moved on. Carried until 1907. <span class="badge v">Verified</span></li>
+          <li><b>Berthier Mle 1907</b> — adopted for the tirailleurs sénégalais in 1907: 3-shot clip, smokeless 8mm. The tech-tree event of the whole campaign — after 1907, parity ends. <span class="badge v">Verified</span></li>
+          <li><b>Modèle 1892 revolver</b> — the officer's sidearm. <span class="badge a">Plausible</span></li>
+          <li><b>2×65mm Mle 1906 mountain guns + a 2-gun machine-gun section</b> — pack-transportable; the column's treasure, and the true tech gap. <span class="badge a">Plausible</span></li>
+          <li><b>Bayonets and sabers</b> — épée-baïonnettes; light-cavalry sabers for the spahis. <span class="badge a">Plausible</span></li>
+          <li><b>Never the Lebel, never the Legion</b> — colonial units drew from the Colonies ministry, not the War Ministry. <span class="badge v">Verified</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="lead">The design insight: before 1907 this is a small-arms <strong>parity</strong> war — both sides single-shot, black powder, ~200 m practical range. The real asymmetry was never the rifle. It was logistics, water, and the 700 camels behind every French column.</p>
+    <div class="ucards">
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><span class="sw"><i style="background:#28324F"></i><i style="background:#B33A3A"></i><i style="background:#28324F"></i></span><h3>Tirailleur sénégalais</h3><p>Dark-blue tunic and trousers, red sash, red chéchia; khaki drill from 1898. Famously barefoot. The backbone of every column.</p></div>
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><span class="sw"><i style="background:#B49B6B"></i><i style="background:#E8E2D2"></i><i style="background:#B49B6B"></i></span><h3>Méhariste</h3><p>Khaki or white drill, baggy trousers, chéchia or covered képi — and the cheich scarf: French camel troops veiling like the blue men they pursue.</p></div>
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><span class="sw"><i style="background:#B33A3A"></i><i style="background:#B49B6B"></i><i style="background:#B33A3A"></i></span><h3>Spahis sénégalais</h3><p>The red burnous over khaki — Toucouleur recruits from the old Garde Rouge; Fourn's squadron rode the 1908 campaigns.</p></div>
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><span class="sw"><i style="background:#E8E2D2"></i><i style="background:#B49B6B"></i><i style="background:#E8E2D2"></i></span><h3>French officer</h3><p>Colonial whites or khaki, cork casque colonial, cheich in the desert. A tiny cadre, deliberately forward — and deliberately sniped.</p></div>
+      <div class="ucard"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><span class="sw"><i style="background:#26456E"></i><i style="background:#1B2F4C"></i><i style="background:#26456E"></i></span><h3>Hassane warrior</h3><p>Indigo tagelmust wound over mouth and brow, indigo bubu over short trousers. The dye bleeds into skin: the "blue men." No armor — distance is armor.</p></div>
+    </div>
+    <p class="flagnote"><svg width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> The Algerian cavalry, honestly framed: a <em>2e escadron de spahis algériens</em> rode in the colonnes volantes of 1908–09 <span class="badge v">Verified</span> — and the Chaamba méhariste companies of the Algerian Sahara (1902) were the <em>model</em> for camel warfare, not men seconded to Mauritania. Mauritania's camel companies were home-grown: Gouraud mounted Sudanese tirailleur sections in 1902–03. The post-WWII white-képi méhariste iconography does not belong to this war.</p>
+    <div class="ucards">
+      <div class="ucard"><h3>Rezzou doctrine <span class="badge v">Verified</span></h3><p>Converging camel columns, dawn strike, take herds and captives — not positions — then disperse into the vacuum. Template: Gandon 1857. Terminal form: the 6,000-km Reguibat grand rezzou of 1934.</p></div>
+      <div class="ucard"><h3>Counter-rezzou <span class="badge v">Verified</span></h3><p>Gouraud's answer: the raid's own tactic under a flag. Camel columns as desert police — seize the wells, threaten the herds, negotiate tribe by tribe.</p></div>
+      <div class="ucard"><h3>Column anatomy <span class="badge v">Verified</span></h3><p>700+ camels of logistics, watering order, well-to-well marches, ~30–40 km a day. Nouarmach, 24 July 1908: a fight won — then eleven tirailleurs died of thirst.</p></div>
+      <div class="ucard"><h3>Borj defense <span class="badge v">Verified</span></h3><p>Square stone posts and zariba night-laagers. Small garrisons hold: a corporal and seven men stopped the Gandon rezzou. Besieged often, stormed almost never.</p></div>
+      <div class="ucard"><h3>Officer sniping <span class="badge v">Verified</span></h3><p>The European cadre is tiny and deliberately forward — every loss is real. Niémilane 1907, Damané 1908, Liboirat 1913: sixty dead in a morning.</p></div>
+      <div class="ucard"><h3>Parley culture <span class="badge v">Verified</span></h3><p>Sieges end in negotiation more often than assault, and tribes flip for tribute. The "forty horses" norm is an 18th-century precolonial precedent — it works on tribes, never on columns.</p></div>
+    </div>
+  </div>
+</section>
+
+<svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+
 <section class="dark" id="pillars">
   <div class="wrap sec-head">
     <h2>Gameplay Pillars</h2><div class="rule"></div>
@@ -623,6 +689,28 @@ section.light .resrc li{border-bottom-color:var(--linel)}
   </div>
 </section>
 
+<section class="light land" id="land">
+  <div class="wrap sec-head">
+    <span class="kicker">The Map Is the Enemy</span>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg>The Land</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p class="lead">Every tile below is a terrain type, a movement rule, and a tactic at once. The Hassaniya names are the game's map vocabulary.</p>
+    <div class="biomes">
+      <div class="biome" style="--bt:#E3D2AC"><b class="term">عِرْق <i>'irq</i> · Erg</b><p>Sand sea: high dunes, no surface water, thorn scrub only on the flanks.</p><p class="tac">Camel-only. Columns skirt the margins; rezzous vanish into them. Nouarmach-class thirst gaps open where ergs part the wells.</p></div>
+      <div class="biome" style="--bt:#DDD3B6"><b class="term">Reg</b><p>Firm desert pavement of gravel, scattered acacia.</p><p class="tac">Fast for everyone — the meeting-engagement tile. Both sides see far; there is no cover.</p></div>
+      <div class="biome" style="--bt:#D3C6B2"><b class="term">Hamada</b><p>Bare stone plateau, waterless, heat-radiating.</p><p class="tac">Dead ground — the Adrar's tabletop. Nothing lives above the escarpment edge without wells.</p></div>
+      <div class="biome" style="--bt:#D8D2B4"><b class="term">وادي <i>wādī</i> · Oued</b><p>Dry valley: lines of acacia and palm, water holes after rain, shallow wells.</p><p class="tac">The ambush corridor. Vegetation is cover — the palmery assassination terrain of Coppolani's last walk, Tidjikja 1905.</p></div>
+      <div class="biome" style="--bt:#C6CFE2"><b class="term">سبخة <i>sebkha</i> · Salt flat</b><p>Salt-clay pan, sometimes seasonal water — all of it unpotable, boggy after rain.</p><p class="tac">The water-trap tile: it looks like water and kills the thirsty. Impassable when wet.</p></div>
+      <div class="biome" style="--bt:#D8C3AE"><b class="term">Escarpments &amp; passes</b><p>Cliff belts with rare ramps: Amogjar, Djouk, Hamdoun.</p><p class="tac">Chokepoints. Whoever holds the pass owns the plateau — Hamdoun, 8 January 1909.</p></div>
+      <div class="biome" style="--bt:#D5DCB8"><b class="term">Palm oasis</b><p>Gardens, date palms, permanent wells, a stone borj — Tidjikja, Atar, Chinguetti, Oujeft.</p><p class="tac">Capture objectives: wells, ambush cover in the dense palmery, manuscripts and zaouias.</p></div>
+      <div class="biome" style="--bt:#C8D9B4"><b class="term">Chemama · river belt</b><p>Flood-recession farms and river towns along the Senegal — Bakel, Podor, Richard Toll. Tsetse belt.</p><p class="tac">The French base-line: river steamers are their logistics spine — and camels sicken here. A biome-gated army.</p></div>
+      <div class="biome" style="--bt:#DAD9AE"><b class="term">Sahel transition</b><p>Thorn savanna; grass after the hivernage rains, permanent wells on the Kiffa–Aioun axis.</p><p class="tac">Transhumance tile: herds ascend north with the rains — and a concentration of herds is a rezzou magnet.</p></div>
+      <div class="biome" style="--bt:#D9D2B0"><b class="term">Aoukar basin</b><p>Dead-lake depression between the Tagant cliffs and the Dhar Néma; rich cold-season pasture, seasonal ponds.</p><p class="tac">The raid economy's heartland — the basin's herds feed both sides' war logistics.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="dark resrc" id="resources">
   <div class="wrap sec-head">
     <h2>Resources</h2><div class="rule"></div>
@@ -636,6 +724,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_campaign_history.md">Campaign history research (1902–1934)</a> — timeline, factions, conflict register</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_precolonial.md">Pre-colonial research (1480–1890)</a> — emirates, Char Bouba, trade economy</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_poetry.md">Resistance poetry corpus (1902–1934)</a> — the kāf texts behind "The Poets' War"</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_armies.md">Arms, uniforms, tactics &amp; terrain research</a> — the reference behind "Arms &amp; Men" and "The Land"</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/CHARACTERS.md">Character design bible</a></li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/art/PROMPTS.md">Art prompt notes</a></li>
         </ul>
