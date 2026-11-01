@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMARA — The Unfinished City · RTS Concept</title>
-<meta name="description" content="SMARA: an asymmetric real-time strategy game of the Saharan resistance to French colonization, 1902–1934.">
+<title>THE UNDEFEATED SOIL · An RTS of the Mauritanian Resistance</title>
+<meta name="description" content="THE UNDEFEATED SOIL: an asymmetric real-time strategy game of the Mauritanian resistance to French colonization, 1591–1934.">
 <style>
 :root{
   --night:#14100C; --night2:#1E1812; --sand:#C2A878; --sand-dim:#8F7B5B;
@@ -23,24 +23,52 @@ a{color:var(--ember-l)}
 .hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--line);overflow:hidden}
 .hero .duneart{position:absolute;inset:0;width:100%;height:100%;display:block}
 .hero .inner{position:relative;padding:96px 0 64px}
-.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);color:var(--sand);line-height:1.05;margin:18px 0 6px;text-shadow:0 2px 24px rgba(0,0,0,.65)}
-.hero .sub{font-size:clamp(1.05rem,2.4vw,1.4rem);color:var(--text);font-style:italic}
-.hero .pitch{max-width:640px;color:var(--muted);margin-top:16px;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.hero h1{font-size:clamp(2.1rem,5.6vw,3.9rem);color:var(--sand);line-height:1.08;margin:18px 0 6px;text-shadow:0 2px 24px rgba(0,0,0,.65)}
+.hero .sub{font-size:clamp(.95rem,2.2vw,1.2rem);color:var(--sand-dim);font-style:italic;letter-spacing:.04em}
+.hero .pitch{max-width:680px;color:var(--text);margin-top:16px;font-size:1.06rem;text-shadow:0 1px 8px rgba(0,0,0,.85)}
 
 section{padding:72px 0}
 section.alt{background:var(--night2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sec-head{margin-bottom:40px}
 .sec-head h2{font-size:clamp(1.6rem,4vw,2.3rem);color:var(--sand)}
 .sec-head .rule{width:64px;height:3px;background:var(--ember);margin-top:14px}
-.pitch-body p{max-width:760px;margin-bottom:18px;font-size:1.05rem}
+.sec-head .kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ember-l);margin-bottom:10px}
+.pitch-body p{max-width:780px;margin-bottom:18px;font-size:1.05rem}
 .pitch-body p:last-child{margin-bottom:0}
 
-/* Pillars */
+/* Quotes strip */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.quotes figure{border-left:3px solid var(--ember);padding:6px 0 6px 18px}
+.quotes blockquote{color:var(--text);font-size:1.02rem;font-style:italic}
+.quotes figcaption{margin-top:10px;color:var(--sand-dim);font-size:.85rem}
+
+/* Glossary strip */
+.gloss{display:flex;flex-wrap:wrap;gap:10px}
+.gloss span{border:1px solid var(--line);border-radius:3px;padding:8px 14px;font-size:.9rem;color:var(--muted)}
+.gloss b{color:var(--sand);font-weight:600;letter-spacing:.05em}
+
+/* Pillars / cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
 .card{background:var(--night2);border:1px solid var(--line);border-radius:6px;padding:24px}
 section:not(.alt) .card{background:var(--night)}
 .card h3{color:var(--sand);font-size:1.12rem;margin-bottom:8px}
 .card p{color:var(--muted);font-size:.95rem}
+
+/* Factions: two-column counterpoint */
+.vs{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:860px){.vs{grid-template-columns:1fr 1fr}}
+.vs .col{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--night)}
+.vs .col header{padding:18px 22px;border-bottom:1px solid var(--line)}
+.vs .col.fr header{background:linear-gradient(180deg,rgba(46,65,114,.35),transparent)}
+.vs .col.res header{background:linear-gradient(180deg,rgba(201,111,59,.28),transparent)}
+.vs .col h3{font-size:1.2rem;color:var(--sand)}
+.vs .col header .who{color:var(--sand-dim);font-size:.85rem;font-style:italic}
+.vs ul{list-style:none;padding:8px 22px 18px}
+.vs ul li{padding:12px 0;border-bottom:1px dashed var(--line);color:var(--muted);font-size:.95rem}
+.vs ul li:last-child{border-bottom:none}
+.vs ul b{color:var(--text);font-weight:600}
+.vs .portraits{display:flex;gap:12px;padding:16px 22px 4px}
+.vs .portraits img{width:96px;height:128px;object-fit:cover;object-position:top;border-radius:4px;border:1px solid var(--line)}
 
 /* Timeline */
 .tl{border-left:2px solid var(--line);margin-left:8px;padding-left:28px;display:flex;flex-direction:column;gap:34px}
@@ -129,9 +157,9 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </svg>
   <div class="wrap inner">
     <span class="badge">Concept Stage</span>
-    <h1>SMARA</h1>
-    <div class="sub">The Unfinished City — an RTS of the Saharan Resistance</div>
-    <p class="pitch">An asymmetric real-time strategy game of the Mauritanian resistance to French colonization, 1902–1934. No base building. Wells, herds and tribal allegiance are the war.</p>
+    <h1>THE UNDEFEATED SOIL</h1>
+    <div class="sub">1591–1934 · Bilad Shinqit · from Char Bouba to the last Reguibat rezzou</div>
+    <p class="pitch">A scattered nation of camel nomads, scholar-saints and tribal federations fought one of history's largest empires for thirty-two years — no artillery, no railways, no cities — and was never defeated on its own soil. France took the wells. It never took the allegiance.</p>
   </div>
 </header>
 
@@ -140,14 +168,95 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
     <h2>The Pitch</h2><div class="rule"></div>
   </div>
   <div class="wrap pitch-body">
-    <p>Between 1902 and 1934, France absorbed a desert country the size of France and Spain combined — with almost no battles. Corsican Arabist Xavier Coppolani took three emirates with treaties and sermons; when a single rezzou killed him at Tidjikja in 1905, the conquest froze for three years, and the Sahara answered with the oldest weapon it had: the lightning camel raid.</p>
-    <p><strong>SMARA</strong> is a point-control RTS with no worker economy and no base building. The map is a lattice of wells, oases, pastures and caravan routes. Whoever controls the water controls the war: away from a friendly well, every unit bleeds a thirst meter until it dies — thirteen tirailleurs fell at Nouarmach in July 1908, and eleven more died of thirst afterward. That statistic is a game mechanic.</p>
-    <p>The two sides fight for the same territory with opposite tools. The French side webs a lattice of mud-brick forts (borj) across the country, extends its supply radius post by post, and budgets units from Saint-Louis — reinforcements that can be ambushed in transit. The resistance side lives on mobility: rezzou raids that strike herds and caravans and vanish, tribal allegiances that must be won and held, and charismatic leaders whose presence is worth a regiment — until their death breaks one.</p>
-    <p>A pre-colonial prologue era teaches the world before the flag arrives: the emirates' own wars, the gum and salt trade, the rules of the raid. Then the player meets France not as a protagonist but as a disruption — a world at war with itself, invaded.</p>
+    <p>In 1902 France began absorbing a desert country the size of France and Spain combined — and meant to do it without battles. An Arabist conqueror took three emirates with treaties and sermons; a single five-minute ambush killed him in a palmery at Tidjikja, and the conquest froze for three years. What followed was not a war of fronts but a war of water: thirty-two years in which the world's finest army could hold every fort it built and still die of thirst between them.</p>
+    <p><strong>THE UNDEFEATED SOIL</strong> is a point-control RTS with no worker economy and no base building. The map is a lattice of wells, oases, pastures and caravan routes. Every unit carries water; away from a friendly well it bleeds a thirst meter until it dies. At Nouarmach in July 1908, thirteen tirailleurs fell in combat and eleven more died of thirst afterward — that statistic is a game mechanic, not a flavor text.</p>
+    <p>The asymmetry is the design. The resistance plays mobility: lightning rezzou raids, tribal allegiances won and held, caravans raided and herds driven, gun-runs down from Morocco. France plays infrastructure: a web of mud-brick borj forts extending its supply radius post by post, columns budgeted from Saint-Louis, subsidies and propaganda splitting tribe from tribe. Same territory, opposite grammars of war.</p>
+    <p>A pre-colonial prologue teaches the world before the flag arrives — the emirates' own wars, the gum and salt trade, the rules of the raid — so that when France appears, it appears as what it was to the people of Bilad Shinqit: a disruption arriving in a world already at war with itself.</p>
   </div>
 </section>
 
-<section class="alt" id="pillars">
+<section class="alt" id="resistance">
+  <div class="wrap sec-head">
+    <span class="kicker">The Side That Would Not Be Ruled</span>
+    <h2>The Resistance</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <div class="vs">
+      <div class="col res">
+        <header><h3>The House of Ma El Aïnin</h3><div class="who">A saint's dynasty against an empire</div></header>
+        <div class="portraits">
+          <img src="art/portraits/ma_el_ainin_hd.png" alt="Portrait of Ma El Aïnin">
+          <img src="art/portraits/sidi_seghir_hd.png" alt="Portrait of Sidi Seghir">
+        </div>
+        <ul>
+          <li><b>Ma El Aïnin (1831–1910)</b> — scholar of a hundred and forty books, builder of the unfinished holy city of Smara, proclaimer of the jihad. A living banner: his baraka made units unbreakable, his death began the collapse.</li>
+          <li><b>Sidi Seghir (d. 1905)</b> — the dream-vow assassin. Twenty-seven warriors, five minutes after night prayer, and the conquest froze for three years.</li>
+          <li><b>Ahmed al-Hiba, "the Blue Sultan"</b> — the son who took Marrakech in 1912 with ten thousand men, and lost two thousand of them in an afternoon.</li>
+          <li><b>Agdaf</b> — vengeance of the burned city: when Smara fell in 1913, his reprisals killed forty men across three posts.</li>
+          <li><b>Merebbi Rebbu</b> — keeper of the remnant after 1919, patron of the last great raids.</li>
+          <li><b>Emir Sidi Ahmed Ould Ahmed Ayda</b> — the tragedy arc: installed, captured, restored as a puppet, defected, dead in the desert. His allegiance swings the whole Adrar.</li>
+        </ul>
+      </div>
+      <div class="col res">
+        <header><h3>Tribes &amp; Tactics</h3><div class="who">How the desert fought</div></header>
+        <ul>
+          <li><b>The Rguibat</b> — the irreconcilables. Sacked Tindouf in 1896, struck Port-Étienne twice in the 1920s, deserted wholesale in 1932, and rode the final 6,000-km grand rezzou of 1934.</li>
+          <li><b>Ouled Delim, Tekna, Tenaki</b> — the raiding nations of the north; the méharistes who walked off with their weapons rather than fight their kin.</li>
+          <li><b>The rezzou</b> — the lightning camel raid: converge, strike, take herds and captives, vanish before pursuit can mount.</li>
+          <li><b>Well-denial</b> — the desert fights over water, not terrain. Hold or spoil the wells and columns die slowly, on their own.</li>
+          <li><b>The azalaï economy</b> — salt caravans crossing the erg: resource convoys on legs, for escort or ambush.</li>
+          <li><b>The Moroccan gun-run</b> — the sultan's steamship <i>Turki</i> landing rifles at Tarfaya; in 1916, a German submarine's guns. External supply as a campaign lane.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quotes">
+  <div class="wrap sec-head">
+    <h2>Voices of the War</h2><div class="rule"></div>
+  </div>
+  <div class="wrap quotes">
+    <figure><blockquote>"He who takes arms departs from virtue."</blockquote><figcaption>— Cheikh Saad Bouh, <i>Nasîha</i>, 1906 · the anti-jihad letter to his own brother</figcaption></figure>
+    <figure><blockquote>"Not a matter of permanent occupation… but a police column to purge the country."</blockquote><figcaption>— Col. Henri Gouraud · doctrine of the column war</figcaption></figure>
+    <figure><blockquote>"The friend of the Muslims."</blockquote><figcaption>— Coppolani's tomb epitaph, Tidjikja · in Arabic</figcaption></figure>
+    <figure><blockquote>"Undefeated on Mauritanian soil."</blockquote><figcaption>— on the death of Ma El Aïnin, Tiznit, 23 October 1910</figcaption></figure>
+  </div>
+</section>
+
+<section class="alt" id="colonizer">
+  <div class="wrap sec-head">
+    <span class="kicker">The Counterpoint — and the Other Half of the Game</span>
+    <h2>The Colonizer's Method</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <div class="vs">
+      <div class="col fr">
+        <header><h3>Penetrate by Speech, Not by Rifle</h3><div class="who">Coppolani's political conquest</div></header>
+        <div class="portraits">
+          <img src="art/portraits/coppolani_hd.png" alt="Portrait of Xavier Coppolani">
+          <img src="art/portraits/gouraud_hd.png" alt="Portrait of Col. Henri Gouraud">
+        </div>
+        <ul>
+          <li><b>Xavier Coppolani</b> — the Corsican Arabist who took Trarza, Brakna and Tagant with treaties, subsidies and sermons before a rezzou ended him in 1905.</li>
+          <li><b>Divide and rule</b> — over eight hundred recognized chiefs and sub-chiefs, tribute switched to rebates, a captured emir restored to a hollowed throne.</li>
+          <li><b>Es-Saada</b> — the Tangier newspaper run as a character-assassination campaign against Ma El Aïnin. Propaganda as a playable lane.</li>
+        </ul>
+      </div>
+      <div class="col fr">
+        <header><h3>The Column &amp; the Lattice</h3><div class="who">Gouraud's answer</div></header>
+        <ul>
+          <li><b>Col. Henri Gouraud</b> — the man who replaced persuasion with the camel column and the counter-rezzou: the raid's tactic under a flag.</li>
+          <li><b>The borj lattice</b> — Nouakchott, Tidjikja, Moudjeria, Inchiri, Atar: a web of mud-brick forts extending supply and safe water, post by post.</li>
+          <li><b>Water discipline</b> — the column as a moving fortress with its own thirst; every march a wager against the wells.</li>
+          <li><b>Thirst as a weapon</b> — and the desert loaned it to whoever held the water. The asymmetry is the game's design.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pillars">
   <div class="wrap sec-head">
     <h2>Gameplay Pillars</h2><div class="rule"></div>
   </div>
@@ -161,7 +270,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </section>
 
-<section id="campaign">
+<section class="alt" id="campaign">
   <div class="wrap sec-head">
     <h2>The Campaign</h2><div class="rule"></div>
   </div>
@@ -195,9 +304,26 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </section>
 
+<section id="glossary">
+  <div class="wrap sec-head">
+    <h2>A War in Hassaniya</h2><div class="rule"></div>
+  </div>
+  <div class="wrap gloss">
+    <span><b>rezzou</b> · lightning camel raid</span>
+    <span><b>borj</b> · mud-brick desert fort</span>
+    <span><b>coutume</b> · annual river tribute</span>
+    <span><b>méhariste</b> · camel-corps trooper</span>
+    <span><b>azalaï</b> · trans-desert salt caravan</span>
+    <span><b>hassane</b> · warrior aristocracy</span>
+    <span><b>znaga</b> · tributary client tribes</span>
+    <span><b>zawiya</b> · scholarly religious lodge</span>
+    <span><b>Bilad Shinqit</b> · the land's own old name</span>
+  </div>
+</section>
+
 <section class="alt" id="characters">
   <div class="wrap sec-head">
-    <h2>Characters</h2><div class="rule"></div>
+    <h2>The Cast</h2><div class="rule"></div>
   </div>
   <div class="wrap chars">
     <div class="char"><img src="art/portraits/ma_el_ainin_hd.png" alt="Portrait of Ma El Aïnin"><div class="body"><h3>Ma El Aïnin</h3><div class="dates">1831 – 1910</div><p>The Saint of Smara. A living banner whose baraka makes nearby units unbreakable — and whose death starts a faction-collapse timer.</p><span class="tag res">Resistance</span></div></div>
@@ -234,7 +360,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
     <h2>About the Project</h2><div class="rule"></div>
   </div>
   <div class="wrap">
-    <p><strong>SMARA</strong> is a concept-stage game design. Target engine: <strong>Godot 4</strong> (open source, no royalties). Single-player campaign first; no release date exists. Design docs, the historical research backbone and the character bible live in this repository.</p>
+    <p><strong>THE UNDEFEATED SOIL</strong> is a concept-stage game design. Target engine: <strong>Godot 4</strong> (open source, no royalties). Single-player campaign first; no release date exists. Design docs, the historical research backbone and the character bible live in this repository.</p>
     <h3>Historical basis</h3>
     <p>The campaign follows the documented record of the French pacification of Mauritania. Where sources disagree — siege dates, the year an emir was captured — the disagreements are flagged in the research document rather than smoothed over. One caution from the research is baked into the design: the war's true asymmetry was logistics and water, not weapons — both sides carried comparable rifles.</p>
     <ul class="src">
@@ -249,7 +375,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
 </section>
 
 <footer>
-  SMARA — The Unfinished City · Concept stage — not yet in development · Portraits: early concept art
+  THE UNDEFEATED SOIL · Concept stage — not yet in development · Portraits: early concept art
 </footer>
 
 </body>

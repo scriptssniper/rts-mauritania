@@ -1,15 +1,18 @@
-# SMARA — The Unfinished City
+# THE UNDEFEATED SOIL
 
-An asymmetric real-time strategy game concept of the Mauritanian resistance to French colonization, 1902–1934.
+**An RTS of the Mauritanian Resistance** · 1591–1934 · Bilad Shinqit · from Char Bouba to the last Reguibat rezzou
 
 **Live showcase:** https://scriptssniper.github.io/rts-mauritania/
 
-Point-control RTS · no base building · wells, herds and tribal allegiance · thirst attrition · Godot 4 · concept stage.
+A scattered nation of camel nomads, scholar-saints and tribal federations fought one of history's largest empires for thirty-two years — no artillery, no railways, no cities — and was never defeated on its own soil. France took the wells; it never took the allegiance. This game is about that war: not the empire's map-makers' version, but the one written in Hassaniya — the rezzou, the well, the caravan, the oath.
+
+Mechanically it is a point-control RTS with no worker economy and no base building: capture-point economy of wells, oases, pastures and caravan routes; herds as mobile raidable wealth; tribal allegiance as the recruitment system; thirst attrition on every unit; a French fort-lattice (the borj web) against Saharan mobility. Target engine: Godot 4. Concept stage.
 
 ## Repository layout
 
 - `docs/` — GitHub Pages showcase site
 - `RESEARCH_campaign_history.md` — historical research backbone (1902–1934), with source-conflict register
+- `RESEARCH_precolonial.md` — pre-colonial era research (emirates, Char Bouba, trade economy)
 - `CHARACTERS.md` — character and faction design bible
 - `art/` — concept portraits and placeholder art
 
