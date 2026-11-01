@@ -122,6 +122,34 @@ ul.src li::before{content:"◆";position:absolute;left:0;top:6px;color:var(--gol
 footer{padding:0 0 56px;background:var(--ink);text-align:center}
 footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.85rem;font-style:italic}
 
+/* Bloc vedette El Hiba */
+.feature{border:1px solid var(--gold);outline:1px solid var(--gold);outline-offset:5px;border-radius:4px;background:var(--sand);color:var(--tol);display:grid;grid-template-columns:1fr;margin-top:32px;overflow:hidden}
+@media(min-width:700px){.feature{grid-template-columns:280px 1fr}}
+.feature .fimg{position:relative;min-height:300px}
+.feature .fimg svg{width:100%;height:100%;display:block}
+.feature .fimg .soon{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-l);text-shadow:0 1px 6px rgba(10,18,32,.9)}
+.feature .fbody{padding:28px 30px}
+.feature h3{font-size:1.5rem;color:var(--tol)}
+.feature .fdates{color:#8a6a1f;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin:6px 0 14px}
+.feature p{font-size:1rem;color:var(--mol);margin-bottom:10px}
+.feature p:last-child{margin-bottom:0}
+
+/* Carte + ressources */
+.map-fig{border:1px solid var(--lined);border-radius:4px;overflow:hidden;background:var(--indigo-x)}
+.map-fig svg{width:100%;display:block}
+.map-legend{display:flex;flex-wrap:wrap;gap:14px 24px;padding:14px 18px;color:var(--mod);font-size:.88rem}
+.map-legend i{font-style:normal;margin-left:6px}
+.resrc .cols{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:860px){.resrc .cols{grid-template-columns:1fr 1fr}}
+.resrc h3{color:inherit;font-size:1.05rem;margin-bottom:10px}
+section.dark .resrc h3{color:var(--sand)}
+section.light .resrc h3{color:var(--tol)}
+.resrc ul{list-style:none}
+.resrc li{padding:8px 0;border-bottom:1px dashed var(--lined);font-size:.93rem}
+section.light .resrc li{border-bottom-color:var(--linel)}
+.resrc a{color:inherit}
+.resrc .lead{font-size:1.02rem;font-style:italic;margin-bottom:22px;color:var(--mod);max-width:760px}
+
 .ph-init{font-family:Georgia,serif;font-weight:600;letter-spacing:.08em}
 </style>
 </head>
@@ -192,7 +220,7 @@ footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.85rem;font-styl
   <div class="wrap inner">
     <span class="badge">Stade conceptuel</span>
     <h1>LA TERRE JAMAIS VAINCUE</h1>
-    <div class="sub">1591–1934 · Bilad Shinqit · de la guerre de Char Bouba au dernier rezzou reguibat</div>
+    <div class="sub">1480–1934 · Bilad Shinqit · du sac d'Oualata au dernier rezzou reguibat</div>
     <p class="pitch">Une nation dispersée de nomades chameliers, de saints lettrés et de fédérations tribales affronta pendant trente-deux ans l'un des plus vastes empires de l'histoire — sans artillerie, sans chemin de fer, sans villes — et ne fut jamais vaincue sur sa propre terre. La France prit les puits. Elle ne prit jamais les allégeances.</p>
   </div>
 </header>
@@ -243,6 +271,33 @@ footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.85rem;font-styl
           <li><b>L'économie de l'azalaï</b> — les caravanes de sel traversant l'erg : des convois de ressources sur pattes, à escorter ou à tendre.</li>
           <li><b>Le trafic d'armes marocain</b> — le vapeur du sultan, le <i>Turki</i>, débarquant des fusils à Tarfaya ; en 1916, les canons d'un sous-marin allemand. L'approvisionnement extérieur comme campagne jouable.</li>
         </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="feature">
+      <div class="fimg">
+        <svg viewBox="0 0 280 400" role="img" aria-label="Portrait placeholder d'Ahmed al-Hiba, le Sultan bleu">
+          <rect width="280" height="400" fill="url(#phg)"/>
+          <g fill="none" stroke="#C8A24B" stroke-width="1.4" opacity=".55">
+            <rect x="108" y="128" width="64" height="64" transform="rotate(45 140 160)"/>
+            <rect x="122" y="142" width="36" height="36" transform="rotate(45 140 160)"/>
+            <rect x="20" y="20" width="24" height="24" transform="rotate(45 32 32)"/>
+            <rect x="236" y="20" width="24" height="24" transform="rotate(45 248 32)"/>
+            <rect x="20" y="356" width="24" height="24" transform="rotate(45 32 368)"/>
+            <rect x="236" y="356" width="24" height="24" transform="rotate(45 248 368)"/>
+          </g>
+          <text x="140" y="182" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">EH</text>
+          <path d="M0,330 Q70,290 140,320 Q210,355 280,310 L280,400 L0,400 Z" fill="#101E33" opacity=".6"/>
+        </svg>
+        <div class="soon">Portrait à venir</div>
+      </div>
+      <div class="fbody">
+        <h3>Ahmed al-Hiba — le Sultan bleu</h3>
+        <div class="fdates">v. 1876 – 23 juin 1919 · fils aîné de Ma El Aïnin</div>
+        <p>L'arc le plus dramatique de la résistance. Des ruines de la cause de son père, il leva une armée de l'extrême nord — Tekna, Ouled Delim, Rguibat — passa au Maroc, et le <strong>14 août 1912</strong> entra dans Marrakech avec dix mille hommes, où il fut proclamé Sultan.</p>
+        <p>Cela dura trois semaines. À <strong>Sidi Bou Othmane</strong>, le 6 septembre 1912, les spahis et tirailleurs de Mangin détruisirent l'armée — quelque deux mille guerriers morts — et le règne du Sultan bleu s'acheva avant d'avoir connu son second mois. Le jihad se replia dans le désert pour de bon.</p>
+        <p>Il combattit encore sept ans depuis l'Anti-Atlas, refusant les grâces françaises comme les pensions espagnoles, jusqu'à sa mort à Kerdous le 23 juin 1919. En termes de jeu : le chef au meilleur multiplicateur de levée de tout le casting — des armées de masse levées vite, la qualité payée en sang.</p>
       </div>
     </div>
   </div>
@@ -315,10 +370,22 @@ footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.85rem;font-styl
   <div class="wrap">
     <div class="tl">
       <article>
+        <span class="act">Acte 0 · Le vieux monde des caravanes</span>
+        <h3>Oualata et Tondibi</h3>
+        <div class="dates">1480 – 1591</div>
+        <p>Le prologue s'ouvre en 1480 : les Mossi assiègent et pillent Oualata — et les habitants se regroupent, poursuivent les razzieurs dans la brousse et reprennent leurs captifs. Un tutoriel de sauvetage tout trouvé. Puis Tondibi, 13 mars 1591 : les arquebusiers et le canon de Judar Pacha détruisent l'empire songhaï, sept siècles de puissance soudanaise s'achèvent en un après-midi, et les cités caravanières du Bilad Shinqit entament leur longue décadence.</p>
+      </article>
+      <article>
+        <span class="act">Acte 0 · La guerre de Trente Ans du désert</span>
+        <h3>Char Bouba</h3>
+        <div class="dates">1644 – 1674</div>
+        <p>La confédération sanhadja de Nasr ad-Din contre les Banu Hassan : victoires à Intuji et Jiwa, mort de l'imam à Tirtillass, quatre successeurs condamnés tombant l'un après l'autre — et le traité de Tin Yedfad, par lequel les vaincus « renoncent pour toujours aux armes ». De cette guerre naissent les émirats du Trarza et du Brakna, l'ordre social hassane et znaga, et les règles du tribut que la France saura exploiter un jour.</p>
+      </article>
+      <article>
         <span class="act">Acte 0 · Prologue</span>
         <h3>Avant le drapeau</h3>
-        <div class="dates">XVIIᵉ siècle – 1901</div>
-        <p>Le monde avant l'invasion : émirats et marabouts, commerce de la gomme sur le Sénégal, caravanes de sel à travers l'erg. L'ère du tutoriel — maîtrisez le rezzou, les puits et le tribut, car chacun de ces outils va viser un empire.</p>
+        <div class="dates">1638 – 1901</div>
+        <p>Le monde avant l'invasion : émirats et marabouts, le commerce de la gomme sur le Sénégal et la coutume qui en naquit, caravanes de sel à travers l'erg. L'ère du tutoriel — maîtrisez le rezzou, les puits et le tribut, car chacun de ces outils va viser un empire.</p>
       </article>
       <article>
         <span class="act">Acte I</span>
@@ -390,6 +457,106 @@ footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.85rem;font-styl
     <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Placeholder concept borj"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">BRJ</text></svg><figcaption>Un borj au crépuscule : petit, de brique crue, et la graine d'une toile logistique d'empire.</figcaption></figure>
     <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Placeholder concept caravane de sel"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">AZA</text></svg><figcaption>L'azalaï du sel — un convoi de ressources sur pattes, à escorter ou à tendre.</figcaption></figure>
     <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Placeholder concept camp de zawiya"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">ZAW</text></svg><figcaption>Un camp de zawiya — le savoir et l'allégeance, le front plus discret de la guerre.</figcaption></figure>
+  </div>
+</section>
+
+<section class="light" id="map">
+  <div class="wrap sec-head">
+    <h2>La carte de la guerre</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <figure class="map-fig">
+      <svg viewBox="0 0 800 900" role="img" aria-label="Carte schématique de la guerre : fleuves, régions, forts et routes caravanières de Mauritanie, 1902–1934">
+        <rect width="800" height="900" fill="#16273F"/>
+        <path d="M110,820 C85,640 80,400 100,260 C112,200 150,180 210,175 C300,160 420,170 520,190 C620,215 700,270 740,360 C770,460 775,600 745,720 C725,790 660,825 560,835 C400,850 220,845 110,820 Z" fill="rgba(232,220,195,.09)" stroke="rgba(200,162,75,.4)" stroke-width="1.5"/>
+        <text x="40" y="480" transform="rotate(-90 40 480)" text-anchor="middle" fill="#8FA6C4" font-size="15" letter-spacing="4" font-style="italic">ATLANTIQUE</text>
+        <line x1="95" y1="172" x2="745" y2="118" stroke="rgba(143,166,196,.55)" stroke-width="1.5" stroke-dasharray="10 6"/>
+        <text x="648" y="98" fill="#8FA6C4" font-size="13" font-style="italic">Sahara espagnol</text>
+        <path d="M70,845 C240,835 420,850 600,830 C680,820 740,825 780,815" fill="none" stroke="#8FA6C4" stroke-width="3"/>
+        <text x="470" y="872" fill="#8FA6C4" font-size="14" font-style="italic">Fleuve Sénégal</text>
+        <g fill="none" stroke="#C8A24B" stroke-width="1.8" stroke-dasharray="8 7" opacity=".8">
+          <path d="M340,140 C370,210 400,270 424,338"/>
+          <path d="M426,350 C420,430 410,500 398,565 C385,628 355,658 332,678"/>
+          <path d="M592,110 C450,58 250,92 130,224"/>
+        </g>
+        <path d="M654,340 C720,430 750,530 764,648" fill="none" stroke="#E8DCC3" stroke-width="2.4" stroke-dasharray="2 9"/>
+        <text x="700" y="560" fill="#E8DCC3" font-size="12" font-style="italic" transform="rotate(72 700 560)">azalaï</text>
+        <text x="672" y="700" fill="#E8DCC3" font-size="12" font-style="italic">vers Tombouctou</text>
+        <g fill="#C8A24B">
+          <rect x="452" y="306" width="11" height="11" transform="rotate(45 457.5 311.5)"/>
+          <rect x="514" y="294" width="11" height="11" transform="rotate(45 519.5 299.5)"/>
+          <rect x="649" y="526" width="11" height="11" transform="rotate(45 654.5 531.5)"/>
+          <rect x="646" y="326" width="11" height="11" transform="rotate(45 651.5 331.5)"/>
+          <rect x="334" y="124" width="11" height="11" transform="rotate(45 339.5 129.5)"/>
+          <rect x="584" y="92" width="11" height="11" transform="rotate(45 589.5 97.5)"/>
+        </g>
+        <g fill="#8FA6C4">
+          <rect x="64" y="839" width="12" height="12"/>
+          <rect x="144" y="656" width="12" height="12"/>
+          <rect x="114" y="226" width="12" height="12"/>
+          <rect x="392" y="566" width="12" height="12"/>
+          <rect x="422" y="346" width="12" height="12"/>
+        </g>
+        <g fill="#E8DCC3" font-size="13">
+          <text x="72" y="832">Saint-Louis</text>
+          <text x="164" y="667">Nouakchott</text>
+          <text x="134" y="237">Port-Étienne</text>
+          <text x="412" y="577">Tidjikja</text>
+          <text x="442" y="357">Atar</text>
+          <text x="470" y="300">Chinguetti</text>
+          <text x="532" y="290">Ouadane</text>
+          <text x="668" y="537">Oualata</text>
+          <text x="664" y="337">Taoudeni</text>
+          <text x="352" y="135">Smara</text>
+          <text x="602" y="103">Tindouf</text>
+        </g>
+        <g fill="rgba(200,162,75,.75)" font-size="16" letter-spacing="3">
+          <text x="185" y="735">TRARZA</text>
+          <text x="308" y="695">BRAKNA</text>
+          <text x="355" y="490">TAGANT</text>
+          <text x="452" y="278">ADRAR</text>
+          <text x="628" y="440">HODH</text>
+        </g>
+      </svg>
+      <figcaption class="map-legend">
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" fill="#8FA6C4"/></svg><i>poste français / borj</i></span>
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="11" height="11" fill="#C8A24B" transform="rotate(45 7 7)"/></svg><i>ville / zawiya</i></span>
+        <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#C8A24B" stroke-width="2" stroke-dasharray="6 5"/></svg><i>couloir de rezzou</i></span>
+        <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#E8DCC3" stroke-width="2" stroke-dasharray="2 6"/></svg><i>azalaï (caravane de sel)</i></span>
+        <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#8FA6C4" stroke-width="1.5" stroke-dasharray="8 5"/></svg><i>limite du Sahara espagnol</i></span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="dark resrc" id="resources">
+  <div class="wrap sec-head">
+    <h2>Ressources</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p class="lead">Le dossier de design est ouvert — l'histoire, les sources et les prompts vivent dans le dépôt.</p>
+    <div class="cols">
+      <div>
+        <h3>Dans le dépôt</h3>
+        <ul>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_campaign_history.md">Recherche sur l'histoire de la campagne (1902–1934)</a> — chronologie, factions, registre des conflits</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_precolonial.md">Recherche précoloniale (1480–1890)</a> — émirats, Char Bouba, économie du commerce</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/CHARACTERS.md">Bible de design des personnages</a></li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/art/PROMPTS.md">Notes de prompts artistiques</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Histoire &amp; culture</h3>
+        <ul>
+          <li><a href="https://www.loc.gov/collections/country-studies/about-this-collection/">Library of Congress</a> — <em>Mauritania: A Country Study</em> (1988)</li>
+          <li>Wikipédia français — <a href="https://fr.wikipedia.org/wiki/Xavier_Coppolani">Xavier Coppolani</a>, <a href="https://fr.wikipedia.org/wiki/Ma_El_Ainin">Ma El Aïnin</a>, <a href="https://fr.wikipedia.org/wiki/Henri_Gouraud">Henri Gouraud</a></li>
+          <li>Wikipédia anglais — <a href="https://en.wikipedia.org/wiki/Colonial_Mauritania">Colonial Mauritania</a></li>
+          <li><a href="https://www.persee.fr/doc/jso_0180-7106_1984_num_59_1_1893">Persée</a> — P. Bonte, <em>L'émirat de l'Adrar</em> (1984)</li>
+          <li><a href="https://lecalame.info/?q=node/3116">Le Calame</a> — le Col. Oumar Ould Beibecar sur la résistance et l'occupation</li>
+          <li>J.M.G. Le Clézio, <em>Désert</em> (1980) — le roman du peuple de Ma El Aïnin</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 

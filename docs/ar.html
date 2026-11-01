@@ -121,6 +121,34 @@ ul.src li::before{content:"◆";position:absolute;right:0;top:8px;color:var(--go
 footer{padding:0 0 56px;background:var(--ink);text-align:center}
 footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.88rem;font-style:italic}
 
+/* كتلة أحمد الهيبة */
+.feature{border:1px solid var(--gold);outline:1px solid var(--gold);outline-offset:5px;border-radius:4px;background:var(--sand);color:var(--tol);display:grid;grid-template-columns:1fr;margin-top:32px;overflow:hidden}
+@media(min-width:700px){.feature{grid-template-columns:280px 1fr}}
+.feature .fimg{position:relative;min-height:300px}
+.feature .fimg svg{width:100%;height:100%;display:block}
+.feature .fimg .soon{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:.78rem;color:var(--gold-l);text-shadow:0 1px 6px rgba(10,18,32,.9)}
+.feature .fbody{padding:28px 30px}
+.feature h3{font-size:1.5rem;color:var(--tol)}
+.feature .fdates{color:#8a6a1f;font-size:.85rem;margin:6px 0 14px}
+.feature p{font-size:1rem;color:var(--mol);margin-bottom:10px}
+.feature p:last-child{margin-bottom:0}
+
+/* الخريطة والمصادر */
+.map-fig{border:1px solid var(--lined);border-radius:4px;overflow:hidden;background:var(--indigo-x)}
+.map-fig svg{width:100%;display:block}
+.map-legend{display:flex;flex-wrap:wrap;gap:14px 24px;padding:14px 18px;color:var(--mod);font-size:.9rem}
+.map-legend i{font-style:normal;margin-right:6px}
+.resrc .cols{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:860px){.resrc .cols{grid-template-columns:1fr 1fr}}
+.resrc h3{color:inherit;font-size:1.1rem;margin-bottom:10px}
+section.dark .resrc h3{color:var(--sand)}
+section.light .resrc h3{color:var(--tol)}
+.resrc ul{list-style:none}
+.resrc li{padding:8px 0;border-bottom:1px dashed var(--lined);font-size:.95rem}
+section.light .resrc li{border-bottom-color:var(--linel)}
+.resrc a{color:inherit}
+.resrc .lead{font-size:1.02rem;font-style:italic;margin-bottom:22px;color:var(--mod);max-width:760px}
+
 .ph-init{font-family:Georgia,serif;font-weight:600;letter-spacing:.08em}
 </style>
 </head>
@@ -191,7 +219,7 @@ footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.88rem;font-styl
   <div class="wrap inner">
     <span class="badge">مرحلة التصوّر</span>
     <h1>الأرض التي لم تُقهر</h1>
-    <div class="sub">١٥٩١–١٩٣٤ · بلاد شنقيط · من حرب شار بوبّا إلى آخر غزوة رجيباتية</div>
+    <div class="sub">١٤٨٠–١٩٣٤ · بلاد شنقيط · من نهب ولاتة إلى آخر غزوة رجيباتية</div>
     <p class="pitch">أمّةٌ مبعثرة من رُحّل الجمال وقديسي العلم واتحادات القبائل حاربت واحدةً من أكبر إمبراطوريات التاريخ اثنين وثلاثين عامًا — بلا مدفعية، بلا سكك حديد، بلا مدن — ولم تُقهر قط على أرضها. أخذ الفرنسيون الآبار؛ ولم يأخذوا البيعة أبدًا.</p>
   </div>
 </header>
@@ -242,6 +270,33 @@ footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.88rem;font-styl
           <li><b>اقتصاد الأزلاي</b> — قوافل الملح تعبر العرق: أرزال موارد على قوائم، للحماية أو للكمين.</li>
           <li><b>خط السلاح المغربي</b> — باخرة السلطان «التركي» تنزّل البنادق في طرفاية؛ وفي ١٩١٦ مدافع غواصة ألمانية. الإمداد الخارجي مسارُ حملةٍ كامل.</li>
         </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="feature">
+      <div class="fimg">
+        <svg viewBox="0 0 280 400" role="img" aria-label="صورة رمزية لأحمد الهيبة، السلطان الأزرق">
+          <rect width="280" height="400" fill="url(#phg)"/>
+          <g fill="none" stroke="#C8A24B" stroke-width="1.4" opacity=".55">
+            <rect x="108" y="128" width="64" height="64" transform="rotate(45 140 160)"/>
+            <rect x="122" y="142" width="36" height="36" transform="rotate(45 140 160)"/>
+            <rect x="20" y="20" width="24" height="24" transform="rotate(45 32 32)"/>
+            <rect x="236" y="20" width="24" height="24" transform="rotate(45 248 32)"/>
+            <rect x="20" y="356" width="24" height="24" transform="rotate(45 32 368)"/>
+            <rect x="236" y="356" width="24" height="24" transform="rotate(45 248 368)"/>
+          </g>
+          <text x="140" y="182" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">EH</text>
+          <path d="M0,330 Q70,290 140,320 Q210,355 280,310 L280,400 L0,400 Z" fill="#101E33" opacity=".6"/>
+        </svg>
+        <div class="soon">الصورة قادمة لاحقًا</div>
+      </div>
+      <div class="fbody">
+        <h3>أحمد الهيبة — السلطان الأزرق</h3>
+        <div class="fdates">نحو ١٨٧٦ – ٢٣ يونيو ١٩١٩ · الابن الأكبر لماء العينين</div>
+        <p>أكثر أقواس المقاومة درامية. من رُكام قضية أبيه جنّد جيشًا من أقصى الشمال — تكنة وأولاد دليم والرگيبات — وعبر إلى المغرب، وفي <strong>١٤ أغسطس ١٩١٢</strong> دخل مراكش بعشرة آلاف رجل، فبايعوه سلطانًا.</p>
+        <p>دام ذلك ثلاثة أسابيع. في <strong>سيدي بو عثمان</strong>، في ٦ سبتمبر ١٩١٢، دمّر سباهي مَنغان وتيرايوروه الجيش — نحو ألفي مقاتل قتيل — وانتهى ملك السلطان الأزرق قبل أن يكتمل شهره الثاني. وعاد الجهاد إلى الصحراء نهائيًا.</p>
+        <p>وواصل القتال سبع سنين من الأطلس الصغير، رافضًا العفو الفرنسي كما المعاش الإسباني، حتى مات في كردوس في ٢٣ يونيو ١٩١٩. بلغة اللعبة: صاحب أعلى مضاعف تجنيد في الشخصيات جميعًا — جيوش هائلة تُرفع بسرعة، والجودة ثمنها الدم.</p>
       </div>
     </div>
   </div>
@@ -314,10 +369,22 @@ footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.88rem;font-styl
   <div class="wrap">
     <div class="tl">
       <article>
+        <span class="act">الفصل صفر · عالم القوافل القديم</span>
+        <h3>ولاتة وتونديبي</h3>
+        <div class="dates">١٤٨٠ – ١٥٩١</div>
+        <p>يفتح التمهيد بعام ١٤٨٠: يحاصر الموسى ولاتة وينهبونها — فيتجمع أهلها، ويلحقون بالغزاة في البادية، ويستردّون أسراهم. درسُ إنقاذٍ جاهز. ثم تونديبي، ١٣ مارس ١٥٩١: بنادق جودر باشا ومدافعه تحطّ إمبراطورية سونغاي، وينتهي سبعةُ قرون من القوة السودانية في عصرٍ واحد، وتبدأ مدن بلاد شنقيط القافلية انحدارها الطويل البطيء.</p>
+      </article>
+      <article>
+        <span class="act">الفصل صفر · حرب الثلاثين عامًا الصحراوية</span>
+        <h3>شار بوبّا</h3>
+        <div class="dates">١٦٤٤ – ١٦٧٤</div>
+        <p>اتحاد صنهاجة بقيادة نصر الدين في مواجهة بني حسّان: انتصاراتٌ في إنتوجي وجيوة، وموتُ الإمام في تيرتلاس، وأربعةُ خلفاءَ محكومين يتساقطون واحدًا بعد آخر — ثم معاهدة تين يدفاد التي «يتنازل فيها المهزومون عن السلاح إلى الأبد». ومن رحم الحرب تُولد إمارتا الترارزة والبراكنة، ونظام حسّان وزناگة الاجتماعي، وقواعد الجزية التي ستجيد فرنسا استغلالها يومًا.</p>
+      </article>
+      <article>
         <span class="act">الفصل صفر · تمهيد</span>
         <h3>قبل الراية</h3>
-        <div class="dates">القرن ١٧ – ١٩٠١</div>
-        <p>العالم قبل الغزو: إمارات ومحاضر، وتجارة صمغ على السنغال، وقوافل ملح عبر العرق. عصر التعلّم — أتقن الرزو والآبار والجزية، فكل هذه الأدوات على وشك أن تصوَّب نحو إمبراطورية.</p>
+        <div class="dates">١٦٣٨ – ١٩٠١</div>
+        <p>العالم قبل الغزو: إمارات ومحاضر، وتجارة صمغ على السنغال و«العادة» التي وُلدت منها، وقوافل ملح عبر العرق. عصر التعلّم — أتقن الرزو والآبار والجزية، فكل هذه الأدوات على وشك أن تصوَّب نحو إمبراطورية.</p>
       </article>
       <article>
         <span class="act">الفصل الأول</span>
@@ -389,6 +456,106 @@ footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.88rem;font-styl
     <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="تصور رمزي للبرج"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="165" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">BRJ</text></svg><figcaption>برجٌ في الغسق: صغير، طيني، وبذرة نسيج إمداد لإمبراطورية.</figcaption></figure>
     <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="تصور رمزي لقافلة الملح"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="165" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">AZA</text></svg><figcaption>أزلاي الملح — قافلة موارد على قوائم، للحماية أو للكمين.</figcaption></figure>
     <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="تصور رمزي لمخيم الزاوية"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="165" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">ZAW</text></svg><figcaption>مخيم زاوية — علمٌ وبيعة، الجبهة الأهدأ من الحرب.</figcaption></figure>
+  </div>
+</section>
+
+<section class="light" id="map">
+  <div class="wrap sec-head">
+    <h2>خريطة الحرب</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <figure class="map-fig">
+      <svg viewBox="0 0 800 900" role="img" aria-label="خريطة تخطيطية للحرب: الأنهار والأقاليم والحصون ودرورب القوافل في موريتانيا، ١٩٠٢–١٩٣٤">
+        <rect width="800" height="900" fill="#16273F"/>
+        <path d="M110,820 C85,640 80,400 100,260 C112,200 150,180 210,175 C300,160 420,170 520,190 C620,215 700,270 740,360 C770,460 775,600 745,720 C725,790 660,825 560,835 C400,850 220,845 110,820 Z" fill="rgba(232,220,195,.09)" stroke="rgba(200,162,75,.4)" stroke-width="1.5"/>
+        <text x="40" y="480" transform="rotate(-90 40 480)" text-anchor="middle" fill="#8FA6C4" font-size="15" font-style="italic">الأطلسي</text>
+        <line x1="95" y1="172" x2="745" y2="118" stroke="rgba(143,166,196,.55)" stroke-width="1.5" stroke-dasharray="10 6"/>
+        <text x="610" y="98" fill="#8FA6C4" font-size="13" font-style="italic">الصحراء الإسبانية</text>
+        <path d="M70,845 C240,835 420,850 600,830 C680,820 740,825 780,815" fill="none" stroke="#8FA6C4" stroke-width="3"/>
+        <text x="430" y="872" fill="#8FA6C4" font-size="14" font-style="italic">نهر السنغال</text>
+        <g fill="none" stroke="#C8A24B" stroke-width="1.8" stroke-dasharray="8 7" opacity=".8">
+          <path d="M340,140 C370,210 400,270 424,338"/>
+          <path d="M426,350 C420,430 410,500 398,565 C385,628 355,658 332,678"/>
+          <path d="M592,110 C450,58 250,92 130,224"/>
+        </g>
+        <path d="M654,340 C720,430 750,530 764,648" fill="none" stroke="#E8DCC3" stroke-width="2.4" stroke-dasharray="2 9"/>
+        <text x="700" y="560" fill="#E8DCC3" font-size="12" font-style="italic" transform="rotate(72 700 560)">أزلاي</text>
+        <text x="668" y="700" fill="#E8DCC3" font-size="12" font-style="italic">إلى تمبكتو</text>
+        <g fill="#C8A24B">
+          <rect x="452" y="306" width="11" height="11" transform="rotate(45 457.5 311.5)"/>
+          <rect x="514" y="294" width="11" height="11" transform="rotate(45 519.5 299.5)"/>
+          <rect x="649" y="526" width="11" height="11" transform="rotate(45 654.5 531.5)"/>
+          <rect x="646" y="326" width="11" height="11" transform="rotate(45 651.5 331.5)"/>
+          <rect x="334" y="124" width="11" height="11" transform="rotate(45 339.5 129.5)"/>
+          <rect x="584" y="92" width="11" height="11" transform="rotate(45 589.5 97.5)"/>
+        </g>
+        <g fill="#8FA6C4">
+          <rect x="64" y="839" width="12" height="12"/>
+          <rect x="144" y="656" width="12" height="12"/>
+          <rect x="114" y="226" width="12" height="12"/>
+          <rect x="392" y="566" width="12" height="12"/>
+          <rect x="422" y="346" width="12" height="12"/>
+        </g>
+        <g fill="#E8DCC3" font-size="13">
+          <text x="72" y="832">سن لويس</text>
+          <text x="164" y="667">نواكشوط</text>
+          <text x="134" y="237">بور إتيان</text>
+          <text x="412" y="577">تجكجة</text>
+          <text x="442" y="357">أطار</text>
+          <text x="470" y="300">شنقيط</text>
+          <text x="532" y="290">وادان</text>
+          <text x="668" y="537">ولاتة</text>
+          <text x="664" y="337">توادني</text>
+          <text x="352" y="135">السمارة</text>
+          <text x="602" y="103">تندوف</text>
+        </g>
+        <g fill="rgba(200,162,75,.75)" font-size="16">
+          <text x="185" y="735">الترارزة</text>
+          <text x="308" y="695">البراكنة</text>
+          <text x="355" y="490">تكانت</text>
+          <text x="452" y="278">الأدرار</text>
+          <text x="628" y="440">الحوض</text>
+        </g>
+      </svg>
+      <figcaption class="map-legend">
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" fill="#8FA6C4"/></svg><i>مركز فرنسي / برج</i></span>
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="11" height="11" fill="#C8A24B" transform="rotate(45 7 7)"/></svg><i>بلدة / زاوية</i></span>
+        <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#C8A24B" stroke-width="2" stroke-dasharray="6 5"/></svg><i>ممرّ الرزو</i></span>
+        <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#E8DCC3" stroke-width="2" stroke-dasharray="2 6"/></svg><i>أزلاي الملح</i></span>
+        <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#8FA6C4" stroke-width="1.5" stroke-dasharray="8 5"/></svg><i>حدود الصحراء الإسبانية</i></span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="dark resrc" id="resources">
+  <div class="wrap sec-head">
+    <h2>المصادر</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p class="lead">ملف التصميم مفتوح — التاريخ والمصادر وأوامر الرسم كلها في المستودع.</p>
+    <div class="cols">
+      <div>
+        <h3>في المستودع</h3>
+        <ul>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_campaign_history.md">بحث تاريخ الحملة (١٩٠٢–١٩٣٤)</a> — التسلسل الزمني والفصائل وسجل التعارضات</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_precolonial.md">بحث ما قبل الاستعمار (١٤٨٠–١٨٩٠)</a> — الإمارات وشار بوبّا واقتصاد التجارة</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/CHARACTERS.md">إنجيل تصميم الشخصيات</a></li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/art/PROMPTS.md">ملاحظات أوامر الرسم</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>تاريخ وثقافة</h3>
+        <ul>
+          <li><a href="https://www.loc.gov/collections/country-studies/about-this-collection/">مكتبة الكونغرس</a> — <em>Mauritania: A Country Study</em> (١٩٨٨)</li>
+          <li>ويكيبيديا الفرنسية — <a href="https://fr.wikipedia.org/wiki/Xavier_Coppolani">كزافييه كوبولاني</a>، <a href="https://fr.wikipedia.org/wiki/Ma_El_Ainin">ماء العينين</a>، <a href="https://fr.wikipedia.org/wiki/Henri_Gouraud">هنري غورو</a></li>
+          <li>ويكيبيديا الإنجليزية — <a href="https://en.wikipedia.org/wiki/Colonial_Mauritania">موريتانيا الاستعمارية</a></li>
+          <li><a href="https://www.persee.fr/doc/jso_0180-7106_1984_num_59_1_1893">Persée</a> — ب. بونت، <em>إمارة الأدرار</em> (١٩٨٤)</li>
+          <li><a href="https://lecalame.info/?q=node/3116">المرصد (Le Calame)</a> — العقيد عمر ولد بيبكر عن المقاومة والاحتلال</li>
+          <li>ج. م. ج. لو كليزيو، <em>الصحراء (Désert)</em> (١٩٨٠) — رواية قوم ماء العينين</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
