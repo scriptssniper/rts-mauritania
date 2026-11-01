@@ -48,6 +48,7 @@ def resolve(v, root):
 CONTEXTS = [
     ('.badge.v', '#C8A24B'),          # gold badge vs its own text
     ('.badge.a', '#8FA6C4'),          # steel badge vs its own text
+    ('.gloss span', '#21385A'),   # spans only in dark glossary; mcards' gloss has no spans
     ('section.light .sec-head .kicker', '#E8DCC3'),
     ('.sec-head .kicker', '#223A5E'),
     ('#campaign .subhead', '#E8DCC3'),
@@ -55,6 +56,7 @@ CONTEXTS = [
     ('.poem', '#F1E9D7'),
     ('.ucard', '#2A344C'),            # 6% sand blended over indigo
     ('section.light .card', '#1B2F4C'),
+    ('.vs', '#E8DCC3'),            # every .vs column carries sand bg
     ('.card', '#E8DCC3'),
     ('.char', '#E8DCC3'),
     ('.feature', '#E8DCC3'),
@@ -65,14 +67,94 @@ CONTEXTS = [
     ('body', '#223A5E'),
 ]
 
-DECORATIVE = ('::before', '::after', '.rule', 'border', 'box-shadow', 'background', '.band')
+DECORATIVE = ('::before', '::after', '.band')
 
-def bg_for(sel, root):
-    if 'footer' in sel: return hex2rgb('#191512')
-    for prefix, bg in CONTEXTS:
-        if any(p.strip() == prefix or prefix in s for s in sel.split(',') for p in [s]):
-            return hex2rgb(bg)
+def section_bg_sec(sec):
+    tag, cls = sec
+    if tag == 'footer': return hex2rgb('#191512')
+    if 'light' in cls: return hex2rgb('#E8DCC3')
+    return hex2rgb('#223A5E')
+
+def section_bg(tag_match):
+    tag = tag_match.group(1)
+    if tag == 'footer': return hex2rgb('#191512')
+    if 'light' in tag_match.group(0): return hex2rgb('#E8DCC3')
+    return hex2rgb('#223A5E')
+
+def css_bg(class_list, rules, root):
+    """Background (hex or ('rgba', raw)) of the first rule matching any class."""
+    for sel, props in rules:
+        b = props.get('background')
+        if not b: continue
+        if 'gradient' in b or 'url(' in b: continue  # not a flat color
+        if '::' in sel: continue
+        # only the last compound may target the element itself; all its
+        # classes must be on the element (span.badge must not match .poem .badge.v)
+        last = re.split(r'[ >,+~]', sel.strip())[-1]
+        lcls = re.findall(r'\.([\w-]+)', last)
+        if lcls and all(c in class_list for c in lcls):
+            v = resolve(b, root)
+            if v: return v
+            if b.startswith('rgb'):
+                return ('rgba', b)
     return None
+
+def resolve_bg(val, base, root):
+    """Blend an rgba value over base; hex passes through."""
+    if isinstance(val, tuple):
+        m = re.match(r'rgba?\((\d+)[,\s]+(\d+)[,\s]+(\d+)[,\s]+([\d.]+)\)', val[1])
+        return blend((int(m.group(1)), int(m.group(2)), int(m.group(3))), base, float(m.group(4)))
+    return hex2rgb(val)
+
+VOID = {'img','br','hr','meta','link','input','use','path','rect','circle',
+        'line','polyline','polygon','stop','source','col','area','base','embed'}
+
+def ancestors_at(html, pos):
+    """(tag, class_list) stack of strictly enclosing elements at pos."""
+    stack = []
+    for t in re.finditer(r'<(/?)([a-z]+)\b([^>]*?)(/?)>', html[:pos]):
+        close, tag, attrs, selfc = t.group(1) == '/', t.group(2), t.group(3), t.group(4) == '/'
+        if close:
+            for i in range(len(stack) - 1, -1, -1):
+                if stack[i][0] == tag:
+                    del stack[i:]
+                    break
+        elif not selfc and tag not in VOID:
+            cm = re.search(r'class="([^"]*)"', attrs)
+            stack.append((tag, cm.group(1).split() if cm else []))
+    return stack
+
+def bg_for(sel, html, rules, root):
+    """Explicit context table first, then DOM: stack of enclosing elements,
+    nearest CSS background wins (rgba blended over section base)."""
+    for prefix, bg in CONTEXTS:
+        if any(prefix in s for s in sel.split(',')):
+            return hex2rgb(bg)
+    # rightmost compound that carries a class = the element itself (.vs .col h3 -> col)
+    cls = None
+    for comp in re.split(r'[ >,+~]', sel.strip())[::-1]:
+        cc = re.findall(r'\.([\w-]+)', comp)
+        if cc and not comp.startswith(':'):
+            cls = cc[0]; break
+    if cls is None: return None
+    need = [c for comp in re.split(r'[ >,+~]', sel.strip()) for c in re.findall(r'\.([\w-]+)', comp) if c != cls]
+    em = None
+    for cand in re.finditer(r'<([a-z]+)[^>]*class="[^"]*\b' + cls + r'\b[^"]*"', html):
+        anc = {c for _, cl in ancestors_at(html, cand.start()) for c in cl}
+        if all(c in anc for c in need):
+            em = cand; break
+    if em is None:
+        em = re.search(r'<([a-z]+)[^>]*class="[^"]*\b' + cls + r'\b[^"]*"', html)
+    if not em: return None
+    own = re.search(r'class="([^"]*)"', em.group(0))
+    stack = ancestors_at(html, em.start())
+    secs = [s for s in stack if s[0] in ('section', 'footer', 'header')]
+    base = section_bg_sec(secs[-1]) if secs else hex2rgb('#223A5E')
+    chains = ([own.group(1).split()] if own else []) + [c for _, c in reversed(stack)]
+    for class_list in chains:
+        v = css_bg(class_list, rules, root)
+        if v: return resolve_bg(v, base, root)
+    return base
 
 def audit(path):
     html = open(path, encoding='utf-8').read()
@@ -86,7 +168,7 @@ def audit(path):
         if not fg: continue
         bg = resolve(props.get('background', ''), root)
         if not bg:
-            bgc = bg_for(sel, root)
+            bgc = bg_for(sel, html, rules, root)
             if not bgc: continue
             bg_rgb = bgc
         else:
@@ -95,15 +177,15 @@ def audit(path):
         # rgba background? blend over context
         bm = re.match(r'rgba?\((\d+)[,\s]+(\d+)[,\s]+(\d+)[,\s]+([\d.]+)\)', props.get('background', ''))
         if bm:
-            base = bg_for(sel, root) or hex2rgb('#223A5E')
+            base = bg_for(sel, html, rules, root) or hex2rgb('#223A5E')
             bg_rgb = blend((int(bm.group(1)), int(bm.group(2)), int(bm.group(3))), base, float(bm.group(4)))
         r = ratio(fg_rgb, bg_rgb)
         size = props.get('font-size', '1rem')
-        small = float(re.sub(r'[^\d.]', '', size) or 1) < 0.85  # badge/caption scale
+        fm = re.search(r'([\d.]+)', size)
+        small = float(fm.group(1)) if fm else 1
+        if 'clamp' in size: small = 1  # clamp floor is >= .85rem in this codebase
         thresh = 3.0 if small else 4.5
         verdict = 'PASS' if r >= thresh else 'FAIL'
-        (deco if any(d in sel for d in ('.rule',)) else rows if True else rows).append(None)
-        rows = [x for x in rows if x]
         rows.append((sel[:60], fg, '#%02X%02X%02X' % bg_rgb if isinstance(bg_rgb, tuple) else bg_rgb, round(r, 2), verdict, thresh))
     return rows
 

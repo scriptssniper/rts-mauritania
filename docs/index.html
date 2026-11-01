@@ -67,11 +67,11 @@ section.light .sec-head .kicker{color:var(--bronze)}
 .quotes figure::before{top:10px;left:12px}
 .quotes figure::after{bottom:10px;right:12px}
 .quotes blockquote{font-size:1.04rem;font-style:italic}
-.quotes figcaption{margin-top:12px;color:var(--mol);font-size:.85rem}
+.quotes figcaption{margin-top:12px;color:var(--mod);font-size:.85rem}
 
 /* Glossary strip */
 .gloss{display:flex;flex-wrap:wrap;gap:10px}
-.gloss span{border:1px solid var(--linel);background:rgba(25,21,18,.045);border-radius:3px;padding:8px 14px;font-size:.9rem;color:var(--mol)}
+.gloss span{border:1px solid var(--linel);background:rgba(25,21,18,.045);border-radius:3px;padding:8px 14px;font-size:.9rem;color:var(--mod)}
 .gloss b{color:var(--tol);font-weight:600;letter-spacing:.05em}
 
 /* Cards */
@@ -102,12 +102,12 @@ section.light .card p{color:var(--mod)}
 .tl{border-left:2px solid var(--lined);margin-left:8px;padding-left:28px;display:flex;flex-direction:column;gap:34px}
 .tl article{position:relative}
 .tl article::before{content:"";position:absolute;left:-38px;top:8px;width:12px;height:12px;background:var(--gold);border:1px solid var(--ink);transform:rotate(45deg)}
-.tl .act{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.tl .act{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}
 section.light .tl{border-left-color:var(--linel)}
 .tl h3{font-size:1.25rem;margin:4px 0 6px}
 .tl .dates{display:inline-block;background:var(--gold);color:var(--ink);font-style:italic;font-size:.82rem;padding:2px 12px;border-radius:2px;margin-bottom:10px}
 .tl p{max-width:720px;font-size:.97rem}
-.tl p{color:var(--mod)}
+.tl p{color:var(--mol)}
 section.light .tl p{color:var(--mol)}
 
 /* Characters */
@@ -122,13 +122,15 @@ section.light .tl p{color:var(--mol)}
 .char p{color:var(--mol);font-size:.9rem;margin-top:8px}
 .tag{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;padding:3px 10px;margin-top:12px}
 .tag.fr{color:#41597c;border:1px solid var(--steel)}
-.tag.res{color:var(--gold-d);border:1px solid var(--gold)}
+section.dark .tag.fr{color:var(--tod)}
+.tag.res{color:var(--bronze);border:1px solid var(--gold)}
+section.dark .tag.res{color:var(--gold-l)}
 
 /* Gallery */
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 .gal figure{border:1px solid var(--linel);border-radius:4px;overflow:hidden;background:var(--sand)}
 .gal svg.art{width:100%;aspect-ratio:1;display:block}
-.gal figcaption{padding:12px 16px;color:var(--mol);font-size:.9rem;font-style:italic}
+.gal figcaption{padding:12px 16px;color:var(--mod);font-size:.9rem;font-style:italic}
 
 /* About */
 .about p{max-width:760px;margin-bottom:16px;color:var(--mol)}
@@ -166,7 +168,9 @@ section.light .resrc h3{color:var(--tol)}
 .resrc li{padding:8px 0;border-bottom:1px dashed var(--lined);font-size:.93rem}
 section.light .resrc li{border-bottom-color:var(--linel)}
 .resrc a{color:inherit}
-.resrc .lead{font-size:1.02rem;font-style:italic;margin-bottom:22px;color:var(--mod);max-width:760px}
+.resrc .lead{font-size:1.02rem;font-style:italic;margin-bottom:22px;max-width:760px}
+section.dark .resrc .lead{color:var(--mod)}
+section.light .resrc .lead{color:var(--mol)}
 
 /* Historical photographs */
 .hist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;margin:14px 0 8px}
@@ -197,10 +201,10 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 .ucard .sw{display:flex;height:14px;border-radius:2px;overflow:hidden;margin-bottom:10px;border:1px solid rgba(232,220,195,.25)}
 .ucard .sw i{flex:1}
 .biomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:28px}
-.biome{background:var(--bt);border:1px solid rgba(25,21,18,.15);border-top:3px solid var(--bronze);border-radius:4px;padding:16px 18px;color:var(--tod)}
+.biome{background:var(--bt);border:1px solid rgba(25,21,18,.15);border-top:3px solid var(--bronze);border-radius:4px;padding:16px 18px;color:var(--tol)}
 .biome .term{display:block;font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--indigo)}
 .biome .term i{font-style:italic;font-weight:400;font-size:.88rem}
-.biome p{font-size:.87rem;line-height:1.55;margin:0 0 7px;color:var(--tod)}
+.biome p{font-size:.87rem;line-height:1.55;margin:0 0 7px;color:var(--tol)}
 .biome .tac{font-style:italic;margin-bottom:0}
 
 /* Poets' War manuscript frames */
@@ -238,7 +242,12 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 .bgm-btn:hover{color:var(--tod);border-color:var(--gold)}
 .bgm-btn svg{width:15px;height:15px;display:block}
 [dir="rtl"] .bgm-btn{margin-left:0;margin-right:8px}
-.mcred{font-size:.78rem;color:var(--mol);margin-top:12px}</style>
+.mcred{font-size:.78rem;color:var(--mol);margin-top:12px}.tracks{display:grid;gap:16px;margin-top:22px}
+.track .trow{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.track .tinfo b{display:block;font-size:1.02rem;color:var(--tol)}
+.track .tinfo span{font-size:.85rem;color:var(--mol)}
+.track audio{width:300px;max-width:100%}
+</style>
 </head>
 <body>
 
@@ -797,6 +806,17 @@ section.light .resrc li{border-bottom-color:var(--linel)}
   </div>
 </section>
 
+<section class="light" id="soundtrack">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">Soundtrack</span><h2>Demo tracks</h2></div>
+    <div class="tracks">
+    <div class="poem track"><div class="trow"><div class="tinfo"><b>Rezzou — battle theme</b><span>Battle looting raids.</span></div><audio class="track" controls preload="none" src="audio/rezzou_theme.mp3"></audio></div></div>
+    <div class="poem track"><div class="trow"><div class="tinfo"><b>The Poets’ War — kāf screen theme</b><span>The poems screen — harp and voice.</span></div><audio class="track" controls preload="none" src="audio/poets_war.mp3"></audio></div></div>
+    <div class="poem track"><div class="trow"><div class="tinfo"><b>Smara — the unfinished city</b><span>The burning of Smara — lament.</span></div><audio class="track" controls preload="none" src="audio/smara_theme.mp3"></audio></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="light about" id="about">
   <div class="wrap sec-head">
     <h2>About the Project</h2><div class="rule"></div>
@@ -814,7 +834,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
     <h3>Contact</h3>
     <p>Questions, corrections (especially from Mauritanian historians) and contributions: open an issue on the <a href="https://github.com/scriptssniper/rts-mauritania">GitHub repository</a>.</p>
     <p class="flagnote"><svg width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> The tricolor marks the colonial state; <svg width="13" height="13" aria-hidden="true"><use href="#crest"/></svg> the diamond crest honours the resistance — which fought under tribal banners, not a national flag.</p>
-    <p class="mcred">Demo soundtrack: <em>Rezzou</em> — battle theme (demo), AI-generated (Suno), non-commercial license.</p>
+    <p class="mcred">Tracks: <em>Rezzou</em> · <em>The Poets’ War</em> · <em>Smara</em> — AI-generated demos (Suno), non-commercial.</p>
   </div>
 </section>
 
@@ -831,7 +851,9 @@ if(!b||!t)return;b.volume=.25;
 function ic(){t.querySelector('.on').hidden=!b.paused;t.querySelector('.off').hidden=b.paused}
 function arm(){function f(){b.play().catch(function(){});document.removeEventListener('pointerdown',f);document.removeEventListener('keydown',f)}document.addEventListener('pointerdown',f);document.addEventListener('keydown',f)}
 if(localStorage.getItem('bgmMuted')==='1'){b.pause();ic()}else{b.play().then(ic).catch(function(){ic();arm()})}
-t.addEventListener('click',function(){if(b.paused){b.play().catch(function(){});localStorage.setItem('bgmMuted','0')}else{b.pause();localStorage.setItem('bgmMuted','1')}ic()})})();
+t.addEventListener('click',function(){if(b.paused){b.play().catch(function(){});localStorage.setItem('bgmMuted','0')}else{b.pause();localStorage.setItem('bgmMuted','1')}ic()});
+document.querySelectorAll('audio.track').forEach(function(a){a.addEventListener('play',function(){b.pause();localStorage.setItem('bgmMuted','1');ic()})});
+})();
 </script>
 </body>
 </html>
