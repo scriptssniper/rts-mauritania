@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMARA — The Unfinished City · RTS Concept</title>
+<meta name="description" content="SMARA: an asymmetric real-time strategy game of the Saharan resistance to French colonization, 1902–1934.">
+<style>
+:root{
+  --night:#14100C; --night2:#1E1812; --sand:#C2A878; --sand-dim:#8F7B5B;
+  --indigo:#2E4172; --indigo-l:#5E77B5; --ember:#C96F3B; --ember-l:#E39A6B;
+  --text:#E8DCC8; --muted:#A99A80; --line:#3A3125;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--text);font:16px/1.7 Georgia,'Times New Roman',serif}
+h1,h2,h3{font-family:Georgia,'Palatino Linotype',serif;font-weight:600;letter-spacing:.02em}
+a{color:var(--ember-l)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.badge{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ember-l);border:1px solid var(--ember);border-radius:2px;padding:4px 12px}
+
+/* Hero */
+.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--line);overflow:hidden}
+.hero .duneart{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .inner{position:relative;padding:96px 0 64px}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);color:var(--sand);line-height:1.05;margin:18px 0 6px;text-shadow:0 2px 24px rgba(0,0,0,.65)}
+.hero .sub{font-size:clamp(1.05rem,2.4vw,1.4rem);color:var(--text);font-style:italic}
+.hero .pitch{max-width:640px;color:var(--muted);margin-top:16px;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+
+section{padding:72px 0}
+section.alt{background:var(--night2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.6rem,4vw,2.3rem);color:var(--sand)}
+.sec-head .rule{width:64px;height:3px;background:var(--ember);margin-top:14px}
+.pitch-body p{max-width:760px;margin-bottom:18px;font-size:1.05rem}
+.pitch-body p:last-child{margin-bottom:0}
+
+/* Pillars */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:var(--night2);border:1px solid var(--line);border-radius:6px;padding:24px}
+section:not(.alt) .card{background:var(--night)}
+.card h3{color:var(--sand);font-size:1.12rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* Timeline */
+.tl{border-left:2px solid var(--line);margin-left:8px;padding-left:28px;display:flex;flex-direction:column;gap:34px}
+.tl article{position:relative}
+.tl article::before{content:"";position:absolute;left:-37px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--ember);border:2px solid var(--night)}
+.tl .act{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ember-l)}
+.tl h3{color:var(--sand);font-size:1.25rem;margin:4px 0 6px}
+.tl .dates{color:var(--sand-dim);font-style:italic;font-size:.9rem;margin-bottom:8px}
+.tl p{max-width:720px;color:var(--muted);font-size:.97rem}
+
+/* Characters */
+.chars{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.char{background:var(--night2);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+section:not(.alt) .char{background:var(--night)}
+.char img,.char svg.art{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.char img{filter:saturate(.92)}
+.char .body{padding:16px 18px 20px;flex:1}
+.char h3{font-size:1.05rem;color:var(--sand)}
+.char .dates{color:var(--sand-dim);font-size:.82rem;font-style:italic}
+.char p{color:var(--muted);font-size:.9rem;margin-top:8px}
+.tag{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;padding:3px 10px;margin-top:12px}
+.tag.fr{color:var(--indigo-l);border:1px solid var(--indigo)}
+.tag.res{color:var(--ember-l);border:1px solid var(--ember)}
+
+/* Gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.gal figure{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--night2)}
+.gal svg.art{width:100%;aspect-ratio:1;display:block}
+.gal figcaption{padding:12px 16px;color:var(--muted);font-size:.9rem;font-style:italic}
+
+/* About */
+.about p{max-width:760px;margin-bottom:16px;color:var(--muted)}
+.about h3{color:var(--sand);margin:26px 0 8px;font-size:1.1rem}
+ul.src{list-style:none;max-width:760px}
+ul.src li{padding:6px 0 6px 22px;position:relative;color:var(--muted);font-size:.95rem}
+ul.src li::before{content:"—";position:absolute;left:0;color:var(--ember)}
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;color:var(--sand-dim);font-size:.85rem;font-style:italic}
+
+/* SVG placeholder text */
+.ph-init{font-family:Georgia,serif;font-weight:600;letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<!-- shared SVG defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="phg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E4172"/><stop offset=".55" stop-color="#3B3350"/><stop offset="1" stop-color="#7A4A2B"/>
+    </linearGradient>
+    <linearGradient id="duneg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241C14"/><stop offset="1" stop-color="#14100C"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" id="top">
+  <svg class="duneart" viewBox="0 0 1536 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="1536" height="760" fill="url(#duneg)"/>
+    <circle cx="1150" cy="330" r="110" fill="#C2A878" opacity=".85"/>
+    <circle cx="1150" cy="330" r="150" fill="#C2A878" opacity=".12"/>
+    <g fill="none" stroke="#0E0B08" stroke-width="7" stroke-linecap="round" opacity=".9">
+      <g transform="translate(300,470) scale(1.15)">
+        <path d="M2,38 Q10,12 17,26 Q20,8 28,24 Q33,10 39,26"/>
+        <path d="M6,30 L3,52 M24,26 L26,52 M36,27 L40,52 M14,28 L12,50"/>
+        <path d="M39,26 L46,8 L52,8"/>
+        <circle cx="54" cy="7" r="4" fill="#0E0B08" stroke="none"/>
+      </g>
+      <g transform="translate(430,495) scale(.8)">
+        <path d="M2,38 Q10,12 17,26 Q20,8 28,24 Q33,10 39,26"/>
+        <path d="M6,30 L3,52 M24,26 L26,52 M36,27 L40,52 M14,28 L12,50"/>
+        <path d="M39,26 L46,8 L52,8"/>
+        <circle cx="54" cy="7" r="4" fill="#0E0B08" stroke="none"/>
+      </g>
+      <g transform="translate(540,505) scale(.55)">
+        <path d="M2,38 Q10,12 17,26 Q20,8 28,24 Q33,10 39,26"/>
+        <path d="M6,30 L3,52 M24,26 L26,52 M36,27 L40,52 M14,28 L12,50"/>
+        <path d="M39,26 L46,8 L52,8"/>
+        <circle cx="54" cy="7" r="4" fill="#0E0B08" stroke="none"/>
+      </g>
+    </g>
+    <path d="M0,540 Q380,420 760,520 Q1180,630 1536,470 L1536,760 L0,760 Z" fill="#2A2118"/>
+    <path d="M0,600 Q420,500 850,590 Q1250,670 1536,560 L1536,760 L0,760 Z" fill="#1E1812"/>
+    <path d="M0,680 Q500,590 1000,660 Q1300,700 1536,650 L1536,760 L0,760 Z" fill="#14100C"/>
+  </svg>
+  <div class="wrap inner">
+    <span class="badge">Concept Stage</span>
+    <h1>SMARA</h1>
+    <div class="sub">The Unfinished City — an RTS of the Saharan Resistance</div>
+    <p class="pitch">An asymmetric real-time strategy game of the Mauritanian resistance to French colonization, 1902–1934. No base building. Wells, herds and tribal allegiance are the war.</p>
+  </div>
+</header>
+
+<section id="pitch">
+  <div class="wrap sec-head">
+    <h2>The Pitch</h2><div class="rule"></div>
+  </div>
+  <div class="wrap pitch-body">
+    <p>Between 1902 and 1934, France absorbed a desert country the size of France and Spain combined — with almost no battles. Corsican Arabist Xavier Coppolani took three emirates with treaties and sermons; when a single rezzou killed him at Tidjikja in 1905, the conquest froze for three years, and the Sahara answered with the oldest weapon it had: the lightning camel raid.</p>
+    <p><strong>SMARA</strong> is a point-control RTS with no worker economy and no base building. The map is a lattice of wells, oases, pastures and caravan routes. Whoever controls the water controls the war: away from a friendly well, every unit bleeds a thirst meter until it dies — thirteen tirailleurs fell at Nouarmach in July 1908, and eleven more died of thirst afterward. That statistic is a game mechanic.</p>
+    <p>The two sides fight for the same territory with opposite tools. The French side webs a lattice of mud-brick forts (borj) across the country, extends its supply radius post by post, and budgets units from Saint-Louis — reinforcements that can be ambushed in transit. The resistance side lives on mobility: rezzou raids that strike herds and caravans and vanish, tribal allegiances that must be won and held, and charismatic leaders whose presence is worth a regiment — until their death breaks one.</p>
+    <p>A pre-colonial prologue era teaches the world before the flag arrives: the emirates' own wars, the gum and salt trade, the rules of the raid. Then the player meets France not as a protagonist but as a disruption — a world at war with itself, invaded.</p>
+  </div>
+</section>
+
+<section class="alt" id="pillars">
+  <div class="wrap sec-head">
+    <h2>Gameplay Pillars</h2><div class="rule"></div>
+  </div>
+  <div class="wrap grid">
+    <div class="card"><h3>Wells Are Resources</h3><p>Capture points are wells, oases, palmaries and caravan stops. Deny a well to an enemy column and you kill it slowly — no assault required.</p></div>
+    <div class="card"><h3>Herds Are Economy</h3><p>Camels and cattle graze controlled pasture. Wealth walks — it can be raided, driven off, and taken back. The azalaï salt caravans are resource convoys on legs.</p></div>
+    <div class="card"><h3>Allegiance Is Recruitment</h3><p>No barracks, no unit spam. Each tribe that swears to you is a manpower pool with its own flavor — Rguibat raiders fight nothing like Kounta levies. Lose the tribe's allegiance, lose the army.</p></div>
+    <div class="card"><h3>The Borj Lattice</h3><p>France builds no cities either. A web of small desert forts extends supply radius and safe water, post by post — Nouakchott, Tidjikja, Moudjeria, Atar. Cut the web and the desert returns.</p></div>
+    <div class="card"><h3>The Rezzou</h3><p>The lightning raid: converge, strike, take herds and captives, and be gone before pursuit can mount. France's answer was the contre-rezzou — the same tactic with a flag.</p></div>
+    <div class="card"><h3>Thirst</h3><p>Every unit carries water. Distance from a friendly well is a decay timer. Heat is the third army in every battle, and it never negotiates.</p></div>
+  </div>
+</section>
+
+<section id="campaign">
+  <div class="wrap sec-head">
+    <h2>The Campaign</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <div class="tl">
+      <article>
+        <span class="act">Act 0 · Prologue</span>
+        <h3>Before the Flag</h3>
+        <div class="dates">17th century – 1901</div>
+        <p>The world before invasion: emirates and marabouts, gum trade down the Senegal river, salt caravans across the erg. The tutorial era — master the rezzou, the wells and the tribute, because every one of those tools is about to be aimed at an empire.</p>
+      </article>
+      <article>
+        <span class="act">Act I</span>
+        <h3>The Charmeur</h3>
+        <div class="dates">1902 – 12 May 1905</div>
+        <p>Xavier Coppolani conquers Trarza, Brakna and Tagant with treaties, subsidies and sermons — "penetrate by speech, not by rifle." It ends in a palmery at Tidjikja: a dream-vow assassin, twenty-seven warriors, five minutes after night prayer. The conquest freezes for three years.</p>
+      </article>
+      <article>
+        <span class="act">Act II</span>
+        <h3>The Column</h3>
+        <div class="dates">1905 – 1909</div>
+        <p>The harassment war: rezzous bleed the occupier column by column — Niémilane, Damané, Nouarmach and its eleven dead of thirst. Colonel Gouraud answers with camel columns and the counter-rezzou, forces the Hamdoun pass, and takes Atar on 9 January 1909.</p>
+      </article>
+      <article>
+        <span class="act">Act III</span>
+        <h3>The Long Decay</h3>
+        <div class="dates">1910 – 1934</div>
+        <p>Ma El Aïnin's field army dies at Tadla in Morocco and the saint himself follows — but the desert is not done. Smara burns in 1913 and vengeance answers at Liboirat, Tagliat and Bou-Telis. A puppet emir defects, a méhariste company deserts, and the last great Rguibat rezzou rides 6,000 kilometers before the "pacification" closes at Tindouf, 31 May 1934.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="characters">
+  <div class="wrap sec-head">
+    <h2>Characters</h2><div class="rule"></div>
+  </div>
+  <div class="wrap chars">
+    <div class="char"><img src="art/portraits/ma_el_ainin_hd.png" alt="Portrait of Ma El Aïnin"><div class="body"><h3>Ma El Aïnin</h3><div class="dates">1831 – 1910</div><p>The Saint of Smara. A living banner whose baraka makes nearby units unbreakable — and whose death starts a faction-collapse timer.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char"><img src="art/portraits/sidi_seghir_hd.png" alt="Portrait of Sidi Seghir"><div class="body"><h3>Sidi Seghir</h3><div class="dates">d. 1905</div><p>The dream-vow assassin. One stealth mission, twenty-seven warriors, a five-minute window at the milk delivery.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Ahmed al-Hiba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">EH</text></svg><div class="body"><h3>Ahmed al-Hiba</h3><div class="dates">c. 1876 – 1919</div><p>The Blue Sultan. Raises mass armies fast and takes Marrakech — then loses two thousand men in an afternoon.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Agdaf"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">AG</text></svg><div class="body"><h3>Agdaf</h3><div class="dates">fl. 1913</div><p>Vengeance of the burned city. After Smara falls, his reprisal raids strike critical against every post in the south.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Emir Sidi Ahmed Ould Ahmed Ayda"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">EA</text></svg><div class="body"><h3>Sidi Ahmed Ould Ahmed Ayda</h3><div class="dates">r. 1909 – 1932</div><p>The puppet who defected. His allegiance meter swings the rules of the whole Adrar region — installed, captured, restored, and lost to the desert.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Merebbi Rebbu"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">MR</text></svg><div class="body"><h3>Merebbi Rebbu</h3><div class="dates">d. after 1919</div><p>Keeper of the remnant. Quest-giver of the late raids — Port-Étienne, and the final 6,000-km grand rezzou.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Saad Bouh"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">SB</text></svg><div class="body"><h3>Cheikh Saad Bouh</h3><div class="dates">1848 – 1917</div><p>The other brother. Refuted the jihad in an open letter to the man waging it. One family, one brotherhood — two wars.</p><span class="tag fr">Ally of France</span></div></div>
+    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Sidiya Baba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">SIB</text></svg><div class="body"><h3>Cheikh Sidiya Baba</h3><div class="dates">19th – 20th c.</div><p>The kingmaker. Through him flowed the submissions of Trarza, Brakna and Tagant — the "peaceful penetration" tech tree in human form.</p><span class="tag fr">Ally of France</span></div></div>
+    <div class="char"><img src="art/portraits/coppolani_hd.png" alt="Portrait of Xavier Coppolani"><div class="body"><h3>Xavier Coppolani</h3><div class="dates">1866 – 1905</div><p>The peaceful conqueror. Converts tribes without firing a shot. His tomb reads, in Arabic: "the friend of the Muslims."</p><span class="tag fr">France</span></div></div>
+    <div class="char"><img src="art/portraits/gouraud_hd.png" alt="Portrait of Col. Henri Gouraud"><div class="body"><h3>Col. Henri Gouraud</h3><div class="dates">1867 – 1946</div><p>The Column. Doctrine: "not permanent occupation… but a police column to purge the country." Camel logistics, water discipline, counter-rezzou.</p><span class="tag fr">France</span></div></div>
+    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Capt. Frèrejean"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">FJ</text></svg><div class="body"><h3>Capt. Frèrejean</h3><div class="dates">fl. 1904 – 1909</div><p>Builder of the borj lattice. Planted the post that became Nouakchott; the map of forts is his monument.</p><span class="tag fr">France</span></div></div>
+    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Lt. Etiévent"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">EV</text></svg><div class="body"><h3>Lt. Etiévent</h3><div class="dates">fl. 1905</div><p>The avenger. Two revolver shots ended the assassin in the palmery. One cameo, unforgettable.</p><span class="tag fr">France</span></div></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap sec-head">
+    <h2>Gallery</h2><div class="rule"></div>
+  </div>
+  <div class="wrap gal">
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Rezzou raid concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">RZ</text></svg><figcaption>A Hassane rezzou on the move — the game's signature raid mechanic.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Méhariste concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">MÉH</text></svg><figcaption>Méhariste camel troopers — France learned to fight the desert war in the desert's own way.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Tirailleur concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">TIR</text></svg><figcaption>Tirailleurs sénégalais, camel-mounted — the backbone of every column.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Borj fort concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">BRJ</text></svg><figcaption>A borj at dusk: small, mud-brick, and the seed of an empire's supply web.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Salt caravan concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">AZA</text></svg><figcaption>The azalaï salt caravan — a resource convoy on legs, for escort or ambush.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Zawiya camp concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">ZAW</text></svg><figcaption>A zawiya camp — scholarship and allegiance, the war's quieter front.</figcaption></figure>
+  </div>
+</section>
+
+<section class="alt about" id="about">
+  <div class="wrap sec-head">
+    <h2>About the Project</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p><strong>SMARA</strong> is a concept-stage game design. Target engine: <strong>Godot 4</strong> (open source, no royalties). Single-player campaign first; no release date exists. Design docs, the historical research backbone and the character bible live in this repository.</p>
+    <h3>Historical basis</h3>
+    <p>The campaign follows the documented record of the French pacification of Mauritania. Where sources disagree — siege dates, the year an emir was captured — the disagreements are flagged in the research document rather than smoothed over. One caution from the research is baked into the design: the war's true asymmetry was logistics and water, not weapons — both sides carried comparable rifles.</p>
+    <ul class="src">
+      <li>Library of Congress, <em>Mauritania: A Country Study</em> (1988)</li>
+      <li>French &amp; English Wikipedia — Coppolani, Ma El Aïnin, Gouraud, the emirates, the conquest of Mauritania</li>
+      <li>Academic history — d'Andurain on the Adrar column (2013), Bonte on the Adrar emirate (Persée, 1984)</li>
+      <li>Primary — Col. Henri Gouraud, <em>La Pacification de la Mauritanie</em> (1910)</li>
+    </ul>
+    <h3>Contact</h3>
+    <p>Questions, corrections (especially from Mauritanian historians) and contributions: open an issue on the <a href="https://github.com/scriptssniper/rts-mauritania">GitHub repository</a>.</p>
+  </div>
+</section>
+
+<footer>
+  SMARA — The Unfinished City · Concept stage — not yet in development · Portraits: early concept art
+</footer>
+
+</body>
+</html>
