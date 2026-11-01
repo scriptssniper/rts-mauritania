@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Canonical version: English (index.html). fr.html and ar.html are full translations — edit content here first, then mirror. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,106 +8,132 @@
 <meta name="description" content="THE UNDEFEATED SOIL: an asymmetric real-time strategy game of the Mauritanian resistance to French colonization, 1591–1934.">
 <style>
 :root{
-  --night:#14100C; --night2:#1E1812; --sand:#C2A878; --sand-dim:#8F7B5B;
-  --indigo:#2E4172; --indigo-l:#5E77B5; --ember:#C96F3B; --ember-l:#E39A6B;
-  --text:#E8DCC8; --muted:#A99A80; --line:#3A3125;
+  --ink:#191512; --indigo:#223A5E; --indigo-d:#1B2F4C; --indigo-x:#16273F;
+  --sand:#E8DCC3; --sand-d:#D9C9A8; --gold:#C8A24B; --gold-l:#E0C078;
+  --steel:#8FA6C4;
+  --tod:#EAE2CE; --mod:#B9AF97; --tol:#2A2115; --mol:#6B5D45;
+  --lined:rgba(200,162,75,.28); --linel:rgba(42,33,21,.28);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--night);color:var(--text);font:16px/1.7 Georgia,'Times New Roman',serif}
+body{background:var(--indigo);color:var(--tod);font:16px/1.7 Georgia,'Times New Roman',serif}
 h1,h2,h3{font-family:Georgia,'Palatino Linotype',serif;font-weight:600;letter-spacing:.02em}
-a{color:var(--ember-l)}
+a{color:var(--gold-l)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-.badge{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ember-l);border:1px solid var(--ember);border-radius:2px;padding:4px 12px}
+.badge{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l);border:1px solid var(--gold);border-radius:2px;padding:4px 12px}
+
+/* language switcher */
+.lang{position:absolute;top:18px;right:24px;z-index:5;font-size:.95rem;letter-spacing:.06em}
+.lang a{color:var(--mod);text-decoration:none;padding:0 6px}
+.lang a:hover{color:var(--gold-l)}
+.lang b{color:var(--gold-l)}
+
+/* geometric texture on light sections */
+section.light{background:var(--sand);color:var(--tol);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cg fill='none' stroke='%23C8A24B' stroke-opacity='.13'%3E%3Crect x='18' y='18' width='20' height='20' transform='rotate(45 28 28)'/%3E%3Crect x='24' y='24' width='8' height='8' transform='rotate(45 28 28)'/%3E%3C/g%3E%3C/svg%3E")}
+section.dark{background:var(--indigo)}
 
 /* Hero */
-.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--line);overflow:hidden}
+.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--lined);overflow:hidden;background:var(--indigo-x)}
 .hero .duneart{position:absolute;inset:0;width:100%;height:100%;display:block}
 .hero .inner{position:relative;padding:96px 0 64px}
-.hero h1{font-size:clamp(2.1rem,5.6vw,3.9rem);color:var(--sand);line-height:1.08;margin:18px 0 6px;text-shadow:0 2px 24px rgba(0,0,0,.65)}
-.hero .sub{font-size:clamp(.95rem,2.2vw,1.2rem);color:var(--sand-dim);font-style:italic;letter-spacing:.04em}
-.hero .pitch{max-width:680px;color:var(--text);margin-top:16px;font-size:1.06rem;text-shadow:0 1px 8px rgba(0,0,0,.85)}
+.hero h1{font-size:clamp(2.1rem,5.6vw,3.9rem);color:var(--sand);line-height:1.08;margin:18px 0 6px;text-shadow:0 2px 24px rgba(10,18,32,.8)}
+.hero .sub{font-size:clamp(.95rem,2.2vw,1.2rem);color:var(--gold-l);font-style:italic;letter-spacing:.04em}
+.hero .pitch{max-width:680px;color:var(--tod);margin-top:16px;font-size:1.06rem;text-shadow:0 1px 8px rgba(10,18,32,.9)}
 
 section{padding:72px 0}
-section.alt{background:var(--night2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sec-head{margin-bottom:40px}
-.sec-head h2{font-size:clamp(1.6rem,4vw,2.3rem);color:var(--sand)}
-.sec-head .rule{width:64px;height:3px;background:var(--ember);margin-top:14px}
-.sec-head .kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ember-l);margin-bottom:10px}
+.sec-head h2{font-size:clamp(1.6rem,4vw,2.3rem);color:inherit}
+section.dark .sec-head h2{color:var(--sand)}
+section.light .sec-head h2{color:var(--tol)}
+.sec-head .rule{width:64px;height:3px;background:var(--gold);margin-top:14px;position:relative}
+.sec-head .rule::after{content:"";position:absolute;right:-14px;top:-3.5px;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+.sec-head .kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .pitch-body p{max-width:780px;margin-bottom:18px;font-size:1.05rem}
 .pitch-body p:last-child{margin-bottom:0}
 
-/* Quotes strip */
-.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.quotes figure{border-left:3px solid var(--ember);padding:6px 0 6px 18px}
-.quotes blockquote{color:var(--text);font-size:1.02rem;font-style:italic}
-.quotes figcaption{margin-top:10px;color:var(--sand-dim);font-size:.85rem}
+/* geometric divider band */
+.band{display:block;width:100%;height:34px;color:var(--gold)}
+.band .bandfill{fill:url(#dzpat)}
+
+/* Quotes: manuscript pages */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.quotes figure{background:var(--sand);color:var(--tol);border:1px solid var(--tol);outline:1px solid var(--tol);outline-offset:4px;padding:26px 24px 20px;position:relative}
+.quotes figure::before,.quotes figure::after{content:"";position:absolute;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.quotes figure::before{top:10px;left:12px}
+.quotes figure::after{bottom:10px;right:12px}
+.quotes blockquote{font-size:1.04rem;font-style:italic}
+.quotes figcaption{margin-top:12px;color:var(--mol);font-size:.85rem}
 
 /* Glossary strip */
 .gloss{display:flex;flex-wrap:wrap;gap:10px}
-.gloss span{border:1px solid var(--line);border-radius:3px;padding:8px 14px;font-size:.9rem;color:var(--muted)}
-.gloss b{color:var(--sand);font-weight:600;letter-spacing:.05em}
+.gloss span{border:1px solid var(--linel);background:rgba(25,21,18,.045);border-radius:3px;padding:8px 14px;font-size:.9rem;color:var(--mol)}
+.gloss b{color:var(--tol);font-weight:600;letter-spacing:.05em}
 
-/* Pillars / cards */
+/* Cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.card{background:var(--night2);border:1px solid var(--line);border-radius:6px;padding:24px}
-section:not(.alt) .card{background:var(--night)}
-.card h3{color:var(--sand);font-size:1.12rem;margin-bottom:8px}
-.card p{color:var(--muted);font-size:.95rem}
+.card{background:var(--sand);color:var(--tol);border:1px solid var(--linel);border-radius:4px;padding:24px;border-top:3px solid var(--gold)}
+section.light .card{background:var(--indigo-d);color:var(--tod);border-color:var(--lined);border-top-color:var(--gold)}
+.card h3{font-size:1.12rem;margin-bottom:8px;color:inherit}
+.card p{color:var(--mol);font-size:.95rem}
+section.light .card p{color:var(--mod)}
 
-/* Factions: two-column counterpoint */
+/* Factions counterpoint */
 .vs{display:grid;grid-template-columns:1fr;gap:28px}
 @media(min-width:860px){.vs{grid-template-columns:1fr 1fr}}
-.vs .col{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--night)}
-.vs .col header{padding:18px 22px;border-bottom:1px solid var(--line)}
-.vs .col.fr header{background:linear-gradient(180deg,rgba(46,65,114,.35),transparent)}
-.vs .col.res header{background:linear-gradient(180deg,rgba(201,111,59,.28),transparent)}
-.vs .col h3{font-size:1.2rem;color:var(--sand)}
-.vs .col header .who{color:var(--sand-dim);font-size:.85rem;font-style:italic}
+.vs .col{border:1px solid var(--linel);border-radius:4px;overflow:hidden;background:var(--sand);color:var(--tol)}
+.vs .col.res{border-left:4px solid var(--gold)}
+.vs .col.fr{border-left:4px solid var(--steel)}
+.vs .col header{padding:18px 22px;border-bottom:1px solid var(--linel)}
+.vs .col h3{font-size:1.2rem;color:var(--tol)}
+.vs .col header .who{color:var(--mol);font-size:.85rem;font-style:italic}
 .vs ul{list-style:none;padding:8px 22px 18px}
-.vs ul li{padding:12px 0;border-bottom:1px dashed var(--line);color:var(--muted);font-size:.95rem}
+.vs ul li{padding:12px 0;border-bottom:1px dashed var(--linel);color:var(--mol);font-size:.95rem}
 .vs ul li:last-child{border-bottom:none}
-.vs ul b{color:var(--text);font-weight:600}
+.vs ul b{color:var(--tol);font-weight:600}
 .vs .portraits{display:flex;gap:12px;padding:16px 22px 4px}
-.vs .portraits img{width:96px;height:128px;object-fit:cover;object-position:top;border-radius:4px;border:1px solid var(--line)}
+.vs .portraits img{width:96px;height:128px;object-fit:cover;object-position:top;border-radius:4px;border:1px solid var(--linel)}
 
 /* Timeline */
-.tl{border-left:2px solid var(--line);margin-left:8px;padding-left:28px;display:flex;flex-direction:column;gap:34px}
+.tl{border-left:2px solid var(--lined);margin-left:8px;padding-left:28px;display:flex;flex-direction:column;gap:34px}
 .tl article{position:relative}
-.tl article::before{content:"";position:absolute;left:-37px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--ember);border:2px solid var(--night)}
-.tl .act{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ember-l)}
-.tl h3{color:var(--sand);font-size:1.25rem;margin:4px 0 6px}
-.tl .dates{color:var(--sand-dim);font-style:italic;font-size:.9rem;margin-bottom:8px}
-.tl p{max-width:720px;color:var(--muted);font-size:.97rem}
+.tl article::before{content:"";position:absolute;left:-38px;top:8px;width:12px;height:12px;background:var(--gold);border:1px solid var(--ink);transform:rotate(45deg)}
+.tl .act{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+section.light .tl{border-left-color:var(--linel)}
+.tl h3{font-size:1.25rem;margin:4px 0 6px}
+.tl .dates{display:inline-block;background:var(--gold);color:var(--ink);font-style:italic;font-size:.82rem;padding:2px 12px;border-radius:2px;margin-bottom:10px}
+.tl p{max-width:720px;font-size:.97rem}
+.tl p{color:var(--mod)}
+section.light .tl p{color:var(--mol)}
 
 /* Characters */
 .chars{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
-.char{background:var(--night2);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
-section:not(.alt) .char{background:var(--night)}
+.char{background:var(--sand);color:var(--tol);border:1px solid var(--linel);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.char.res{border-top:3px solid var(--gold)}
+.char.fr{border-top:3px solid var(--steel)}
 .char img,.char svg.art{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
-.char img{filter:saturate(.92)}
 .char .body{padding:16px 18px 20px;flex:1}
-.char h3{font-size:1.05rem;color:var(--sand)}
-.char .dates{color:var(--sand-dim);font-size:.82rem;font-style:italic}
-.char p{color:var(--muted);font-size:.9rem;margin-top:8px}
+.char h3{font-size:1.05rem;color:var(--tol)}
+.char .dates{color:var(--mol);font-size:.82rem;font-style:italic}
+.char p{color:var(--mol);font-size:.9rem;margin-top:8px}
 .tag{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;padding:3px 10px;margin-top:12px}
-.tag.fr{color:var(--indigo-l);border:1px solid var(--indigo)}
-.tag.res{color:var(--ember-l);border:1px solid var(--ember)}
+.tag.fr{color:#41597c;border:1px solid var(--steel)}
+.tag.res{color:#8a6a1f;border:1px solid var(--gold)}
 
 /* Gallery */
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-.gal figure{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--night2)}
+.gal figure{border:1px solid var(--linel);border-radius:4px;overflow:hidden;background:var(--sand)}
 .gal svg.art{width:100%;aspect-ratio:1;display:block}
-.gal figcaption{padding:12px 16px;color:var(--muted);font-size:.9rem;font-style:italic}
+.gal figcaption{padding:12px 16px;color:var(--mol);font-size:.9rem;font-style:italic}
 
 /* About */
-.about p{max-width:760px;margin-bottom:16px;color:var(--muted)}
-.about h3{color:var(--sand);margin:26px 0 8px;font-size:1.1rem}
+.about p{max-width:760px;margin-bottom:16px;color:var(--mol)}
+.about h3{color:var(--tol);margin:26px 0 8px;font-size:1.1rem}
 ul.src{list-style:none;max-width:760px}
-ul.src li{padding:6px 0 6px 22px;position:relative;color:var(--muted);font-size:.95rem}
-ul.src li::before{content:"—";position:absolute;left:0;color:var(--ember)}
+ul.src li{padding:6px 0 6px 22px;position:relative;color:var(--mol);font-size:.95rem}
+ul.src li::before{content:"◆";position:absolute;left:0;top:6px;color:var(--gold);font-size:.7rem}
 
-footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;color:var(--sand-dim);font-size:.85rem;font-style:italic}
+footer{padding:0 0 56px;background:var(--ink);text-align:center}
+footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.85rem;font-style:italic}
 
 /* SVG placeholder text */
 .ph-init{font-family:Georgia,serif;font-weight:600;letter-spacing:.08em}
@@ -121,39 +148,63 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
       <stop offset="0" stop-color="#2E4172"/><stop offset=".55" stop-color="#3B3350"/><stop offset="1" stop-color="#7A4A2B"/>
     </linearGradient>
     <linearGradient id="duneg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#241C14"/><stop offset="1" stop-color="#14100C"/>
+      <stop offset="0" stop-color="#101E33"/><stop offset="1" stop-color="#0C1626"/>
     </linearGradient>
+    <pattern id="dzpat" width="34" height="34" patternUnits="userSpaceOnUse">
+      <rect x="10.5" y="10.5" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.2" transform="rotate(45 17 17)"/>
+    </pattern>
   </defs>
 </svg>
 
 <header class="hero" id="top">
+  <nav class="lang" aria-label="Language"><b>EN</b> · <a href="fr.html">FR</a> · <a href="ar.html">عربية</a></nav>
   <svg class="duneart" viewBox="0 0 1536 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <rect width="1536" height="760" fill="url(#duneg)"/>
-    <circle cx="1150" cy="330" r="110" fill="#C2A878" opacity=".85"/>
-    <circle cx="1150" cy="330" r="150" fill="#C2A878" opacity=".12"/>
-    <g fill="none" stroke="#0E0B08" stroke-width="7" stroke-linecap="round" opacity=".9">
-      <g transform="translate(300,470) scale(1.15)">
+    <circle cx="1150" cy="300" r="105" fill="#C8A24B" opacity=".8"/>
+    <circle cx="1150" cy="300" r="145" fill="#C8A24B" opacity=".1"/>
+    <!-- manuscript-city skyline: Chinguetti minaret + geometric houses -->
+    <g fill="#0A1424" opacity=".92">
+      <rect x="150" y="360" width="16" height="180"/>
+      <rect x="146" y="344" width="24" height="20"/>
+      <path d="M158,344 L158,328 L164,336 L170,344 Z"/>
+      <rect x="180" y="420" width="54" height="120"/>
+      <rect x="248" y="440" width="42" height="100"/>
+      <rect x="300" y="408" width="34" height="132"/>
+      <rect x="344" y="452" width="60" height="88"/>
+    </g>
+    <g fill="none" stroke="#C8A24B" stroke-width="1.6" opacity=".5">
+      <rect x="192" y="436" width="10" height="10" transform="rotate(45 197 441)"/>
+      <rect x="210" y="436" width="10" height="10" transform="rotate(45 215 441)"/>
+      <rect x="228" y="436" width="10" height="10" transform="rotate(45 233 441)"/>
+      <rect x="308" y="424" width="9" height="9" transform="rotate(45 312.5 428.5)"/>
+      <rect x="322" y="424" width="9" height="9" transform="rotate(45 326.5 428.5)"/>
+      <rect x="360" y="468" width="10" height="10" transform="rotate(45 365 473)"/>
+      <rect x="380" y="468" width="10" height="10" transform="rotate(45 385 473)"/>
+    </g>
+    <!-- camel column -->
+    <g fill="none" stroke="#071020" stroke-width="7" stroke-linecap="round" opacity=".95">
+      <g transform="translate(620,470) scale(1.15)">
         <path d="M2,38 Q10,12 17,26 Q20,8 28,24 Q33,10 39,26"/>
         <path d="M6,30 L3,52 M24,26 L26,52 M36,27 L40,52 M14,28 L12,50"/>
         <path d="M39,26 L46,8 L52,8"/>
-        <circle cx="54" cy="7" r="4" fill="#0E0B08" stroke="none"/>
+        <circle cx="54" cy="7" r="4" fill="#071020" stroke="none"/>
       </g>
-      <g transform="translate(430,495) scale(.8)">
+      <g transform="translate(740,492) scale(.8)">
         <path d="M2,38 Q10,12 17,26 Q20,8 28,24 Q33,10 39,26"/>
         <path d="M6,30 L3,52 M24,26 L26,52 M36,27 L40,52 M14,28 L12,50"/>
         <path d="M39,26 L46,8 L52,8"/>
-        <circle cx="54" cy="7" r="4" fill="#0E0B08" stroke="none"/>
+        <circle cx="54" cy="7" r="4" fill="#071020" stroke="none"/>
       </g>
-      <g transform="translate(540,505) scale(.55)">
+      <g transform="translate(840,502) scale(.55)">
         <path d="M2,38 Q10,12 17,26 Q20,8 28,24 Q33,10 39,26"/>
         <path d="M6,30 L3,52 M24,26 L26,52 M36,27 L40,52 M14,28 L12,50"/>
         <path d="M39,26 L46,8 L52,8"/>
-        <circle cx="54" cy="7" r="4" fill="#0E0B08" stroke="none"/>
+        <circle cx="54" cy="7" r="4" fill="#071020" stroke="none"/>
       </g>
     </g>
-    <path d="M0,540 Q380,420 760,520 Q1180,630 1536,470 L1536,760 L0,760 Z" fill="#2A2118"/>
-    <path d="M0,600 Q420,500 850,590 Q1250,670 1536,560 L1536,760 L0,760 Z" fill="#1E1812"/>
-    <path d="M0,680 Q500,590 1000,660 Q1300,700 1536,650 L1536,760 L0,760 Z" fill="#14100C"/>
+    <path d="M0,540 Q380,420 760,520 Q1180,630 1536,470 L1536,760 L0,760 Z" fill="#1B2F4C"/>
+    <path d="M0,600 Q420,500 850,590 Q1250,670 1536,560 L1536,760 L0,760 Z" fill="#16273F"/>
+    <path d="M0,680 Q500,590 1000,660 Q1300,700 1536,650 L1536,760 L0,760 Z" fill="#101E33"/>
   </svg>
   <div class="wrap inner">
     <span class="badge">Concept Stage</span>
@@ -163,7 +214,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </header>
 
-<section id="pitch">
+<section class="dark" id="pitch">
   <div class="wrap sec-head">
     <h2>The Pitch</h2><div class="rule"></div>
   </div>
@@ -175,7 +226,9 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </section>
 
-<section class="alt" id="resistance">
+<svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+
+<section class="light" id="resistance">
   <div class="wrap sec-head">
     <span class="kicker">The Side That Would Not Be Ruled</span>
     <h2>The Resistance</h2><div class="rule"></div>
@@ -212,7 +265,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </section>
 
-<section id="quotes">
+<section class="dark" id="quotes">
   <div class="wrap sec-head">
     <h2>Voices of the War</h2><div class="rule"></div>
   </div>
@@ -224,7 +277,9 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </section>
 
-<section class="alt" id="colonizer">
+<svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+
+<section class="light" id="colonizer">
   <div class="wrap sec-head">
     <span class="kicker">The Counterpoint — and the Other Half of the Game</span>
     <h2>The Colonizer's Method</h2><div class="rule"></div>
@@ -256,7 +311,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </section>
 
-<section id="pillars">
+<section class="dark" id="pillars">
   <div class="wrap sec-head">
     <h2>Gameplay Pillars</h2><div class="rule"></div>
   </div>
@@ -270,7 +325,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </section>
 
-<section class="alt" id="campaign">
+<section class="light" id="campaign">
   <div class="wrap sec-head">
     <h2>The Campaign</h2><div class="rule"></div>
   </div>
@@ -304,7 +359,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </section>
 
-<section id="glossary">
+<section class="dark" id="glossary">
   <div class="wrap sec-head">
     <h2>A War in Hassaniya</h2><div class="rule"></div>
   </div>
@@ -321,41 +376,41 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
   </div>
 </section>
 
-<section class="alt" id="characters">
+<section class="light" id="characters">
   <div class="wrap sec-head">
     <h2>The Cast</h2><div class="rule"></div>
   </div>
   <div class="wrap chars">
-    <div class="char"><img src="art/portraits/ma_el_ainin_hd.png" alt="Portrait of Ma El Aïnin"><div class="body"><h3>Ma El Aïnin</h3><div class="dates">1831 – 1910</div><p>The Saint of Smara. A living banner whose baraka makes nearby units unbreakable — and whose death starts a faction-collapse timer.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char"><img src="art/portraits/sidi_seghir_hd.png" alt="Portrait of Sidi Seghir"><div class="body"><h3>Sidi Seghir</h3><div class="dates">d. 1905</div><p>The dream-vow assassin. One stealth mission, twenty-seven warriors, a five-minute window at the milk delivery.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Ahmed al-Hiba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">EH</text></svg><div class="body"><h3>Ahmed al-Hiba</h3><div class="dates">c. 1876 – 1919</div><p>The Blue Sultan. Raises mass armies fast and takes Marrakech — then loses two thousand men in an afternoon.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Agdaf"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">AG</text></svg><div class="body"><h3>Agdaf</h3><div class="dates">fl. 1913</div><p>Vengeance of the burned city. After Smara falls, his reprisal raids strike critical against every post in the south.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Emir Sidi Ahmed Ould Ahmed Ayda"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">EA</text></svg><div class="body"><h3>Sidi Ahmed Ould Ahmed Ayda</h3><div class="dates">r. 1909 – 1932</div><p>The puppet who defected. His allegiance meter swings the rules of the whole Adrar region — installed, captured, restored, and lost to the desert.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Merebbi Rebbu"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">MR</text></svg><div class="body"><h3>Merebbi Rebbu</h3><div class="dates">d. after 1919</div><p>Keeper of the remnant. Quest-giver of the late raids — Port-Étienne, and the final 6,000-km grand rezzou.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Saad Bouh"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">SB</text></svg><div class="body"><h3>Cheikh Saad Bouh</h3><div class="dates">1848 – 1917</div><p>The other brother. Refuted the jihad in an open letter to the man waging it. One family, one brotherhood — two wars.</p><span class="tag fr">Ally of France</span></div></div>
-    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Sidiya Baba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">SIB</text></svg><div class="body"><h3>Cheikh Sidiya Baba</h3><div class="dates">19th – 20th c.</div><p>The kingmaker. Through him flowed the submissions of Trarza, Brakna and Tagant — the "peaceful penetration" tech tree in human form.</p><span class="tag fr">Ally of France</span></div></div>
-    <div class="char"><img src="art/portraits/coppolani_hd.png" alt="Portrait of Xavier Coppolani"><div class="body"><h3>Xavier Coppolani</h3><div class="dates">1866 – 1905</div><p>The peaceful conqueror. Converts tribes without firing a shot. His tomb reads, in Arabic: "the friend of the Muslims."</p><span class="tag fr">France</span></div></div>
-    <div class="char"><img src="art/portraits/gouraud_hd.png" alt="Portrait of Col. Henri Gouraud"><div class="body"><h3>Col. Henri Gouraud</h3><div class="dates">1867 – 1946</div><p>The Column. Doctrine: "not permanent occupation… but a police column to purge the country." Camel logistics, water discipline, counter-rezzou.</p><span class="tag fr">France</span></div></div>
-    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Capt. Frèrejean"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">FJ</text></svg><div class="body"><h3>Capt. Frèrejean</h3><div class="dates">fl. 1904 – 1909</div><p>Builder of the borj lattice. Planted the post that became Nouakchott; the map of forts is his monument.</p><span class="tag fr">France</span></div></div>
-    <div class="char"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Lt. Etiévent"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#14100C" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C2A878" font-size="88" class="ph-init">EV</text></svg><div class="body"><h3>Lt. Etiévent</h3><div class="dates">fl. 1905</div><p>The avenger. Two revolver shots ended the assassin in the palmery. One cameo, unforgettable.</p><span class="tag fr">France</span></div></div>
+    <div class="char res"><img src="art/portraits/ma_el_ainin_hd.png" alt="Portrait of Ma El Aïnin"><div class="body"><h3>Ma El Aïnin</h3><div class="dates">1831 – 1910</div><p>The Saint of Smara. A living banner whose baraka makes nearby units unbreakable — and whose death starts a faction-collapse timer.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><img src="art/portraits/sidi_seghir_hd.png" alt="Portrait of Sidi Seghir"><div class="body"><h3>Sidi Seghir</h3><div class="dates">d. 1905</div><p>The dream-vow assassin. One stealth mission, twenty-seven warriors, a five-minute window at the milk delivery.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Ahmed al-Hiba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EH</text></svg><div class="body"><h3>Ahmed al-Hiba</h3><div class="dates">c. 1876 – 1919</div><p>The Blue Sultan. Raises mass armies fast and takes Marrakech — then loses two thousand men in an afternoon.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Agdaf"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">AG</text></svg><div class="body"><h3>Agdaf</h3><div class="dates">fl. 1913</div><p>Vengeance of the burned city. After Smara falls, his reprisal raids strike critical against every post in the south.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Emir Sidi Ahmed Ould Ahmed Ayda"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EA</text></svg><div class="body"><h3>Sidi Ahmed Ould Ahmed Ayda</h3><div class="dates">r. 1909 – 1932</div><p>The puppet who defected. His allegiance meter swings the rules of the whole Adrar region — installed, captured, restored, and lost to the desert.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Merebbi Rebbu"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">MR</text></svg><div class="body"><h3>Merebbi Rebbu</h3><div class="dates">d. after 1919</div><p>Keeper of the remnant. Quest-giver of the late raids — Port-Étienne, and the final 6,000-km grand rezzou.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Saad Bouh"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SB</text></svg><div class="body"><h3>Cheikh Saad Bouh</h3><div class="dates">1848 – 1917</div><p>The other brother. Refuted the jihad in an open letter to the man waging it. One family, one brotherhood — two wars.</p><span class="tag fr">Ally of France</span></div></div>
+    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Sidiya Baba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SIB</text></svg><div class="body"><h3>Cheikh Sidiya Baba</h3><div class="dates">19th – 20th c.</div><p>The kingmaker. Through him flowed the submissions of Trarza, Brakna and Tagant — the "peaceful penetration" tech tree in human form.</p><span class="tag fr">Ally of France</span></div></div>
+    <div class="char fr"><img src="art/portraits/coppolani_hd.png" alt="Portrait of Xavier Coppolani"><div class="body"><h3>Xavier Coppolani</h3><div class="dates">1866 – 1905</div><p>The peaceful conqueror. Converts tribes without firing a shot. His tomb reads, in Arabic: "the friend of the Muslims."</p><span class="tag fr">France</span></div></div>
+    <div class="char fr"><img src="art/portraits/gouraud_hd.png" alt="Portrait of Col. Henri Gouraud"><div class="body"><h3>Col. Henri Gouraud</h3><div class="dates">1867 – 1946</div><p>The Column. Doctrine: "not permanent occupation… but a police column to purge the country." Camel logistics, water discipline, counter-rezzou.</p><span class="tag fr">France</span></div></div>
+    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Capt. Frèrejean"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">FJ</text></svg><div class="body"><h3>Capt. Frèrejean</h3><div class="dates">fl. 1904 – 1909</div><p>Builder of the borj lattice. Planted the post that became Nouakchott; the map of forts is his monument.</p><span class="tag fr">France</span></div></div>
+    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Lt. Etiévent"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EV</text></svg><div class="body"><h3>Lt. Etiévent</h3><div class="dates">fl. 1905</div><p>The avenger. Two revolver shots ended the assassin in the palmery. One cameo, unforgettable.</p><span class="tag fr">France</span></div></div>
   </div>
 </section>
 
-<section id="gallery">
+<section class="dark" id="gallery">
   <div class="wrap sec-head">
     <h2>Gallery</h2><div class="rule"></div>
   </div>
   <div class="wrap gal">
-    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Rezzou raid concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">RZ</text></svg><figcaption>A Hassane rezzou on the move — the game's signature raid mechanic.</figcaption></figure>
-    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Méhariste concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">MÉH</text></svg><figcaption>Méhariste camel troopers — France learned to fight the desert war in the desert's own way.</figcaption></figure>
-    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Tirailleur concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">TIR</text></svg><figcaption>Tirailleurs sénégalais, camel-mounted — the backbone of every column.</figcaption></figure>
-    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Borj fort concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">BRJ</text></svg><figcaption>A borj at dusk: small, mud-brick, and the seed of an empire's supply web.</figcaption></figure>
-    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Salt caravan concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">AZA</text></svg><figcaption>The azalaï salt caravan — a resource convoy on legs, for escort or ambush.</figcaption></figure>
-    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Zawiya camp concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#14100C" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C2A878" font-size="64" class="ph-init">ZAW</text></svg><figcaption>A zawiya camp — scholarship and allegiance, the war's quieter front.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Rezzou raid concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">RZ</text></svg><figcaption>A Hassane rezzou on the move — the game's signature raid mechanic.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Méhariste concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">MÉH</text></svg><figcaption>Méhariste camel troopers — France learned to fight the desert war in the desert's own way.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Tirailleur concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">TIR</text></svg><figcaption>Tirailleurs sénégalais, camel-mounted — the backbone of every column.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Borj fort concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">BRJ</text></svg><figcaption>A borj at dusk: small, mud-brick, and the seed of an empire's supply web.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Salt caravan concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">AZA</text></svg><figcaption>The azalaï salt caravan — a resource convoy on legs, for escort or ambush.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="Zawiya camp concept placeholder"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="160" text-anchor="middle" fill="#C8A24B" font-size="64" class="ph-init">ZAW</text></svg><figcaption>A zawiya camp — scholarship and allegiance, the war's quieter front.</figcaption></figure>
   </div>
 </section>
 
-<section class="alt about" id="about">
+<section class="light about" id="about">
   <div class="wrap sec-head">
     <h2>About the Project</h2><div class="rule"></div>
   </div>
@@ -375,7 +430,8 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);text-align:center;co
 </section>
 
 <footer>
-  THE UNDEFEATED SOIL · Concept stage — not yet in development · Portraits: early concept art
+  <svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+  <div class="ftext">THE UNDEFEATED SOIL · Concept stage — not yet in development · Portraits: early concept art</div>
 </footer>
 
 </body>

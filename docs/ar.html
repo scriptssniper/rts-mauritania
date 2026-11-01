@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!-- الترجمة العربية. النسخة المرجعية: index.html (الإنجليزية) — عدّل المحتوى هناك أولاً. -->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأرض التي لم تُقهر · لعبة استراتيجية عن المقاومة الموريتانية</title>
+<meta name="description" content="الأرض التي لم تُقهر: لعبة استراتيجية لحظية غير متناظرة عن مقاومة الاستعمار الفرنسي في موريتانيا، ١٥٩١–١٩٣٤.">
+<style>
+:root{
+  --ink:#191512; --indigo:#223A5E; --indigo-d:#1B2F4C; --indigo-x:#16273F;
+  --sand:#E8DCC3; --sand-d:#D9C9A8; --gold:#C8A24B; --gold-l:#E0C078;
+  --steel:#8FA6C4;
+  --tod:#EAE2CE; --mod:#B9AF97; --tol:#2A2115; --mol:#6B5D45;
+  --lined:rgba(200,162,75,.28); --linel:rgba(42,33,21,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--indigo);color:var(--tod);font:17px/1.9 "Noto Naskh Arabic","Amiri","Scheherazade New",serif}
+h1,h2,h3{font-family:"Noto Naskh Arabic","Amiri",serif;font-weight:700}
+a{color:var(--gold-l)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.badge{display:inline-block;font-size:.78rem;letter-spacing:.1em;color:var(--gold-l);border:1px solid var(--gold);border-radius:2px;padding:4px 14px}
+
+.lang{position:absolute;top:18px;left:24px;z-index:5;font-size:1rem;direction:ltr}
+.lang a{color:var(--mod);text-decoration:none;padding:0 6px}
+.lang a:hover{color:var(--gold-l)}
+.lang b{color:var(--gold-l)}
+
+section.light{background:var(--sand);color:var(--tol);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cg fill='none' stroke='%23C8A24B' stroke-opacity='.13'%3E%3Crect x='18' y='18' width='20' height='20' transform='rotate(45 28 28)'/%3E%3Crect x='24' y='24' width='8' height='8' transform='rotate(45 28 28)'/%3E%3C/g%3E%3C/svg%3E")}
+section.dark{background:var(--indigo)}
+
+.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--lined);overflow:hidden;background:var(--indigo-x)}
+.hero .duneart{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .inner{position:relative;padding:96px 0 64px}
+.hero h1{font-size:clamp(2rem,5.6vw,3.6rem);color:var(--sand);line-height:1.25;margin:18px 0 8px;text-shadow:0 2px 24px rgba(10,18,32,.8)}
+.hero .sub{font-size:clamp(.95rem,2.2vw,1.2rem);color:var(--gold-l);font-style:italic}
+.hero .pitch{max-width:700px;color:var(--tod);margin-top:16px;font-size:1.08rem;text-shadow:0 1px 8px rgba(10,18,32,.9)}
+
+section{padding:72px 0}
+.sec-head{margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.5rem,4vw,2.2rem);color:inherit}
+section.dark .sec-head h2{color:var(--sand)}
+section.light .sec-head h2{color:var(--tol)}
+.sec-head .rule{width:64px;height:3px;background:var(--gold);margin-top:14px;position:relative}
+.sec-head .rule::after{content:"";position:absolute;left:-14px;top:-3.5px;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+.sec-head .kicker{font-size:.8rem;color:var(--gold);margin-bottom:10px}
+.pitch-body p{max-width:780px;margin-bottom:18px;font-size:1.08rem}
+.pitch-body p:last-child{margin-bottom:0}
+
+.band{display:block;width:100%;height:34px;color:var(--gold)}
+
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.quotes figure{background:var(--sand);color:var(--tol);border:1px solid var(--tol);outline:1px solid var(--tol);outline-offset:4px;padding:26px 24px 20px;position:relative}
+.quotes figure::before,.quotes figure::after{content:"";position:absolute;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.quotes figure::before{top:10px;right:12px}
+.quotes figure::after{bottom:10px;left:12px}
+.quotes blockquote{font-size:1.06rem;font-style:italic}
+.quotes figcaption{margin-top:12px;color:var(--mol);font-size:.88rem}
+
+.gloss{display:flex;flex-wrap:wrap;gap:10px}
+.gloss span{border:1px solid var(--linel);background:rgba(25,21,18,.045);border-radius:3px;padding:8px 14px;font-size:.95rem;color:var(--mol)}
+.gloss b{color:var(--tol);font-weight:700}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:var(--sand);color:var(--tol);border:1px solid var(--linel);border-radius:4px;padding:24px;border-top:3px solid var(--gold)}
+section.light .card{background:var(--indigo-d);color:var(--tod);border-color:var(--lined);border-top-color:var(--gold)}
+.card h3{font-size:1.15rem;margin-bottom:8px;color:inherit}
+.card p{color:var(--mol);font-size:.98rem}
+section.light .card p{color:var(--mod)}
+
+.vs{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:860px){.vs{grid-template-columns:1fr 1fr}}
+.vs .col{border:1px solid var(--linel);border-radius:4px;overflow:hidden;background:var(--sand);color:var(--tol)}
+.vs .col.res{border-right:4px solid var(--gold)}
+.vs .col.fr{border-right:4px solid var(--steel)}
+.vs .col header{padding:18px 22px;border-bottom:1px solid var(--linel)}
+.vs .col h3{font-size:1.25rem;color:var(--tol)}
+.vs .col header .who{color:var(--mol);font-size:.88rem;font-style:italic}
+.vs ul{list-style:none;padding:8px 22px 18px}
+.vs ul li{padding:12px 0;border-bottom:1px dashed var(--linel);color:var(--mol);font-size:.98rem}
+.vs ul li:last-child{border-bottom:none}
+.vs ul b{color:var(--tol);font-weight:700}
+.vs .portraits{display:flex;gap:12px;padding:16px 22px 4px}
+.vs .portraits img{width:96px;height:128px;object-fit:cover;object-position:top;border-radius:4px;border:1px solid var(--linel)}
+
+.tl{border-right:2px solid var(--lined);margin-right:8px;padding-right:28px;display:flex;flex-direction:column;gap:34px}
+.tl article{position:relative}
+.tl article::before{content:"";position:absolute;right:-38px;top:8px;width:12px;height:12px;background:var(--gold);border:1px solid var(--ink);transform:rotate(45deg)}
+.tl .act{font-size:.8rem;color:var(--gold)}
+section.light .tl{border-right-color:var(--linel)}
+.tl h3{font-size:1.3rem;margin:4px 0 6px}
+.tl .dates{display:inline-block;background:var(--gold);color:var(--ink);font-size:.85rem;padding:2px 14px;border-radius:2px;margin-bottom:10px}
+.tl p{max-width:720px;font-size:1rem;color:var(--mod)}
+section.light .tl p{color:var(--mol)}
+
+.chars{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.char{background:var(--sand);color:var(--tol);border:1px solid var(--linel);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.char.res{border-top:3px solid var(--gold)}
+.char.fr{border-top:3px solid var(--steel)}
+.char img,.char svg.art{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.char .body{padding:16px 18px 20px;flex:1}
+.char h3{font-size:1.1rem;color:var(--tol)}
+.char .dates{color:var(--mol);font-size:.85rem;font-style:italic}
+.char p{color:var(--mol);font-size:.93rem;margin-top:8px}
+.tag{display:inline-block;font-size:.72rem;border-radius:2px;padding:3px 12px;margin-top:12px}
+.tag.fr{color:#41597c;border:1px solid var(--steel)}
+.tag.res{color:#8a6a1f;border:1px solid var(--gold)}
+
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.gal figure{border:1px solid var(--linel);border-radius:4px;overflow:hidden;background:var(--sand)}
+.gal svg.art{width:100%;aspect-ratio:1;display:block}
+.gal figcaption{padding:12px 16px;color:var(--mol);font-size:.92rem;font-style:italic}
+
+.about p{max-width:760px;margin-bottom:16px;color:var(--mol)}
+.about h3{color:var(--tol);margin:26px 0 8px;font-size:1.15rem}
+ul.src{list-style:none;max-width:760px}
+ul.src li{padding:6px 22px 6px 0;position:relative;color:var(--mol);font-size:.98rem}
+ul.src li::before{content:"◆";position:absolute;right:0;top:8px;color:var(--gold);font-size:.7rem}
+
+footer{padding:0 0 56px;background:var(--ink);text-align:center}
+footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.88rem;font-style:italic}
+
+.ph-init{font-family:Georgia,serif;font-weight:600;letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="phg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E4172"/><stop offset=".55" stop-color="#3B3350"/><stop offset="1" stop-color="#7A4A2B"/>
+    </linearGradient>
+    <linearGradient id="duneg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101E33"/><stop offset="1" stop-color="#0C1626"/>
+    </linearGradient>
+    <pattern id="dzpat" width="34" height="34" patternUnits="userSpaceOnUse">
+      <rect x="10.5" y="10.5" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.2" transform="rotate(45 17 17)"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="hero" id="top">
+  <nav class="lang" aria-label="اللغة"><a href="index.html">EN</a> · <a href="fr.html">FR</a> · <b>عربية</b></nav>
+  <svg class="duneart" viewBox="0 0 1536 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="1536" height="760" fill="url(#duneg)"/>
+    <circle cx="1150" cy="300" r="105" fill="#C8A24B" opacity=".8"/>
+    <circle cx="1150" cy="300" r="145" fill="#C8A24B" opacity=".1"/>
+    <g fill="#0A1424" opacity=".92">
+      <rect x="150" y="360" width="16" height="180"/>
+      <rect x="146" y="344" width="24" height="20"/>
+      <path d="M158,344 L158,328 L164,336 L170,344 Z"/>
+      <rect x="180" y="420" width="54" height="120"/>
+      <rect x="248" y="440" width="42" height="100"/>
+      <rect x="300" y="408" width="34" height="132"/>
+      <rect x="344" y="452" width="60" height="88"/>
+    </g>
+    <g fill="none" stroke="#C8A24B" stroke-width="1.6" opacity=".5">
+      <rect x="192" y="436" width="10" height="10" transform="rotate(45 197 441)"/>
+      <rect x="210" y="436" width="10" height="10" transform="rotate(45 215 441)"/>
+      <rect x="228" y="436" width="10" height="10" transform="rotate(45 233 441)"/>
+      <rect x="308" y="424" width="9" height="9" transform="rotate(45 312.5 428.5)"/>
+      <rect x="322" y="424" width="9" height="9" transform="rotate(45 326.5 428.5)"/>
+      <rect x="360" y="468" width="10" height="10" transform="rotate(45 365 473)"/>
+      <rect x="380" y="468" width="10" height="10" transform="rotate(45 385 473)"/>
+    </g>
+    <g fill="none" stroke="#071020" stroke-width="7" stroke-linecap="round" opacity=".95">
+      <g transform="translate(620,470) scale(1.15)">
+        <path d="M2,38 Q10,12 17,26 Q20,8 28,24 Q33,10 39,26"/>
+        <path d="M6,30 L3,52 M24,26 L26,52 M36,27 L40,52 M14,28 L12,50"/>
+        <path d="M39,26 L46,8 L52,8"/>
+        <circle cx="54" cy="7" r="4" fill="#071020" stroke="none"/>
+      </g>
+      <g transform="translate(740,492) scale(.8)">
+        <path d="M2,38 Q10,12 17,26 Q20,8 28,24 Q33,10 39,26"/>
+        <path d="M6,30 L3,52 M24,26 L26,52 M36,27 L40,52 M14,28 L12,50"/>
+        <path d="M39,26 L46,8 L52,8"/>
+        <circle cx="54" cy="7" r="4" fill="#071020" stroke="none"/>
+      </g>
+      <g transform="translate(840,502) scale(.55)">
+        <path d="M2,38 Q10,12 17,26 Q20,8 28,24 Q33,10 39,26"/>
+        <path d="M6,30 L3,52 M24,26 L26,52 M36,27 L40,52 M14,28 L12,50"/>
+        <path d="M39,26 L46,8 L52,8"/>
+        <circle cx="54" cy="7" r="4" fill="#071020" stroke="none"/>
+      </g>
+    </g>
+    <path d="M0,540 Q380,420 760,520 Q1180,630 1536,470 L1536,760 L0,760 Z" fill="#1B2F4C"/>
+    <path d="M0,600 Q420,500 850,590 Q1250,670 1536,560 L1536,760 L0,760 Z" fill="#16273F"/>
+    <path d="M0,680 Q500,590 1000,660 Q1300,700 1536,650 L1536,760 L0,760 Z" fill="#101E33"/>
+  </svg>
+  <div class="wrap inner">
+    <span class="badge">مرحلة التصوّر</span>
+    <h1>الأرض التي لم تُقهر</h1>
+    <div class="sub">١٥٩١–١٩٣٤ · بلاد شنقيط · من حرب شار بوبّا إلى آخر غزوة رجيباتية</div>
+    <p class="pitch">أمّةٌ مبعثرة من رُحّل الجمال وقديسي العلم واتحادات القبائل حاربت واحدةً من أكبر إمبراطوريات التاريخ اثنين وثلاثين عامًا — بلا مدفعية، بلا سكك حديد، بلا مدن — ولم تُقهر قط على أرضها. أخذ الفرنسيون الآبار؛ ولم يأخذوا البيعة أبدًا.</p>
+  </div>
+</header>
+
+<section class="dark" id="pitch">
+  <div class="wrap sec-head">
+    <h2>الفكرة</h2><div class="rule"></div>
+  </div>
+  <div class="wrap pitch-body">
+    <p>في عام ١٩٠٢ بدأت فرنسا ابتلاع صحراء بمساحة فرنسا وإسبانيا مجتمعتين — وعزمت على فعل ذلك بلا معارك. غازمٌ عربيّ الضمير أخذ ثلاث إمارات بالمعاهدات والخطب؛ كمينٌ واحد من خمس دقائق قتله في واحة نخيل بتجكجة، فجمّد الفتح ثلاث سنين. ما تلا ذلك لم يكن حرب جبهات بل حرب مياه: اثنان وثلاثون عامًا استطاعت فيها أرقى جيوش العالم أن تحصّن كل حصنٍ بنته — وتموت عطشًا بين حصونها.</p>
+    <p><strong>الأرض التي لم تُقهر</strong> لعبة استراتيجية لحظية قائمة على السيطرة على النقاط، بلا اقتصاد عمّال وبلا بناء قواعد. الخريطة شبكة من الآبار والواحات والمراعي ودروب القوافل. كل وحدة تحمل ماءها؛ وبُعدها عن بئرٍ صديق يستنزف عدّاد عطشها حتى الموت. في نو أرمش، في يوليو ١٩٠٨، سقط ثلاثة عشر تيرايور في القتال، ثم مات أحد عشر آخرون عطشًا بعدهم. هذا الإحصاء ميكانيكا لعب، لا نصّ زينة.</p>
+    <p>اللاتناظر هو التصميم ذاته. المقاومة تلعب الحركة: غزوات الرزو البرقية، وبيعات القبائل تُكتسب وتُحفظ، وقوافل تُغير عليها القطعان تُساق، وخطوط سلاح تنزل من المغرب. وفرنسا تلعب البنية التحتية: نسيج من حصون البرج الطينية يمدّ نطاق إمداده نقطةً بعد نقطة، وأعمدة تُموَّل من سان-لويس، وإعانات ودعاية تفرّق القبائل بعضها عن بعض. الأرض نفسها، ونحوَيان متعاكسان للحرب.</p>
+    <p>تمهيدٌ ما قبل الاستعمار يعلّم العالم قبل وصول الراية — حروب الإمارات الخاصة، وتجارة الصمغ والملح، وقواعد الغزو — حتى إذا ظهرت فرنسا ظهرت كما كانت في عيون أهل بلاد شنقيط: خرقٌ يطرق عالمًا يقاتل نفسه من قبل.</p>
+  </div>
+</section>
+
+<svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+
+<section class="light" id="resistance">
+  <div class="wrap sec-head">
+    <span class="kicker">الجانب الذي أبى أن يُحكَم</span>
+    <h2>المقاومة</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <div class="vs">
+      <div class="col res">
+        <header><h3>بيت ماء العينين</h3><div class="who">أسرة قدّيس في مواجهة إمبراطورية</div></header>
+        <div class="portraits">
+          <img src="art/portraits/ma_el_ainin_hd.png" alt="صورة ماء العينين">
+          <img src="art/portraits/sidi_seghir_hd.png" alt="صورة سيدي صغير">
+        </div>
+        <ul>
+          <li><b>ماء العينين (١٨٣١–١٩١٠)</b> — عالمٌ صاحب مئة وأربعين كتابًا، وباني المدينة المقدسة غير المكتملة السمارة، ومنادٍ بالجهاد. رايةٌ حيّة: بركته كانت تمنح الوحدات صلابة لا تُكسر، وموته بدأ الانهيار.</li>
+          <li><b>سيدي صغير (توفي ١٩٠٥)</b> — القاتل صاحب نذر الرؤيا. سبعة وعشرون مقاتلًا، خمس دقائق بعد صلاة العشاء، فجمَد الفتح ثلاث سنين.</li>
+          <li><b>أحمد الهيبة، «السلطان الأزرق»</b> — الابن الذي دخل مراكش عام ١٩١٢ بعشرة آلاف رجل، فخسر ألفين منهم في عصرٍ واحد.</li>
+          <li><b>أگداف</b> — ثأر المدينة المحروقة: لما سقطت السمارة عام ١٩١٣، قتلت انتقاماته أربعين رجلًا في ثلاثة مراكز.</li>
+          <li><b>مرابط ربو</b> — حارس البقية الباقية بعد ١٩١٩، راعي الغزوات الكبرى الأخيرة.</li>
+          <li><b>الأمير سيدي أحمد ولد أحمد عيدة</b> — القوس المأساوي: نُصّب، وأُسر، وأُعيد دميةً على العرش، فانشق، ومات في الصحراء. بيعته تقلب قواعد الأدرار كلها.</li>
+        </ul>
+      </div>
+      <div class="col res">
+        <header><h3>القبائل والتكتيكات</h3><div class="who">كيف قاتلت الصحراء</div></header>
+        <ul>
+          <li><b>الرگيبات</b> — الذين لا مصالحة معهم. نهبوا تندوف عام ١٨٩٦، وضربوا بور إتيان مرتين في العشرينيات، وانشقّوا جملةً واحدة عام ١٩٣٢، وامتطوا الرزو الكبرى الأخيرة عام ١٩٣٤ مسافة ستة آلاف كيلومتر.</li>
+          <li><b>أولاد دليم، وتكنة، وتناقَة</b> — أمم الغزو في الشمال؛ الميهاريون الذين غادروا بأسلحتهم كي لا يقاتلوا أبناء عمومتهم.</li>
+          <li><b>الرزو</b> — الغزوة البرقية على الجمال: تلتقي، تضرب، تأخذ القطعان والأسرى، وتختفي قبل أن تركب المطاردة.</li>
+          <li><b>حرمان الآبار</b> — الصحراء تُقاتل على الماء لا على التراب. أمسك الآبار أو أفسدها، تمت الأعمدة ببطء، بيدها.</li>
+          <li><b>اقتصاد الأزلاي</b> — قوافل الملح تعبر العرق: أرزال موارد على قوائم، للحماية أو للكمين.</li>
+          <li><b>خط السلاح المغربي</b> — باخرة السلطان «التركي» تنزّل البنادق في طرفاية؛ وفي ١٩١٦ مدافع غواصة ألمانية. الإمداد الخارجي مسارُ حملةٍ كامل.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="quotes">
+  <div class="wrap sec-head">
+    <h2>أصوات الحرب</h2><div class="rule"></div>
+  </div>
+  <div class="wrap quotes">
+    <figure><blockquote>«من أخذ السلاح فقد خرج من الفضيلة.»</blockquote><figcaption>— الشيخ سعد بو، «النصيحة»، ١٩٠٦ · رسالة ضد الجهاد إلى أخيه نفسه</figcaption></figure>
+    <figure><blockquote>«ليس الأمر احتلالًا دائمًا… بل تنظيم عمودٍ للشرطة لتطهير البلاد.»</blockquote><figcaption>— العقيد هنري غورو · عقيدة حرب الأعمدة</figcaption></figure>
+    <figure><blockquote>«صديق المسلمين.»</blockquote><figcaption>— شاهد قبر كوبولاني، تجكجة · بالعربية</figcaption></figure>
+    <figure><blockquote>«لم يُقهَر على التراب الموريتاني.»</blockquote><figcaption>— في وفاة ماء العينين، تزنيت، ٢٣ أكتوبر ١٩١٠</figcaption></figure>
+  </div>
+</section>
+
+<svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+
+<section class="light" id="colonizer">
+  <div class="wrap sec-head">
+    <span class="kicker">الوجه الآخر — والنصف الثاني من اللعبة</span>
+    <h2>منهج المستعمِر</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <div class="vs">
+      <div class="col fr">
+        <header><h3>التغلغل بالكلمة لا بالبندقية</h3><div class="who">فتح كوبولاني السياسي</div></header>
+        <div class="portraits">
+          <img src="art/portraits/coppolani_hd.png" alt="صورة كزافييه كوبولاني">
+          <img src="art/portraits/gouraud_hd.png" alt="صورة العقيد هنري غورو">
+        </div>
+        <ul>
+          <li><b>كزافييه كوبولاني</b> — الأرستقراطيُّ الكورسيكي العارف بالعربية، الذي أخذ الترارزة والبراكنة والتكانت بالمعاهدات والإعانات والخطب، قبل أن يجهز عليه رزو عام ١٩٠٥.</li>
+          <li><b>فرّق تَسُد</b> — أكثر من ثمانمئة شيخ معترَف به، والجزية تتحول إلى خصومات جمركية، وأمير أسير يُعاد إلى عرشٍ أجوف.</li>
+          <li><b>«السعادة»</b> — صحيفة طنجة التي أدارت حملة تشويه ضد ماء العينين. الدعاية مسارٌ قابل للعب.</li>
+        </ul>
+      </div>
+      <div class="col fr">
+        <header><h3>العمود والنسيج</h3><div class="who">جواب غورو</div></header>
+        <ul>
+          <li><b>العقيد هنري غورو</b> — الرجل الذي أبدل الإقناع بعمود الجمال وبالرزو المضاد: تكتيك الغزوة تحت راية.</li>
+          <li><b>نسيج البروج</b> — نواكشوط، تجكجة، مودجيرية، إنشيري، أطار: شبكة حصون طينية تمد الإمداد والماء الآمن، نقطةً بعد نقطة.</li>
+          <li><b>انضباط الماء</b> — العمود قلعةٌ متحركة لها عطشها الخاص؛ كل مسيرةٍ رهانٌ على الآبار.</li>
+          <li><b>العطش سلاحًا</b> — والصحراء تُقرضه لمن يمسك الماء. اللاتناظر هو تصميم اللعبة.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="pillars">
+  <div class="wrap sec-head">
+    <h2>ركائز اللعب</h2><div class="rule"></div>
+  </div>
+  <div class="wrap grid">
+    <div class="card"><h3>الآبار هي الموارد</h3><p>نقاط السيطرة آبارٌ وواحات ونخيل ومحطات قوافل. احرم عمودًا عدوًا من بئرٍ تمت ببطء — من دون هجوم.</p></div>
+    <div class="card"><h3>القطعان هي الاقتصاد</h3><p>الإبل والبقر ترعى المراعي الخاضعة. الثروة تمشي — يمكن غزوها وسوقها واستردادها. قوافل ملح الأزلاي أرزال موارد على قوائم.</p></div>
+    <div class="card"><h3>البيعة هي التجنيد</h3><p>لا ثكنات ولا إنتاج منسلق. كل قبيلة تبايعك خزنة رجال بنكهتها الخاصة — غازي رگيبي لا يقاتل كتجنيد كونتي. تخسر البيعة، تخسر الجيش.</p></div>
+    <div class="card"><h3>نسيج البروج</h3><p>فرنسا أيضًا لا تبني مدنًا. شبكة حصون صحراوية صغيرة تمد نطاق الإمداد والماء الآمن، نقطة بعد نقطة — نواكشوط، تجكجة، مودجيرية، أطار. اقطع الشبكة، تعد الصحراء.</p></div>
+    <div class="card"><h3>الرزو</h3><p>الغزوة البرقية: تلتقي، تضرب، تأخذ القطعان والأسرى، وتختفي قبل أن تركب المطاردة. وكان جواب فرنسا «الرزو المضاد» — التكتيك ذاته تحت راية.</p></div>
+    <div class="card"><h3>العطش</h3><p>كل وحدة تحمل ماءها. البعد عن بئرٍ صديق عدّاد تنازلي. الحرارة هي الجيش الثالث في كل معركة، وهي لا تتفاوض أبدًا.</p></div>
+  </div>
+</section>
+
+<section class="light" id="campaign">
+  <div class="wrap sec-head">
+    <h2>الحملة</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <div class="tl">
+      <article>
+        <span class="act">الفصل صفر · تمهيد</span>
+        <h3>قبل الراية</h3>
+        <div class="dates">القرن ١٧ – ١٩٠١</div>
+        <p>العالم قبل الغزو: إمارات ومحاضر، وتجارة صمغ على السنغال، وقوافل ملح عبر العرق. عصر التعلّم — أتقن الرزو والآبار والجزية، فكل هذه الأدوات على وشك أن تصوَّب نحو إمبراطورية.</p>
+      </article>
+      <article>
+        <span class="act">الفصل الأول</span>
+        <h3>المسحور</h3>
+        <div class="dates">١٩٠٢ – ١٢ مايو ١٩٠٥</div>
+        <p>يخضع كزافييه كوبولاني الترارزة والبراكنة والتكانت بالمعاهدات والإعانات والخطب — «التغلغل بالكلمة لا بالبندقية». وينتهي الأمر في واحة نخيل بتجكجة: قاتلٌ نذرَ رؤيا، وسبعة وعشرون مقاتلًا، وخمس دقائق بعد صلاة العشاء. فيجمُد الفتح ثلاث سنين.</p>
+      </article>
+      <article>
+        <span class="act">الفصل الثاني</span>
+        <h3>العمود</h3>
+        <div class="dates">١٩٠٥ – ١٩٠٩</div>
+        <p>حرب الاستنزاف: الرزوات تنزف المحتل عمودًا بعد عمود — نيملان، وداماني، ونو أرمش بأحد عشر قتيلها عطشًا. ويرد العقيد غورو بأعمدة الجمال والرزو المضاد، ويعبر قمة حمدون، ويأخذ أطار في ٩ يناير ١٩٠٩.</p>
+      </article>
+      <article>
+        <span class="act">الفصل الثالث</span>
+        <h3>الانحلال الطويل</h3>
+        <div class="dates">١٩١٠ – ١٩٣٤</div>
+        <p>يموت جيش ماء العينين في تادلا بالمغرب ويليه القدّيس نفسه — لكن الصحراء لم تفرغ بعد. تحرق السمارة عام ١٩١٣ فيجيب الثأر في ليبويرا وتاگليات وبوتيليس. أمير دمية ينشق، وسرية ميهارية تهجر، وتمتطي الرزو الرگيبية الأخيرة ستة آلاف كيلومتر قبل أن تنغلق «التهدئة» على تندوف في ٣١ مايو ١٩٣٤.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="glossary">
+  <div class="wrap sec-head">
+    <h2>حرب بلسانٍ حساني</h2><div class="rule"></div>
+  </div>
+  <div class="wrap gloss">
+    <span><b>رزوة</b> (rezzou) · غزوة برقية على الجمال</span>
+    <span><b>برج</b> (borj) · حصن صحراوي طيني</span>
+    <span><b>عادة</b> (coutume) · ضريبة النهر السنوية</span>
+    <span><b>ميهاري</b> (méhariste) · فارس سرايا الجمال</span>
+    <span><b>أزلاي</b> (azalaï) · قافلة الملح العابرة</span>
+    <span><b>حسّان</b> (hassane) · أرستقراطية محاربة</span>
+    <span><b>زناگة</b> (znaga) · قبائل تابعة جزائية</span>
+    <span><b>زاوية</b> (zawiya) · مدرسة دينية عالمة</span>
+    <span><b>بلاد شنقيط</b> (Bilad Shinqit) · الاسم القديم للبلاد</span>
+  </div>
+</section>
+
+<section class="light" id="characters">
+  <div class="wrap sec-head">
+    <h2>الشخصيات</h2><div class="rule"></div>
+  </div>
+  <div class="wrap chars">
+    <div class="char res"><img src="art/portraits/ma_el_ainin_hd.png" alt="صورة ماء العينين"><div class="body"><h3>ماء العينين</h3><div class="dates">١٨٣١ – ١٩١٠</div><p>قدّيس السمارة. راية حيّة تجعل بركته الوحدات القريبة غير قابلة للكسر — وموته يبدأ عدّاد انهيار الفصيلة.</p><span class="tag res">المقاومة</span></div></div>
+    <div class="char res"><img src="art/portraits/sidi_seghir_hd.png" alt="صورة سيدي صغير"><div class="body"><h3>سيدي صغير</h3><div class="dates">توفي ١٩٠٥</div><p>القاتل صاحب نذر الرؤيا. مهمة تسلل واحدة، وسبعة وعشرون مقاتلًا، ونافذة خمس دقائق عند تسليم الحليب.</p><span class="tag res">المقاومة</span></div></div>
+    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="صورة رمزية لأحمد الهيبة"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="215" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">EH</text></svg><div class="body"><h3>أحمد الهيبة</h3><div class="dates">نحو ١٨٧٦ – ١٩١٩</div><p>السلطان الأزرق. يرفع جيوشًا هائلة بسرعة ويأخذ مراكش — ثم يخسر ألفي رجل في عصر واحد.</p><span class="tag res">المقاومة</span></div></div>
+    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="صورة رمزية لأگداف"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="215" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">AG</text></svg><div class="body"><h3>أگداف</h3><div class="dates">نشط ١٩١٣</div><p>ثأر المدينة المحروقة. بعد سقوط السمارة تضرب انتقاماته بضراوة كل مركز في الجنوب.</p><span class="tag res">المقاومة</span></div></div>
+    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="صورة رمزية للأمير سيدي أحمد ولد أحمد عيدة"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="215" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">EA</text></svg><div class="body"><h3>سيدي أحمد ولد أحمد عيدة</h3><div class="dates">حكم ١٩٠٩ – ١٩٣٢</div><p>الدمية التي انشقت. ميزان بيعته يقلب قواعد إقليم الأدرار كله — نُصّب، وأُسر، وأُعيد، وضاع في الصحراء.</p><span class="tag res">المقاومة</span></div></div>
+    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="صورة رمزية لمرابط ربو"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="215" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">MR</text></svg><div class="body"><h3>مرابط ربو</h3><div class="dates">توفي بعد ١٩١٩</div><p>حارس البقية الباقية. مانح مهام الغزوات المتأخرة — بور إتيان، والرزو الكبرى الأخيرة.</p><span class="tag res">المقاومة</span></div></div>
+    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="صورة رمزية للشيخ سعد بو"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="215" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">SB</text></svg><div class="body"><h3>الشيخ سعد بو</h3><div class="dates">١٨٤٨ – ١٩١٧</div><p>الأخ الآخر. ردّ على الجهاد برسالة مفتوحة إلى الرجل الذي يشنّه. أسرة واحدة، طريقة واحدة — حربان.</p><span class="tag fr">حليف فرنسا</span></div></div>
+    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="صورة رمزية للشيخ سيديا بابا"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="215" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">SIB</text></svg><div class="body"><h3>الشيخ سيديا بابا</h3><div class="dates">القرنان ١٩ – ٢٠</div><p>صانع الملوك. من خلاله جرت خضوعات الترارزة والبراكنة والتكانت — شجرة «التغلغل السلمي» التكنولوجية في هيئة إنسان.</p><span class="tag fr">حليف فرنسا</span></div></div>
+    <div class="char fr"><img src="art/portraits/coppolani_hd.png" alt="صورة كزافييه كوبولاني"><div class="body"><h3>كزافييه كوبولاني</h3><div class="dates">١٨٦٦ – ١٩٠٥</div><p>الفاتح السلمي. يستميل القبائل دون طلقة رصاص. وشاهد قبره يحمل بالعربية: «صديق المسلمين».</p><span class="tag fr">فرنسا</span></div></div>
+    <div class="char fr"><img src="art/portraits/gouraud_hd.png" alt="صورة العقيد هنري غورو"><div class="body"><h3>العقيد هنري غورو</h3><div class="dates">١٨٦٧ – ١٩٤٦</div><p>العمود. العقيدة: «ليس احتلالًا دائمًا… بل عمود شرطة لتطهير البلاد». لوجستيات جمال، وانضباط ماء، ورزو مضاد.</p><span class="tag fr">فرنسا</span></div></div>
+    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="صورة رمزية للكابتن فريرجان"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="215" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">FJ</text></svg><div class="body"><h3>الكابتن فريرجان</h3><div class="dates">نشط ١٩٠٤ – ١٩٠٩</div><p>باني نسيج البروج. غرس المركز الذي صار نواكشوط؛ وخريطة الحصون هي نصبه التذكاري.</p><span class="tag fr">فرنسا</span></div></div>
+    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="صورة رمزية للملازم إيتييفان"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="215" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">EV</text></svg><div class="body"><h3>الملازم إيتييفان</h3><div class="dates">نشط ١٩٠٥</div><p>المنتقم. طلقتان من مسدس أنهتا القاتل في واحة النخيل. ظهور واحد، لا يُنسى.</p><span class="tag fr">فرنسا</span></div></div>
+  </div>
+</section>
+
+<section class="dark" id="gallery">
+  <div class="wrap sec-head">
+    <h2>المعرض</h2><div class="rule"></div>
+  </div>
+  <div class="wrap gal">
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="تصور رمزي للرزو"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="165" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">RZ</text></svg><figcaption>رزوة حسّانية في تحركها — ميكانيكا اللعبة الأيقونية.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="تصور رمزي للميهاري"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="165" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">MÉH</text></svg><figcaption>فرق الميهار — تعلّمت فرنسا أن تحارب حرب الصحراء على طريقة الصحراء.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="تصور رمزي للتيرايور"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="165" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">TIR</text></svg><figcaption>تيرايور سنغال على ظهور الجمال — العمود الفقري لكل عمود.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="تصور رمزي للبرج"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="165" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">BRJ</text></svg><figcaption>برجٌ في الغسق: صغير، طيني، وبذرة نسيج إمداد لإمبراطورية.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="تصور رمزي لقافلة الملح"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="165" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">AZA</text></svg><figcaption>أزلاي الملح — قافلة موارد على قوائم، للحماية أو للكمين.</figcaption></figure>
+    <figure><svg class="art" viewBox="0 0 300 300" role="img" aria-label="تصور رمزي لمخيم الزاوية"><rect width="300" height="300" fill="url(#phg)"/><path d="M0,240 Q80,205 150,232 Q230,262 300,225 L300,300 L0,300 Z" fill="#101E33" opacity=".55"/><text x="150" y="165" text-anchor="middle" fill="#C8A24B" font-size="64" font-family="Georgia,serif">ZAW</text></svg><figcaption>مخيم زاوية — علمٌ وبيعة، الجبهة الأهدأ من الحرب.</figcaption></figure>
+  </div>
+</section>
+
+<section class="light about" id="about">
+  <div class="wrap sec-head">
+    <h2>عن المشروع</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p><strong>الأرض التي لم تُقهر</strong> تصميم لعبة في مرحلة التصوّر. المحرك المستهدف: <strong>Godot 4</strong> (مفتوح المصدر، بلا إتاوات). الحملة الفردية أولًا؛ لا يوجد موعد إصدار. وثائق التصميم وقاعدة البحث التاريخي وإنجيل الشخصيات كلها في هذا المستودع.</p>
+    <h3>الأساس التاريخي</h3>
+    <p>تتبع الحملة السجل الموثق للتهدئة الفرنسية في موريتانيا. وحيث تختلف المصادر — تواريخ الحصار، وسنة أسر أمير — تُعلَّم الاختلافات في وثيقة البحث بدل تمويهها. وتحذيرٌ من البحث منقوش في التصميم: اللاتناظر الحقيقي في هذه الحرب كان اللوجستيات والماء، لا السلاح — فكلا الجانبين حمل بنادق متكافئة.</p>
+    <ul class="src">
+      <li>مكتبة الكونغرس، <em>Mauritania: A Country Study</em> (١٩٨٨)</li>
+      <li>ويكيبيديا الفرنسية والإنجليزية — كوبولاني، ماء العينين، غورو، الإمارات، فتح موريتانيا</li>
+      <li>بحث أكاديمي — دَندوران عن عمود الأدرار (٢٠١٣)، بونت عن إمارة الأدرار (Persée، ١٩٨٤)</li>
+      <li>مصدر أولي — العقيد هنري غورو، <em>La Pacification de la Mauritanie</em> (١٩١٠)</li>
+    </ul>
+    <h3>التواصل</h3>
+    <p>أسئلة، وتصحيحات (خاصة من المؤرخين الموريتانيين)، ومساهمات: افتح ملفًا على <a href="https://github.com/scriptssniper/rts-mauritania">مستودع GitHub</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+  <div class="ftext">الأرض التي لم تُقهر · مرحلة التصوّر — لم يبدأ التطوير بعد · الصور: مسودات فنية أولى</div>
+</footer>
+
+</body>
+</html>
