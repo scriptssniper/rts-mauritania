@@ -13,7 +13,7 @@
 :root{
   --ink:#191512; --indigo:#223A5E; --indigo-d:#1B2F4C; --indigo-x:#16273F;
   --sand:#E8DCC3; --sand-d:#D9C9A8; --gold:#C8A24B; --gold-l:#E0C078;
-  --steel:#8FA6C4;
+  --steel:#8FA6C4; --gold-d:var(--gold-d); --sepia:var(--sepia); --sand-x:var(--sand-x);
   --tod:#EAE2CE; --mod:#B9AF97; --tol:#2A2115; --mol:#6B5D45;
   --lined:rgba(200,162,75,.28); --linel:rgba(42,33,21,.28);
 }
@@ -120,7 +120,7 @@ section.light .tl p{color:var(--mol)}
 .char p{color:var(--mol);font-size:.9rem;margin-top:8px}
 .tag{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;padding:3px 10px;margin-top:12px}
 .tag.fr{color:#41597c;border:1px solid var(--steel)}
-.tag.res{color:#8a6a1f;border:1px solid var(--gold)}
+.tag.res{color:var(--gold-d);border:1px solid var(--gold)}
 
 /* Gallery */
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
@@ -146,7 +146,7 @@ footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.85rem;font-styl
 .feature .fimg .soon{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-l);text-shadow:0 1px 6px rgba(10,18,32,.9)}
 .feature .fbody{padding:28px 30px}
 .feature h3{font-size:1.5rem;color:var(--tol)}
-.feature .fdates{color:#8a6a1f;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin:6px 0 14px}
+.feature .fdates{color:var(--gold-d);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin:6px 0 14px}
 .feature p{font-size:1rem;color:var(--mol);margin-bottom:10px}
 .feature p:last-child{margin-bottom:0}
 
@@ -182,18 +182,18 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 
 /* Poets' War manuscript frames */
 .poems{display:grid;gap:30px;margin-top:34px}
-.poem{position:relative;background:#F1E9D7;border:3px double var(--gold);padding:26px 32px 18px;margin:0;box-shadow:0 1px 0 rgba(25,21,18,.08)}
+.poem{position:relative;background:var(--sand-x);border:3px double var(--gold);padding:26px 32px 18px;margin:0;box-shadow:0 1px 0 rgba(25,21,18,.08)}
 .poem::before,.poem::after{content:"";position:absolute;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
 .poem::before{top:-7px;left:-7px}
 .poem::after{bottom:-7px;right:-7px}
 .poem .var{direction:rtl;text-align:right;font-family:"Noto Naskh Arabic","Amiri","Scheherazade New",serif;font-size:1.3rem;line-height:2.1;color:var(--tol);margin-bottom:10px;white-space:pre-line}
-.poem .tr-l{font-style:italic;color:#5B4A33;font-size:.93rem;margin-bottom:10px}
+.poem .tr-l{font-style:italic;color:var(--sepia);font-size:.93rem;margin-bottom:10px}
 .poem blockquote{margin:0;font-size:1.1rem;line-height:1.7;color:var(--tol)}
-.poem blockquote.gloss{margin-top:10px;font-size:.95rem;font-style:italic;color:#5B4A33}
-.poem figcaption{margin-top:14px;font-size:.85rem;line-height:1.5;color:#5B4A33}
+.poem blockquote.gloss{margin-top:10px;font-size:.95rem;font-style:italic;color:var(--sepia)}
+.poem figcaption{margin-top:14px;font-size:.85rem;line-height:1.5;color:var(--sepia)}
 .poem .badge,.arms .badge,.land .badge{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-right:8px;vertical-align:1px}
 .poem .badge.v,.arms .badge.v,.land .badge.v{background:var(--gold);color:#fff}
-.poem .badge.a,.arms .badge.a,.land .badge.a{background:var(--steel);color:#10233F}
+.poem .badge.a,.arms .badge.a,.land .badge.a{background:var(--steel);color:var(--indigo-x)}
 [dir="rtl"] .badge{margin-right:0;margin-left:8px}
 
 /* Flags & crest */
@@ -233,7 +233,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 </svg>
 
 <header class="hero" id="top">
-  <nav class="lang" aria-label="Language"><b><svg aria-hidden="true"><use href="#fl-en"/></svg>EN</b> · <a href="fr.html"><svg aria-hidden="true"><use href="#fl-fr"/></svg>FR</a> · <a href="ar.html"><svg aria-hidden="true"><use href="#fl-mr"/></svg>عربية</a></nav>
+  <nav class="lang" aria-label="Language"><b><svg aria-hidden="true"><use href="#fl-en"/></svg>EN</b> · <a href="fr.html"><svg aria-hidden="true"><use href="#fl-fr"/></svg>FR</a> · <a href="ar.html"><svg aria-hidden="true"><use href="#fl-mr"/></svg>عربية</a> · <a href="dossier.html">Dossier</a></nav>
   <svg class="duneart" viewBox="0 0 1536 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <rect width="1536" height="760" fill="url(#duneg)"/>
     <circle cx="1150" cy="300" r="105" fill="#C8A24B" opacity=".8"/>
@@ -721,6 +721,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
       <div>
         <h3>In the repository</h3>
         <ul>
+          <li><a href="dossier.html">The full design dossier</a> — gameplay, all 16 missions, the cast, one page</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_campaign_history.md">Campaign history research (1902–1934)</a> — timeline, factions, conflict register</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_precolonial.md">Pre-colonial research (1480–1890)</a> — emirates, Char Bouba, trade economy</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_poetry.md">Resistance poetry corpus (1902–1934)</a> — the kāf texts behind "The Poets' War"</li>

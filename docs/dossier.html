@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<!-- Design dossier (EN only). Styled companion to index.html — palette/motifs shared. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE UNDEFEATED SOIL · Design Dossier</title>
+<meta name="description" content="THE UNDEFEATED SOIL: an asymmetric real-time strategy game of the Mauritanian resistance to French colonization, 1591–1934.">
+<style>
+:root{
+  --ink:#191512; --indigo:#223A5E; --indigo-d:#1B2F4C; --indigo-x:#16273F;
+  --sand:#E8DCC3; --sand-d:#D9C9A8; --gold:#C8A24B; --gold-l:#E0C078;
+  --steel:#8FA6C4; --gold-d:var(--gold-d); --sepia:var(--sepia); --sand-x:var(--sand-x);
+  --tod:#EAE2CE; --mod:#B9AF97; --tol:#2A2115; --mol:#6B5D45;
+  --lined:rgba(200,162,75,.28); --linel:rgba(42,33,21,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--indigo);color:var(--tod);font:16px/1.7 Georgia,'Times New Roman',serif}
+h1,h2,h3{font-family:Georgia,'Palatino Linotype',serif;font-weight:600;letter-spacing:.02em}
+a{color:var(--gold-l)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.badge{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l);border:1px solid var(--gold);border-radius:2px;padding:4px 12px}
+
+/* language switcher */
+.lang{position:absolute;top:18px;right:24px;z-index:5;font-size:.95rem;letter-spacing:.06em}
+.lang a{color:var(--mod);text-decoration:none;padding:0 6px}
+.lang a:hover{color:var(--gold-l)}
+.lang b{color:var(--gold-l)}
+
+/* geometric texture on light sections */
+section.light{background:var(--sand);color:var(--tol);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cg fill='none' stroke='%23C8A24B' stroke-opacity='.13'%3E%3Crect x='18' y='18' width='20' height='20' transform='rotate(45 28 28)'/%3E%3Crect x='24' y='24' width='8' height='8' transform='rotate(45 28 28)'/%3E%3C/g%3E%3C/svg%3E")}
+section.dark{background:var(--indigo)}
+
+/* Hero */
+.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--lined);overflow:hidden;background:var(--indigo-x)}
+.hero .duneart{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .inner{position:relative;padding:96px 0 64px}
+.hero h1{font-size:clamp(2.1rem,5.6vw,3.9rem);color:var(--sand);line-height:1.08;margin:18px 0 6px;text-shadow:0 2px 24px rgba(10,18,32,.8)}
+.hero .sub{font-size:clamp(.95rem,2.2vw,1.2rem);color:var(--gold-l);font-style:italic;letter-spacing:.04em}
+.hero .pitch{max-width:680px;color:var(--tod);margin-top:16px;font-size:1.06rem;text-shadow:0 1px 8px rgba(10,18,32,.9)}
+
+section{padding:72px 0}
+.sec-head{margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.6rem,4vw,2.3rem);color:inherit}
+section.dark .sec-head h2{color:var(--sand)}
+section.light .sec-head h2{color:var(--tol)}
+.sec-head .rule{width:64px;height:3px;background:var(--gold);margin-top:14px;position:relative}
+.sec-head .rule::after{content:"";position:absolute;right:-14px;top:-3.5px;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+.sec-head .kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.pitch-body p{max-width:780px;margin-bottom:18px;font-size:1.05rem}
+.pitch-body p:last-child{margin-bottom:0}
+
+/* geometric divider band */
+.band{display:block;width:100%;height:34px;color:var(--gold)}
+.band .bandfill{fill:url(#dzpat)}
+
+/* Quotes: manuscript pages */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.quotes figure{background:var(--sand);color:var(--tol);border:1px solid var(--tol);outline:1px solid var(--tol);outline-offset:4px;padding:26px 24px 20px;position:relative}
+.quotes figure::before,.quotes figure::after{content:"";position:absolute;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.quotes figure::before{top:10px;left:12px}
+.quotes figure::after{bottom:10px;right:12px}
+.quotes blockquote{font-size:1.04rem;font-style:italic}
+.quotes figcaption{margin-top:12px;color:var(--mol);font-size:.85rem}
+
+/* Glossary strip */
+.gloss{display:flex;flex-wrap:wrap;gap:10px}
+.gloss span{border:1px solid var(--linel);background:rgba(25,21,18,.045);border-radius:3px;padding:8px 14px;font-size:.9rem;color:var(--mol)}
+.gloss b{color:var(--tol);font-weight:600;letter-spacing:.05em}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:var(--sand);color:var(--tol);border:1px solid var(--linel);border-radius:4px;padding:24px;border-top:3px solid var(--gold)}
+section.light .card{background:var(--indigo-d);color:var(--tod);border-color:var(--lined);border-top-color:var(--gold)}
+.card h3{font-size:1.12rem;margin-bottom:8px;color:inherit}
+.card p{color:var(--mol);font-size:.95rem}
+section.light .card p{color:var(--mod)}
+
+/* Factions counterpoint */
+.vs{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:860px){.vs{grid-template-columns:1fr 1fr}}
+.vs .col{border:1px solid var(--linel);border-radius:4px;overflow:hidden;background:var(--sand);color:var(--tol)}
+.vs .col.res{border-left:4px solid var(--gold)}
+.vs .col.fr{border-left:4px solid var(--steel)}
+.vs .col header{padding:18px 22px;border-bottom:1px solid var(--linel)}
+.vs .col h3{font-size:1.2rem;color:var(--tol)}
+.vs .col header .who{color:var(--mol);font-size:.85rem;font-style:italic}
+.vs ul{list-style:none;padding:8px 22px 18px}
+.vs ul li{padding:12px 0;border-bottom:1px dashed var(--linel);color:var(--mol);font-size:.95rem}
+.vs ul li:last-child{border-bottom:none}
+.vs ul b{color:var(--tol);font-weight:600}
+.vs .portraits{display:flex;gap:12px;padding:16px 22px 4px}
+.vs .portraits img{width:96px;height:128px;object-fit:cover;object-position:top;border-radius:4px;border:1px solid var(--linel)}
+
+/* Timeline */
+.tl{border-left:2px solid var(--lined);margin-left:8px;padding-left:28px;display:flex;flex-direction:column;gap:34px}
+.tl article{position:relative}
+.tl article::before{content:"";position:absolute;left:-38px;top:8px;width:12px;height:12px;background:var(--gold);border:1px solid var(--ink);transform:rotate(45deg)}
+.tl .act{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+section.light .tl{border-left-color:var(--linel)}
+.tl h3{font-size:1.25rem;margin:4px 0 6px}
+.tl .dates{display:inline-block;background:var(--gold);color:var(--ink);font-style:italic;font-size:.82rem;padding:2px 12px;border-radius:2px;margin-bottom:10px}
+.tl p{max-width:720px;font-size:.97rem}
+.tl p{color:var(--mod)}
+section.light .tl p{color:var(--mol)}
+
+/* Characters */
+.chars{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.char{background:var(--sand);color:var(--tol);border:1px solid var(--linel);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.char.res{border-top:3px solid var(--gold)}
+.char.fr{border-top:3px solid var(--steel)}
+.char img,.char svg.art{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.char .body{padding:16px 18px 20px;flex:1}
+.char h3{font-size:1.05rem;color:var(--tol)}
+.char .dates{color:var(--mol);font-size:.82rem;font-style:italic}
+.char p{color:var(--mol);font-size:.9rem;margin-top:8px}
+.tag{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;padding:3px 10px;margin-top:12px}
+.tag.fr{color:#41597c;border:1px solid var(--steel)}
+.tag.res{color:var(--gold-d);border:1px solid var(--gold)}
+
+/* Gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.gal figure{border:1px solid var(--linel);border-radius:4px;overflow:hidden;background:var(--sand)}
+.gal svg.art{width:100%;aspect-ratio:1;display:block}
+.gal figcaption{padding:12px 16px;color:var(--mol);font-size:.9rem;font-style:italic}
+
+/* About */
+.about p{max-width:760px;margin-bottom:16px;color:var(--mol)}
+.about h3{color:var(--tol);margin:26px 0 8px;font-size:1.1rem}
+ul.src{list-style:none;max-width:760px}
+ul.src li{padding:6px 0 6px 22px;position:relative;color:var(--mol);font-size:.95rem}
+ul.src li::before{content:"◆";position:absolute;left:0;top:6px;color:var(--gold);font-size:.7rem}
+
+footer{padding:0 0 56px;background:var(--ink);text-align:center}
+footer .ftext{padding:28px 24px 34px;color:var(--mod);font-size:.85rem;font-style:italic}
+
+/* El Hiba feature block */
+.feature{border:1px solid var(--gold);outline:1px solid var(--gold);outline-offset:5px;border-radius:4px;background:var(--sand);color:var(--tol);display:grid;grid-template-columns:1fr;margin-top:32px;overflow:hidden}
+@media(min-width:700px){.feature{grid-template-columns:280px 1fr}}
+.feature .fimg{position:relative;min-height:300px}
+.feature .fimg svg{width:100%;height:100%;display:block}
+.feature .fimg .soon{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-l);text-shadow:0 1px 6px rgba(10,18,32,.9)}
+.feature .fbody{padding:28px 30px}
+.feature h3{font-size:1.5rem;color:var(--tol)}
+.feature .fdates{color:var(--gold-d);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin:6px 0 14px}
+.feature p{font-size:1rem;color:var(--mol);margin-bottom:10px}
+.feature p:last-child{margin-bottom:0}
+
+/* Map + Resources */
+.map-fig{border:1px solid var(--lined);border-radius:4px;overflow:hidden;background:var(--indigo-x)}
+.map-fig svg{width:100%;display:block}
+.map-legend{display:flex;flex-wrap:wrap;gap:14px 24px;padding:14px 18px;color:var(--mod);font-size:.88rem}
+.map-legend i{font-style:normal;margin-left:6px}
+.resrc .cols{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:860px){.resrc .cols{grid-template-columns:1fr 1fr}}
+.resrc h3{color:inherit;font-size:1.05rem;margin-bottom:10px}
+section.dark .resrc h3{color:var(--sand)}
+section.light .resrc h3{color:var(--tol)}
+.resrc ul{list-style:none}
+.resrc li{padding:8px 0;border-bottom:1px dashed var(--lined);font-size:.93rem}
+section.light .resrc li{border-bottom-color:var(--linel)}
+.resrc a{color:inherit}
+.resrc .lead{font-size:1.02rem;font-style:italic;margin-bottom:22px;color:var(--mod);max-width:760px}
+
+/* Arms & Men + The Land */
+.ucards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin:26px 0}
+.ucard{position:relative;background:rgba(232,220,195,.06);border:1px solid var(--lined);border-radius:4px;padding:16px 18px}
+.ucard h3{font-size:1.02rem;margin:0 0 6px;color:var(--mol)}
+.ucard p{font-size:.88rem;line-height:1.55;color:var(--mol);margin:0}
+.ucard .sw{display:flex;height:14px;border-radius:2px;overflow:hidden;margin-bottom:10px;border:1px solid rgba(232,220,195,.25)}
+.ucard .sw i{flex:1}
+.biomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:26px}
+.biome{background:var(--bt);border:1px solid rgba(25,21,18,.15);border-top:3px solid var(--gold);border-radius:3px;padding:16px 18px;color:var(--tod)}
+.biome .term{display:block;font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--indigo)}
+.biome .term i{font-style:italic;font-weight:400;font-size:.88rem}
+.biome p{font-size:.87rem;line-height:1.55;margin:0 0 7px;color:var(--tod)}
+.biome .tac{font-style:italic;margin-bottom:0}
+
+/* Poets' War manuscript frames */
+.poems{display:grid;gap:30px;margin-top:34px}
+.poem{position:relative;background:var(--sand-x);border:3px double var(--gold);padding:26px 32px 18px;margin:0;box-shadow:0 1px 0 rgba(25,21,18,.08)}
+.poem::before,.poem::after{content:"";position:absolute;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+.poem::before{top:-7px;left:-7px}
+.poem::after{bottom:-7px;right:-7px}
+.poem .var{direction:rtl;text-align:right;font-family:"Noto Naskh Arabic","Amiri","Scheherazade New",serif;font-size:1.3rem;line-height:2.1;color:var(--tol);margin-bottom:10px;white-space:pre-line}
+.poem .tr-l{font-style:italic;color:var(--sepia);font-size:.93rem;margin-bottom:10px}
+.poem blockquote{margin:0;font-size:1.1rem;line-height:1.7;color:var(--tol)}
+.poem blockquote.gloss{margin-top:10px;font-size:.95rem;font-style:italic;color:var(--sepia)}
+.poem figcaption{margin-top:14px;font-size:.85rem;line-height:1.5;color:var(--sepia)}
+.poem .badge,.arms .badge,.land .badge{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-right:8px;vertical-align:1px}
+.poem .badge.v,.arms .badge.v,.land .badge.v{background:var(--gold);color:#fff}
+.poem .badge.a,.arms .badge.a,.land .badge.a{background:var(--steel);color:var(--indigo-x)}
+[dir="rtl"] .badge{margin-right:0;margin-left:8px}
+
+/* Flags & crest */
+.lang svg{width:18px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:5px;border:1px solid rgba(232,220,195,.4);opacity:.6}
+.lang a:hover svg,.lang b svg{opacity:1}
+.mark{display:inline-flex;vertical-align:-4px;margin-right:12px}
+.chip{position:absolute;top:8px;right:8px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;background:rgba(232,220,195,.92);border:1px solid var(--linel);border-radius:3px;opacity:.85}
+.char{position:relative}
+.chip svg{width:15px;height:15px}
+.qmark{display:inline-block;vertical-align:-2px;margin-right:6px}
+.qmark svg{width:15px;height:10px}
+.flagnote{font-size:.92rem;font-style:italic}
+
+/* SVG placeholder text */
+.ph-init{font-family:Georgia,serif;font-weight:600;letter-spacing:.08em}
+
+/* Dossier-only */
+.hero-p{max-width:760px;margin:18px auto 0;color:var(--mol);font-size:1.02rem;line-height:1.65}
+.dossier .badge{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-right:8px;vertical-align:1px}
+.dossier .badge.v{background:var(--gold);color:#fff}
+.dossier .badge.a{background:var(--steel);color:var(--indigo-x)}
+.subhead{margin:38px 0 14px;color:var(--gold-l);font-size:1.15rem;letter-spacing:.04em}
+.act{margin:40px 0 6px;font-size:1.3rem;letter-spacing:.05em;color:var(--indigo)}
+.actnote{font-style:italic;color:var(--sepia);margin:0 0 18px}
+.mcard h4{margin:0 0 10px;font-size:1.04rem;color:var(--indigo)}
+.mcard h4 .mn{font-weight:400;font-size:.85rem;color:var(--sepia)}
+.mcard p{font-size:.94rem;line-height:1.6;color:var(--tod);margin:0 0 9px}
+.mcard p.obj{font-size:.9rem}
+.mcard blockquote.gloss{margin-top:10px}
+</style>
+</head>
+<body>
+
+<!-- shared SVG defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="phg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E4172"/><stop offset=".55" stop-color="#3B3350"/><stop offset="1" stop-color="#7A4A2B"/>
+    </linearGradient>
+    <linearGradient id="duneg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101E33"/><stop offset="1" stop-color="#0C1626"/>
+    </linearGradient>
+    <pattern id="dzpat" width="34" height="34" patternUnits="userSpaceOnUse">
+      <rect x="10.5" y="10.5" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.2" transform="rotate(45 17 17)"/>
+    </pattern>
+    <symbol id="fl-en" viewBox="0 0 20 13"><rect width="20" height="13" fill="#012169"/><path d="M0,0 L20,13 M20,0 L0,13" stroke="#fff" stroke-width="2.6"/><path d="M0,0 L20,13 M20,0 L0,13" stroke="#C8102E" stroke-width="1.2"/><rect x="8" width="4" height="13" fill="#fff"/><rect y="4.5" width="20" height="4" fill="#fff"/><rect x="9" width="2" height="13" fill="#C8102E"/><rect y="5.5" width="20" height="2" fill="#C8102E"/></symbol>
+    <symbol id="fl-fr" viewBox="0 0 20 13"><rect width="20" height="13" fill="#fff"/><rect width="6.7" height="13" fill="#1F4788"/><rect x="13.3" width="6.7" height="13" fill="#C8102E"/></symbol>
+    <symbol id="fl-mr" viewBox="0 0 20 13"><rect width="20" height="13" fill="#0D7E45"/><circle cx="11.6" cy="6.5" r="2.7" fill="#C8A24B"/><circle cx="12.6" cy="6.5" r="2.2" fill="#0D7E45"/><path d="M8,5.5 8.35,6.4 9.3,6.4 8.55,6.95 8.85,7.85 8,7.3 7.15,7.85 7.45,6.95 6.7,6.4 7.65,6.4 Z" fill="#C8A24B"/></symbol>
+    <symbol id="crest" viewBox="0 0 24 24"><g fill="none" stroke="#C8A24B"><rect x="7.5" y="7.5" width="9" height="9" transform="rotate(45 12 12)" stroke-width="1.3"/><rect x="10.2" y="10.2" width="3.6" height="3.6" transform="rotate(45 12 12)" stroke-width="1"/></g><path d="M3,21 L19,5" stroke="#191512" stroke-width="1.6"/><path d="M19,5 L17.2,5.6 M19,5 L18.4,6.8" stroke="#191512" stroke-width="1.4"/></symbol>
+  </defs>
+</svg>
+
+
+<body class="dossier">
+
+<header class="hero" id="top">
+  <nav class="lang" aria-label="Language"><a href="index.html"><svg aria-hidden="true"><use href="#fl-en"/></svg>EN</a> · <a href="fr.html"><svg aria-hidden="true"><use href="#fl-fr"/></svg>FR</a> · <a href="ar.html"><svg aria-hidden="true"><use href="#fl-mr"/></svg>عربية</a> · <b>Dossier (EN)</b></nav>
+  <svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+  <div class="wrap inner">
+    <span class="badge">Concept Stage · Working Document (EN)</span>
+    <h1>THE UNDEFEATED SOIL</h1>
+    <div class="sub">The Design Dossier — gameplay, campaign, cast &amp; history files</div>
+    <p class="hero-p">Everything the team is designing, in one page: the core mechanics document, all sixteen scripted missions, the full cast of twelve, and the research backbone. History supplies the outcomes; fiction supplies the play — and every invention is tagged.</p>
+  </div>
+</header>
+
+<section class="dark" id="gamedesign">
+  <div class="wrap sec-head">
+    <span class="kicker">Core Design Document v0.1</span>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg>The Game Design</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p class="lead">Godot 4 · point-control RTS, no base-building (World in Conflict loop, Northgard zones) · campaign 1480–1934. Every mechanic that is invention, not history, carries a <span class="badge a">design fiction</span> badge in this dossier.</p>
+    <div class="grid">
+      <div class="card"><h3>Asymmetry is economy, not stats</h3><p>Both sides field similar small arms — the gap is logistics and forts, not weapons quality. The resistance <em>takes</em> what it fields; France <em>pulls</em> what it fields across an empire. Every unit deployed is cargo somebody moved across the map.</p></div>
+      <div class="card"><h3>Mobility vs lattice</h3><p>Camel speed and well knowledge vs the borj lattice and camel columns. France buys reach by building; the resistance <em>is</em> reach.</p></div>
+      <div class="card"><h3>Water is the clock</h3><p>Every unit ticks thirst away from friendly wells. Timers, not health bars, decide desert operations — Nouarmach: 13 killed in action, 11 died of thirst after.</p></div>
+      <div class="card"><h3>Allegiance is production</h3><p>No barracks. Manpower pools live in tribes; tribes switch sides. Losing allegiance = losing the ability to make war. 800+ recognized chiefs, divide-and-rule.</p></div>
+    </div>
+    <h3 class="subhead">The Two Economies</h3>
+    <div class="vs">
+      <div class="col res">
+        <header><h3><svg class="qmark" width="15" height="15" aria-hidden="true"><use href="#crest"/></svg>Take — the resistance</h3><div class="who">loot, tribute, herds</div></header>
+        <ul>
+          <li><b>Resources:</b> loot crates (arms/ammo/supply), camels, herds, water, baraka (morale)</li>
+          <li><b>Loop:</b> rezzou → loot → rearm → bigger rezzou</li>
+          <li><b>Sinks:</b> raid-range extension, war parties, gifts to tribes (allegiance)</li>
+        </ul>
+      </div>
+      <div class="col fr">
+        <header><h3><svg class="qmark" width="15" height="10" aria-hidden="true"><use href="#fl-fr"/></svg>Pull — France</h3><div class="who">imperial logistics, subsidies</div></header>
+        <ul>
+          <li><b>Resources:</b> military budget, administrative budget, water, convoys</li>
+          <li><b>Loop:</b> budget → convoy → borj → projection → submissions → income</li>
+          <li><b>Sinks:</b> columns, borj construction, subsidies, escort</li>
+        </ul>
+      </div>
+    </div>
+    <p>The two loops interlock into one <strong>transfer economy</strong>: zero-sum cargo. Every crate looted is a crate France must re-pull from the metropole through two colonies. Looting isn't flavor — it is the opponent's supply line bleeding.</p>
+    <h3 class="subhead">Looting — the resistance core loop</h3>
+    <p>Loot drops as physical crates on raid sites and must be carried off on camels — loot has weight and slows the band. Categories: <b>arms</b> (Gras rifles until the real 1907 tech event, then Berthier Mle 1907s; machine-guns only as rare column loot), <b>ammunition</b> (the true bottleneck — rifles without cartridges are clubs), <b>provisions &amp; water gear</b> (+raid range), <b>pack camels</b> (the loot multiplier), <b>military kit</b>, <b>coin/valuables</b> (convertible to allegiance via the zawiya network).</p>
+    <p>A war band's tier is its equipment, not its experience: lance band → Gras band (10 looted rifles + ammo) → rifle line (30+ rifles, sustained volley fire). The tech tree reads as a capture log. Looted rifles wear (no armourer network) and ammo is consumed, never manufactured — every volley fired shrinks the war. Artillery and machine guns can be <em>captured</em> but never <em>served</em>: no ammunition pipeline, no trained crews. <span class="badge a">design fiction</span> looted-kit disguise (one band per raid passes as a friendly méhariste patrol at distance); <span class="badge a">design fiction</span> telegraph-wire reuse as camp alarm nets.</p>
+    <h3 class="subhead">The French imperial pull</h3>
+    <p>A physical, visible, attackable supply lane: <b>metropole</b> (budget accrues, tier-limited by year) → <b>Saint-Louis</b> (river steamers; rail head later) → <b>forward depot</b> (Rosso/Podor → Moudjeria) → <b>convoy</b> (camel trains, slow, escort-dependent; each borj passed refreshes escort) → <b>borj lattice</b> (supply radius projects water discipline, reinforcement spawn, treaty projection). Interception points: river dockings (safe, tier-limited), convoy legs (the resistance's hunting ground), borj handoff (garrisoned).</p>
+    <p><b>Budget duality:</b> military budget buys columns, garrisons, escorts, borjs; administrative budget buys subsidies, treaty missions, emir restorations — submissions convert tribes to income but cost real time and diplomats, and losing a restored emir to dissidence (the Ayda arc) is an administrative catastrophe. <b>Escalation tiers by year:</b> 1902–05 diplomacy-cheap/military-poor (Coppolani) → 1907–09 column war (Gouraud) → 1910–13 peak projection → WWI scarcity (budget halved; the 1916 German gun-run event) → 1920s–34 police war (élite méharistes, slow, cheap).</p>
+    <h3 class="subhead">Shared systems</h3>
+    <ul>
+      <li><b>Wells</b> — capture points; denial by filling/scattering (fast) or corpse-poisoning (slow, permanent, atrocity-marked — <span class="badge a">design fiction</span> the poisoning method; atrocity mechanics cost allegiance globally).</li>
+      <li><b>Thirst clock</b> — ticks up off-well; penalty → attrition → death (the Nouarmach rule). Columns decay slower inside borj radius.</li>
+      <li><b>Herds</b> — mobile slow economy, graze seasonal pasture, raidable; herd loss = famine events in tribes.</li>
+      <li><b>Caravan economy (azalaï)</b> — neutral salt convoys on fixed calendar routes; tax (income, routes reroute away) or raid (loot, route dies). France taxing = submission pressure; resistance raiding hurts civilian tribes.</li>
+      <li><b>Allegiance meter</b> (per tribe, −100…+100) — drivers: subsidies, gifts, protection efficacy, atrocity proximity, marabout diplomacy (Sidiya Baba = French-side multiplier; Goudfiya sheikhs = resistance-side), defeat of local rivals.</li>
+      <li><b>Seasons</b> — rainy season (Jun–Sep): Sahel pasture blooms, columns bog, rezzou season pauses; dry season: the water war peaks; transhumance windows move the herd targets.</li>
+    </ul>
+    <h3 class="subhead">Unit rosters (sketch)</h3>
+    <div class="vs">
+      <div class="col res">
+        <header><h3><svg class="qmark" width="15" height="15" aria-hidden="true"><use href="#crest"/></svg>Resistance</h3><div class="who">taken arms, tribal pools</div></header>
+        <ul>
+          <li>Lance band → Gras band → rifle line</li>
+          <li>Rezzou raiders (fast, loot-bonus, fragile)</li>
+          <li>Herd drivers (civilian logistics)</li>
+          <li>Marabout retinue (baraka aura — no rout, allegiance diplomacy)</li>
+          <li>Tribal levies (quality = tribe allegiance)</li>
+          <li>Tbal drum unit (capturable objective — sovereign morale field)</li>
+        </ul>
+      </div>
+      <div class="col fr">
+        <header><h3><svg class="qmark" width="15" height="10" aria-hidden="true"><use href="#fl-fr"/></svg>France</h3><div class="who">pulled arms, imperial budget</div></header>
+        <ul>
+          <li>Tirailleur foot company; camel-mounted tirailleurs</li>
+          <li>Méhariste company (élite, water-discipline aura, era-correct khaki + chéchia)</li>
+          <li>Spahis (river-theatre cavalry)</li>
+          <li><b>2e escadron de spahis algériens</b> — rare veteran cavalry, confirmed in the 1908–09 colonnes volantes</li>
+          <li>Borj garrison; engineer escort; telegraph crew (vision link between borjs)</li>
+          <li>Light mountain gun (2×65mm Mle 1906 per column) + machine-gun section; diplomats / Coppolani-type agents</li>
+        </ul>
+      </div>
+    </div>
+    <p><b>Neutral:</b> azalaï caravan, zawiya (safe-passage node), tribal camps (both sides).</p>
+    <h3 class="subhead">Seven mission archetypes</h3>
+    <div class="ucards">
+      <div class="ucard"><h3>Rezzou raid <span class="qmark"><svg aria-hidden="true"><use href="#crest"/></svg></span></h3><p><b>Win:</b> loot quota + extraction off-map. <b>Lose:</b> band destroyed / thirst death.</p></div>
+      <div class="ucard"><h3>Post siege <span class="qmark"><svg aria-hidden="true"><use href="#crest"/></svg></span></h3><p><b>Win:</b> borj falls or garrison surrenders. <b>Lose:</b> relief column arrives unbled.</p></div>
+      <div class="ucard"><h3>Column escort <span class="qmark"><svg aria-hidden="true"><use href="#fl-fr"/></svg></span></h3><p><b>Win:</b> convoy % delivered. <b>Lose:</b> convoy burned.</p></div>
+      <div class="ucard"><h3>Submission map <span class="qmark"><svg aria-hidden="true"><use href="#fl-fr"/></svg></span></h3><p><b>Win:</b> tribes above threshold before budget runs. <b>Lose:</b> rebellion spreads.</p></div>
+      <div class="ucard"><h3>Counter-rezzou <span class="qmark"><svg aria-hidden="true"><use href="#fl-fr"/></svg></span></h3><p><b>Win:</b> destroy raider band. <b>Lose:</b> raiders escape with loot.</p></div>
+      <div class="ucard"><h3>Assassination window <span class="qmark"><svg aria-hidden="true"><use href="#crest"/></svg></span></h3><p><b>Win:</b> target killed in the 5-minute window. <b>Lose:</b> window closes. (Scripted, resistance.)</p></div>
+      <div class="ucard"><h3>Waterless crossing <span class="qmark"><svg aria-hidden="true"><use href="#crest"/></svg><svg class="qmark" aria-hidden="true"><use href="#fl-fr"/></svg></span></h3><p><b>Win:</b> cross the gap with X% alive. Either faction.</p></div>
+    </div>
+    <h3 class="subhead">Balance levers</h3>
+    <ul>
+      <li><b>Looting snowball</b> — cap carried ammo per band (camels = soft cap); French tier escalation floods better-armed escorts; ammunition burn rate per volley.</li>
+      <li><b>French turtling</b> — administrative income requires submissions, which require projection; borj upkeep drains military budget. The lattice is a money fire, not a fort line.</li>
+      <li><b>Well camping</b> — denial is cheaper than holding; a well denied to both sides becomes dead ground; season shifts move the fight.</li>
+      <li><b>Thirst death-spiral</b> — bands auto-path via known wells / supply radius: player error punished, pathing error never.</li>
+      <li><b>Ledger transparency</b> — France seeing "240 crates lost" creates counter-raid pressure organically.</li>
+    </ul>
+  </div>
+</section>
+
+<svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+
+<section class="light" id="campaign">
+  <div class="wrap sec-head">
+    <span class="kicker">Working Draft v1 · 16 Missions, 4 Acts</span>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg>The Campaign</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p class="lead">Quotes used are documented lines only; all invention is tagged in the design's fiction register. The crest marks the Shinqit / resistance player, the tricolor the French player; Act 0's crested sides are the pre-war emirates and confederations.</p>
+    <h3 class="act">ACT 0 — The Old War · 1480–1900 · tutorial</h3>
+    <p class="actnote">Teach the world before France exists: wells, tribute, caravans, allegiance — the exact systems Act I will weaponize.</p>
+    <div class="poems">
+      <figure class="poem mcard">
+        <h4>M1 · Tondibi <span class="mn">13 March 1591 · Niger bend</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> field battle</h4>
+        <p>Judar Pasha's Moroccan expedition has crossed the four-month desert — you command the Songhai side, your host dwarfing the invaders, 1,000 cattle herded as a screen. The battle is unwinnable by design: the lesson is the tech cliff.</p>
+        <p class="obj"><b>Objective:</b> destroy the Moroccan vanguard (hidden: keep the Askia alive 20 minutes).</p>
+        <blockquote class="gloss">"In the year 999 of the Hijra, a renegade pasha led four thousand men across the sands our caravans measure in months. They carry tubes of iron that speak with fire."</blockquote>
+        <blockquote class="gloss">"The empire of Songhai did not die at Tondibi of its wounds — it died of the lesson: the gun had come south, and nothing that ignored it would long remain."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M2 · The Prophet of the Lance <span class="mn">1670s · Tagant/Trarza</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> survival + allegiance</h4>
+        <p>The Char Bouba war ends in defeat, but the peace builds the world: hold the line as Nasr ad-Din's successors fall one by one.</p>
+        <p class="obj"><b>Objective:</b> extract the zawaya refugees and the library to safety; bind the survivors into the post-war hierarchy (hidden: preserve the tribute law — milk, a third of well water, three days' hospitality).</p>
+        <blockquote class="gloss">"The drum of the war is heavier than a man. Carry it, and you carry what remains of us." — after the tbal prose (verified)</blockquote>
+        <blockquote class="gloss">"The warriors would take tribute; the scholars would take respect. Between them they built a nation of tents — the order your grandchildren will defend two centuries hence."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M3 · The Salt Road <span class="mn">c. 1800 · Timbuktu–Taoudeni axis</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> escort</h4>
+        <p>The azalaï loads 25-kg salt slabs, two to four to a camel, three weeks out and back. Rezzou riders shadow the route.</p>
+        <p class="obj"><b>Objective:</b> deliver the salt to Timbuktu (hidden: bribe one shadowing band into escort duty — turn raider into guard).</p>
+        <blockquote class="gloss">"Twice a year we go. The salt buys millet, cloth, peace. The desert takes its share in water and its price in blood."</blockquote>
+        <blockquote class="gloss">"Every caravan taxes the future: each safe run teaches the raiders exactly where the next one will pass."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M4 · The Two Monopolies <span class="mn">1820s–1850s · Trarza river belt</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> diplomacy map</h4>
+        <p>Saint-Louis merchants want the gum; so do the Dutch. You are the amir. Sell the same monopoly to both; collect the coutume from both.</p>
+        <p class="obj"><b>Objective:</b> maximize gum income across ten years without open war (hidden: when the fraud is discovered, choose your enemy — and keep the rifles either way).</p>
+        <blockquote class="gloss">"Tell the Christians of the river: the acacia grows on my land, and the wind that dries its tears blows for no flag."</blockquote>
+        <blockquote class="gloss">"Gum built the emirates' arsenals — and taught two empires that the north bank was worth taking. Faidherbe is already a cadet officer in Saint-Louis."</blockquote>
+      </figure>
+    </div>
+    <h3 class="act">ACT I — The Man of Speech · 1902–1905 · France</h3>
+    <p class="actnote">The French player learns conquest without battle: budget, posts, submissions.</p>
+    <div class="poems">
+      <figure class="poem mcard">
+        <h4>M5 · Parole, pas fusil <span class="mn">1903 · Trarza</span> <svg class="qmark" width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> submission map</h4>
+        <p>Paris has adopted Coppolani's plan: "penetrate by speech, not by rifle." The map is neutral tribes; your treasury is administrative, not military.</p>
+        <p class="obj"><b>Objective:</b> bring Trarza to protectorate via marabout alliances (hidden: keep military spending at zero — the doctrine, obeyed, is the achievement).</p>
+        <blockquote class="gloss">"In Muslim lands, the word religion replaces the word patrie." — Coppolani dispatch (documented)</blockquote>
+        <blockquote class="gloss">"Trarza submits without a shot. In Paris they begin to speak of a Corsican who conquers with sermons."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M6 · The Lattice <span class="mn">1904 · Brakna–coast</span> <svg class="qmark" width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> supply-line builder</h4>
+        <p>Build posts across the south — Nouakchott among them — and keep them watered from the Senegal baseline.</p>
+        <p class="obj"><b>Objective:</b> link three borjs into an unbroken supply radius (hidden: a silent well between posts — a rider dies of thirst if you don't scout).</p>
+        <blockquote class="gloss">"A fort is a promise: that the flag outlives the man who planted it. Water is the ink."</blockquote>
+        <blockquote class="gloss">"The lattice grows north. Each borj is a pin through the map — and through something older that did not ask to be pinned."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M7 · Tagant <span class="mn">1905 · Tidjikja</span> <svg class="qmark" width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> submission map</h4>
+        <p>Extend to the Tagant, plant Tidjikja. The map reads peaceful — but a jihad has been proclaimed from the unfinished city of Smara.</p>
+        <p class="obj"><b>Objective:</b> Tagant protectorate (hidden: a dreamer is watching the post's evening routine — unseen, unnarrated; it pays off in M8).</p>
+        <blockquote class="gloss">"He who takes arms departs from virtue." — Saad Bouh's Nasîha, condensed forward (fiction timing; the letter is documented)</blockquote>
+        <blockquote class="gloss">"The Tagant signs. Somewhere in the palm-shade of Tidjikja, twenty-seven men learn the post's evening order by heart."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M8 · The Milk Delivery <span class="mn">12 May 1905 · Tidjikja palmery</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> assassination window</h4>
+        <p>Night, after Isha prayer. Coppolani walks the palmery at the milk delivery, 21h25–21h30 — a five-minute window. Sidi Seghir and 27 Tenaki.</p>
+        <p class="obj"><b>Objective:</b> kill Coppolani inside the window (hidden: spare the escort tirailleurs — they are Senegalese levies, not the target).</p>
+        <blockquote class="gloss">"He had seen this palmery in sleep: the milk, the lantern, the man in the cream suit who talked a country into sleep. Twenty-seven answered. Twenty would go."</blockquote>
+        <blockquote class="gloss">"These wretches have killed me — they do not deserve me." — Coppolani's last words (documented). "The advance France had planned for a decade froze for three years."</blockquote>
+      </figure>
+    </div>
+    <h3 class="act">ACT II — The Harassment War · 1905–1909 · both</h3>
+    <p class="actnote">The war becomes what the desert does best: attrition of water, nerve, and supply.</p>
+    <div class="poems">
+      <figure class="poem mcard">
+        <h4>M9 · The Rezzou Economy <span class="mn">1906 · Tagant</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> raid loop</h4>
+        <p>Gouraud has not yet replaced persuasion with columns; posts stand thin. Your war-band must live off the enemy: no manufacture, only taking.</p>
+        <p class="obj"><b>Objective:</b> loot three convoys — rifles, ammo, rations, camels (hidden: leave the tirailleur escort a water barrel; mercy pays allegiance dividends later).</p>
+        <blockquote class="gloss">"My day is not the day of idle men; my day is the day gunpowder burns." — al-Kounti's kāf (attributed, oral tradition)</blockquote>
+        <blockquote class="gloss">"Every crate that crossed the sea for the columns now rides north on captured camels. The ledger balances in blood and gunpowder."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M10 · The Thirst Clock <span class="mn">24 July 1908 · Nouarmach wells</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> well-denial</h4>
+        <p>A French column marches the waterless gap; you cannot beat it in the field — you can make the desert drink it.</p>
+        <p class="obj"><b>Objective:</b> deny/hold three wells along the column's axis (hidden: poison nothing — deny by presence, keep the wells drinkable for the tribes).</p>
+        <blockquote class="gloss">"You cannot out-shoot a column. But a column is a herd: it drinks where you permit, when you permit, or it dies walking."</blockquote>
+        <blockquote class="gloss">"Thirteen fell to bullets at Nouarmach. Eleven more fell to the hours after — the number France carried home was the desert's, not ours."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M11 · Fort Coppolani <span class="mn">5–30 November 1906 · Tidjikja</span> <svg class="qmark" width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> siege defense</h4>
+        <p>The month-long siege of the Tidjikja post. A mixed garrison, thin walls, the Tagant dissident around you.</p>
+        <p class="obj"><b>Objective:</b> hold the post 25 days (hidden: sally at night to burn the besiegers' date stores — hastens the lift).</p>
+        <blockquote class="gloss">"They took the man who built this post in his palmery. Now they test whether they can take his shadow."</blockquote>
+        <blockquote class="gloss">"The post held. In Paris they learned what a borj costs; in the Tagant they learned what a borj cannot buy."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M12 · The Seven-Hundred-Camel Column <span class="mn">Dec 1908 – Jan 1909 · Moudjeria → Hamdoun → Atar</span> <svg class="qmark" width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> column logistics</h4>
+        <p>The Colonne de l'Adrar: 700+ camels of logistics, tirailleurs mounted à dos de chameau. Not conquest, Gouraud says — a police column.</p>
+        <p class="obj"><b>Objective:</b> force the Hamdoun pass (8 Jan) and occupy Atar (9 Jan) — the two documented dates (hidden: accept a dissident clan's submission on the road; alive beats dead for the administrative ledger).</p>
+        <blockquote class="gloss">"It is not a matter of conquering the Adrar for permanent occupation… but of organizing a police column to purge the country." — Gouraud, order of the day (documented)</blockquote>
+        <blockquote class="gloss">"Nine January: Atar. The emir flees; the plateau opens. France has its foothold — and a war of a different shape."</blockquote>
+      </figure>
+    </div>
+    <h3 class="act">ACT III — The Long Decay · 1910–1934 · both</h3>
+    <p class="actnote">Armies die; the war outlives them. Endgame is administrative — and the soul of the ending is: never defeated on Mauritanian soil.</p>
+    <div class="poems">
+      <figure class="poem mcard">
+        <h4>M13 · Tadla <span class="mn">23 June 1910 · Kasba Zidania, Morocco</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> lost battle (tragedy)</h4>
+        <p>The sheikh's field army — 5,000–6,000 men raised to take Marrakech and Fès. It is the resistance's last conventional host, and it must break.</p>
+        <p class="obj"><b>Objective:</b> the mission is the retreat — extract Ma El Aïnin wounded from the field (hidden: disperse, not annihilate; save 2,000 of the 5,000 — they become Act III's raider pool).</p>
+        <blockquote class="gloss">"At seventy-nine he marched the width of two deserts to raise the Souss. What answered him was the army of a nation of forty million."</blockquote>
+        <blockquote class="gloss">"Broken at Tadla, he carried the cause to Tiznit, where he proclaimed the Mahdiship — and where, on 23 October 1910, he died. Undefeated on Mauritanian soil."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M14 · The Blue Sultan <span class="mn">14 Aug – 6 Sep 1912 · Marrakech → Sidi Bou Othmane</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> victory that cannot hold</h4>
+        <p>El Hiba enters Marrakech with 10,000 men and is proclaimed Sultan. Mangin is three weeks away.</p>
+        <p class="obj"><b>Objective:</b> hold Marrakech 23 days — history: you cannot hold past day 23 (hidden: get the urban collaborators out with you).</p>
+        <blockquote class="gloss">"The son of the saint of Smara is crowned in the Red City. Ten thousand spears follow him. The newspapers of two empires mispronounce his name."</blockquote>
+        <blockquote class="gloss">"Two thousand men died in an afternoon at Sidi Bou Othmane. The Sultan of three weeks rode south, and the war went home to the tents, where it could not be beheaded."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M15 · The Cruellest Year <span class="mn">1913 · Smara–southern posts</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> reprisal raids (tone-governed)</h4>
+        <p>France has burned half-built Smara. Agdaf answers. Three engagements are fixed: Liboirat (10 Jan, 60 French dead), Tagliat (10 Mar, 22 dead 37 wounded), Bou-Telis (10 Sep, 23 dead, 2 survivors).</p>
+        <p class="obj"><b>Objective:</b> strike all three posts — objectives are sabotage/capture, never kill-count; the mission names the historical dead in the outro, both sides' (hidden: spare the two Bou-Telis survivors; they are the witnesses).</p>
+        <blockquote class="gloss">"They burned the library that never finished being built. The drum answers." — after the tbal prose (verified)</blockquote>
+        <blockquote class="gloss">"France called 1913 the year of the massacres. The desert called it the year the drum answered. Both sides buried their dead by name — so will this game."</blockquote>
+      </figure>
+      <figure class="poem mcard">
+        <h4>M16 · The Last Rezzou <span class="mn">1934 · the 6,000-kilometre arc</span> <svg class="qmark" width="14" height="14" aria-hidden="true"><use href="#crest"/></svg> grand raid / epilogue</h4>
+        <p>The last great Reguibat rezzou: 6,000 km, 800 cattle, 270 camels taken, then intercepted. Around you the noose closes: Tindouf occupied 31 May 1934, the emirate dead since '32.</p>
+        <p class="obj"><b>Objective:</b> complete the raid arc — 6,000 km across the map's whole span (hidden: ride the arc home to the drums — the emir's tbal inherited). Ending choice: the historical interception, or the escape — an alt-history branch, flagged as fiction in-game.</p>
+        <blockquote class="gloss">"Six thousand kilometres. Eight hundred cattle, two hundred and seventy camels. One last time, the Reguibat make the desert theirs from horizon to horizon."</blockquote>
+        <blockquote class="gloss">"On 31 May 1934 Tindouf fell and France declared the pacification complete — a sentence in a ledger, 1902–1934. But the drum was never silenced; it passed from hand to hand. The soil was never defeated."</blockquote>
+      </figure>
+    </div>
+    <p class="flagnote">The fiction register (11 items) is the contract: history supplies the outcomes, fiction supplies the play. Full register and mechanic-coverage matrix in <a href="https://github.com/scriptssniper/rts-mauritania/blob/main/CAMPAIGN_SCRIPTS.md">CAMPAIGN_SCRIPTS.md</a>.</p>
+  </div>
+</section>
+
+<section class="dark" id="cast">
+  <div class="wrap sec-head">
+    <span class="kicker">Character Bible · 12 Profiles</span>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg><svg class="mark" width="26" height="17" aria-hidden="true"><use href="#fl-fr"/></svg>The Full Cast</h2><div class="rule"></div>
+  </div>
+  <div class="wrap chars">
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><img src="art/portraits/coppolani_hd.png" alt="Portrait of Xavier Coppolani"><div class="body"><h3>Xavier Coppolani</h3><div class="dates">1866 – 1905</div><p>"Le Charmeur." The diplomat-general: no combat stats — his aura converts tribes to protectorate treaties without fighting. Assassinated 12 May 1905; his death flips French doctrine from diplomacy to columns.</p><span class="tag fr">France · Hero→NPC</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><img src="art/portraits/gouraud_hd.png" alt="Portrait of Col. Henri Gouraud"><div class="body"><h3>Col. Henri Gouraud</h3><div class="dates">1867 – 1946</div><p>The Column. Buffs camel columns — march speed, water discipline; his Contre-rezzou ability mirrors the raid's own tactics. Unlocks the méhariste companies.</p><span class="tag fr">France · Hero</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Capt. Frèrejean"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">FJ</text></svg><div class="body"><h3>Capt. Frèrejean</h3><div class="dates">fl. 1904 – 1909</div><p>The Post-Builder. Founded Nouakchott in 1904; led the 1909 reinforcements. The borj lattice personified — "link the forts" missions are his.</p><span class="tag fr">France · NPC</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Lt. Etiévent"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">ET</text></svg><div class="body"><h3>Lt. Etiévent</h3><div class="dates">1905</div><p>The Avenger. Kills Coppolani's assassin with two revolver shots. A single cinematic cameo — and the optional duel against Sidi Seghir.</p><span class="tag fr">France · NPC</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><img src="art/portraits/ma_el_ainin_hd.png" alt="Portrait of Cheikh Ma El Aïnin"><div class="body"><h3>Cheikh Ma El Aïnin</h3><div class="dates">1831 – 1910</div><p>The Saint of Smara. Not a combat unit — a living wonder: his Jihad aura rallies tribes and raises levies; Baraka makes nearby units never rout. His death starts a faction-collapse timer. Died at Tiznit "undefeated on Mauritanian soil."</p><span class="tag res">Resistance · Hero</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><img src="art/portraits/sidi_seghir_hd.png" alt="Portrait of Sidi Seghir"><div class="body"><h3>Sidi Seghir Ould Moulay Zein</h3><div class="dates">d. 1905</div><p>The Dream-Vow. One mission, one window: the milk delivery, 21h25–21h30. Historical outcome: 8 of 20 attackers die; he falls to Etiévent's revolver.</p><span class="tag res">Resistance · Hero (M8)</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><img src="art/portraits/el_hiba_hd.png" alt="Portrait of Ahmed al-Hiba"><div class="body"><h3>Ahmed al-Hiba</h3><div class="dates">c. 1876 – 1919</div><p>The Blue Sultan. Highest levy multiplier in the cast — the Sultan's Banner raises mass armies fast (10,000 at Marrakech) at poor unit quality. Took a city; lost an empire in three weeks.</p><span class="tag res">Resistance · Hero</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Agdaf"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">AG</text></svg><div class="body"><h3>Agdaf</h3><div class="dates">fl. 1913</div><p>The Vengeance. After Smara burns, his Reprisal ability grants critical-hit bonuses against posts — the dark middle of Act III, tone-governed: the dead are named, never rewarded.</p><span class="tag res">Resistance · Hero</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Merebbi Rebbu"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">MR</text></svg><div class="body"><h3>Merebbi Rebbu</h3><div class="dates">d. after 1919</div><p>The Remnant. Successor from 1919, holder of the Saguia el-Hamra rump — quest-giver of the late Reguibat raids: Port-Étienne, the grand rezzou of 1934.</p><span class="tag res">Resistance · NPC</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Emir Sidi Ahmed Ould Ahmed Ayda"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EA</text></svg><div class="body"><h3>Emir Sidi Ahmed Ould Ahmed Ayda</h3><div class="dates">r. 1909 – 1932</div><p>The Puppet. Installed, captured, restored as a hollow French instrument, defected to dissidence, died in the desert 1932 — the emirate ends with him. His allegiance meter swings the whole Adrar's rules.</p><span class="tag res">Adrar · NPC</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Saad Bouh"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SB</text></svg><div class="body"><h3>Cheikh Saad Bouh</h3><div class="dates">1848 – 1917</div><p>The Other Brother. Pro-French pacifist marabout, Ma El Aïnin's brother — same father, same brotherhood, opposite war. Wrote the Nasîha: "He who takes arms departs from virtue." Campaign narrator candidate.</p><span class="tag res">Mediator · NPC</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Sidiya Baba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SY</text></svg><div class="body"><h3>Cheikh Sidiya Baba</h3><div class="dates">Boutilimit</div><p>The Kingmaker. Head of the Qadiriyya-Sidiyya, Coppolani's principal Mauritanian ally — the "peaceful penetration" tech tree in human form. French-side allegiance multiplier.</p><span class="tag fr">Ally of France · NPC</span></div></div>
+  </div>
+</section>
+
+<svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+
+<section class="light resrc" id="history">
+  <div class="wrap sec-head">
+    <span class="kicker">The Research Backbone</span>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg>The History Files</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p class="lead">Nothing on this site is invented where history speaks. The design lives on four research documents, all open in the repository:</p>
+    <div class="cols">
+      <div>
+        <h3>Research documents</h3>
+        <ul>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_campaign_history.md">RESEARCH_campaign_history.md</a> — the conquest, 1902–1934: timeline, orders of battle, documented quotes</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_precolonial.md">RESEARCH_precolonial.md</a> — 1480–1890: Tondibi, Char Bouba, the emirates, the trade economy</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_poetry.md">RESEARCH_poetry.md</a> — the Hassaniya verse corpus, with verification tags</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_armies.md">RESEARCH_armies.md</a> — weapons, uniforms, tactics, terrain: VERIFIED / PLAUSIBLE / UNCERTAIN flags</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Source discipline</h3>
+        <ul>
+          <li><b>Conflict register</b> — where sources disagree (siege dates, the emir's capture year), the disagreements are kept in a [CONFLICT] register and flagged, never smoothed over.</li>
+          <li><b>Poetry attribution</b> — verse is labelled VERIFIED (traced to a named source) or ATTRIBUTED — ORAL TRADITION (wording carried by transmission); anachronistic material is excluded outright.</li>
+          <li><b>Fiction register</b> — eleven tagged inventions across the campaign; history supplies the outcomes, fiction supplies the play.</li>
+          <li><b>Design documents</b> — <a href="https://github.com/scriptssniper/rts-mauritania/blob/main/GAMEPLAY.md">GAMEPLAY.md</a> · <a href="https://github.com/scriptssniper/rts-mauritania/blob/main/CAMPAIGN_SCRIPTS.md">CAMPAIGN_SCRIPTS.md</a> · <a href="https://github.com/scriptssniper/rts-mauritania/blob/main/CHARACTERS.md">CHARACTERS.md</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <svg class="band" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><rect width="1440" height="34" fill="url(#dzpat)"/></svg>
+  <div class="ftext">THE UNDEFEATED SOIL · Design dossier — concept stage · Portraits: early concept art</div>
+</footer>
+
+</body>
+</html>
