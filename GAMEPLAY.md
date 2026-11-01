@@ -27,7 +27,7 @@ The two loops interlock into one **transfer economy**: zero-sum cargo. Every cra
 **Sources:** raided convoys, ambushed columns, overrun borj outposts, tax/raid caravans, tribute payments from wavering tribes.
 
 **Loot categories** (drop as physical crates on raid sites, must be carried off on camels — loot has weight and slows the band):
-- **Arms** — Gras rifles, bayonets, revolvers, occasional machine-gun [PENDING RESEARCH_armies: what actually reached Mauritania]
+- **Arms** — Gras rifles (until 1907), then Berthier Mle 1907s (real tech event — smokeless 8mm); bayonets, revolvers; machine-guns only as rare column loot (2 per column, PLAUSIBLE per RESEARCH_armies §1)
 - **Ammunition** — the true bottleneck; rifles without cartridges are clubs
 - **Provisions & water gear** — extends raid range (each crate = +N hours off-well)
 - **Pack camels** — cargo capacity, the loot multiplier
@@ -76,7 +76,7 @@ The two loops interlock into one **transfer economy**: zero-sum cargo. Every cra
 
 **Resistance:** lance band → Gras band → rifle line; rezzou raiders (fast, loot-bonus, fragile); herd drivers (civilian logistics); marabout retinue (baraka aura — no rout, allegiance diplomacy) [CHARACTERS.md #5]; tribal levies (quality = tribe allegiance); tbal drum unit (capturable objective — sovereign morale field) [RESEARCH_poetry, tbal entry].
 
-**France:** tirailleur foot company; camel-mounted tirailleurs; méhariste company (elite, water-discipline aura); spahis (river-theatre cavalry); Algerian méhariste detachment **[PENDING RESEARCH_armies verification]**; borj garrison; engineer escort; light mountain gun (column-attached, scarce); diplomats/Coppolani-type agents (administrative budget units); telegraph crew (vision link between borjs).
+**France:** tirailleur foot company; camel-mounted tirailleurs; méhariste company (elite, water-discipline aura; khaki drill + chéchia — era-correct dress per RESEARCH_armies §3); spahis (river-theatre cavalry); 2e escadron de spahis algériens (confirmed in the 1908–09 colonnes volantes — rare veteran cavalry unit, RESEARCH_armies §1); borj garrison; engineer escort; light mountain gun (2×65mm Mle 1906 per column, PLAUSIBLE) + machine-gun section; diplomats/Coppolani-type agents (administrative budget units); telegraph crew (vision link between borjs).
 
 **Neutral:** azalaï caravan, zawiya (safe-passage node), tribal camps (both sides).
 

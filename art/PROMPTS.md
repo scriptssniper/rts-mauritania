@@ -46,10 +46,10 @@ Aging resistance leader, age 60, grey stubble, simple white turban of an ascetic
 ## Units (1:1)
 
 ### Tirailleur sénégalais
-Senegalese tirailleur rifleman mounted on a camel, red fez with blue tassel, dark blue gandoura, Lebel rifle across shoulder, noon heat shimmer
+Senegalese tirailleur rifleman mounted on a camel, dark-blue tunic and trousers with red sash, red chéchia cap, Gras rifle across shoulder, noon heat shimmer
 
 ### Méhariste camel trooper
-French méhariste of the Saharan camel corps, light-blue képi, white gandoura, barefoot on camel, long desert twilight, column stretching behind
+French méhariste of the Saharan camel corps, khaki drill uniform and cheich headwrap, red chéchia cap, rifle slung, long desert twilight, camel column stretching behind
 
 ### Rezzou raiders
 Band of Hassane camel raiders galloping in full rezzou, lances and old Remington rifles, turbans streaming, wall of dust, low sun
