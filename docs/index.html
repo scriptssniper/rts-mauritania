@@ -166,6 +166,33 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 .resrc a{color:inherit}
 .resrc .lead{font-size:1.02rem;font-style:italic;margin-bottom:22px;color:var(--mod);max-width:760px}
 
+/* Poets' War manuscript frames */
+.poems{display:grid;gap:30px;margin-top:34px}
+.poem{position:relative;background:#F1E9D7;border:3px double var(--gold);padding:26px 32px 18px;margin:0;box-shadow:0 1px 0 rgba(25,21,18,.08)}
+.poem::before,.poem::after{content:"";position:absolute;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+.poem::before{top:-7px;left:-7px}
+.poem::after{bottom:-7px;right:-7px}
+.poem .var{direction:rtl;text-align:right;font-family:"Noto Naskh Arabic","Amiri","Scheherazade New",serif;font-size:1.3rem;line-height:2.1;color:var(--tod);margin-bottom:10px;white-space:pre-line}
+.poem .tr-l{font-style:italic;color:#5B4A33;font-size:.93rem;margin-bottom:10px}
+.poem blockquote{margin:0;font-size:1.1rem;line-height:1.7;color:var(--tod)}
+.poem blockquote.gloss{margin-top:10px;font-size:.95rem;font-style:italic;color:#5B4A33}
+.poem figcaption{margin-top:14px;font-size:.85rem;line-height:1.5;color:#5B4A33}
+.poem .badge{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-right:8px;vertical-align:1px}
+.poem .badge.v{background:var(--gold);color:#fff}
+.poem .badge.a{background:var(--steel);color:#10233F}
+[dir="rtl"] .badge{margin-right:0;margin-left:8px}
+
+/* Flags & crest */
+.lang svg{width:18px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:5px;border:1px solid rgba(232,220,195,.4);opacity:.6}
+.lang a:hover svg,.lang b svg{opacity:1}
+.mark{display:inline-flex;vertical-align:-4px;margin-right:12px}
+.chip{position:absolute;top:8px;right:8px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;background:rgba(232,220,195,.92);border:1px solid var(--linel);border-radius:3px;opacity:.85}
+.char{position:relative}
+.chip svg{width:15px;height:15px}
+.qmark{display:inline-block;vertical-align:-2px;margin-right:6px}
+.qmark svg{width:15px;height:10px}
+.flagnote{font-size:.92rem;font-style:italic}
+
 /* SVG placeholder text */
 .ph-init{font-family:Georgia,serif;font-weight:600;letter-spacing:.08em}
 </style>
@@ -184,11 +211,15 @@ section.light .resrc li{border-bottom-color:var(--linel)}
     <pattern id="dzpat" width="34" height="34" patternUnits="userSpaceOnUse">
       <rect x="10.5" y="10.5" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.2" transform="rotate(45 17 17)"/>
     </pattern>
+    <symbol id="fl-en" viewBox="0 0 20 13"><rect width="20" height="13" fill="#012169"/><path d="M0,0 L20,13 M20,0 L0,13" stroke="#fff" stroke-width="2.6"/><path d="M0,0 L20,13 M20,0 L0,13" stroke="#C8102E" stroke-width="1.2"/><rect x="8" width="4" height="13" fill="#fff"/><rect y="4.5" width="20" height="4" fill="#fff"/><rect x="9" width="2" height="13" fill="#C8102E"/><rect y="5.5" width="20" height="2" fill="#C8102E"/></symbol>
+    <symbol id="fl-fr" viewBox="0 0 20 13"><rect width="20" height="13" fill="#fff"/><rect width="6.7" height="13" fill="#1F4788"/><rect x="13.3" width="6.7" height="13" fill="#C8102E"/></symbol>
+    <symbol id="fl-mr" viewBox="0 0 20 13"><rect width="20" height="13" fill="#0D7E45"/><circle cx="11.6" cy="6.5" r="2.7" fill="#C8A24B"/><circle cx="12.6" cy="6.5" r="2.2" fill="#0D7E45"/><path d="M8,5.5 8.35,6.4 9.3,6.4 8.55,6.95 8.85,7.85 8,7.3 7.15,7.85 7.45,6.95 6.7,6.4 7.65,6.4 Z" fill="#C8A24B"/></symbol>
+    <symbol id="crest" viewBox="0 0 24 24"><g fill="none" stroke="#C8A24B"><rect x="7.5" y="7.5" width="9" height="9" transform="rotate(45 12 12)" stroke-width="1.3"/><rect x="10.2" y="10.2" width="3.6" height="3.6" transform="rotate(45 12 12)" stroke-width="1"/></g><path d="M3,21 L19,5" stroke="#191512" stroke-width="1.6"/><path d="M19,5 L17.2,5.6 M19,5 L18.4,6.8" stroke="#191512" stroke-width="1.4"/></symbol>
   </defs>
 </svg>
 
 <header class="hero" id="top">
-  <nav class="lang" aria-label="Language"><b>EN</b> · <a href="fr.html">FR</a> · <a href="ar.html">عربية</a></nav>
+  <nav class="lang" aria-label="Language"><b><svg aria-hidden="true"><use href="#fl-en"/></svg>EN</b> · <a href="fr.html"><svg aria-hidden="true"><use href="#fl-fr"/></svg>FR</a> · <a href="ar.html"><svg aria-hidden="true"><use href="#fl-mr"/></svg>عربية</a></nav>
   <svg class="duneart" viewBox="0 0 1536 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <rect width="1536" height="760" fill="url(#duneg)"/>
     <circle cx="1150" cy="300" r="105" fill="#C8A24B" opacity=".8"/>
@@ -262,7 +293,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 <section class="light" id="resistance">
   <div class="wrap sec-head">
     <span class="kicker">The Side That Would Not Be Ruled</span>
-    <h2>The Resistance</h2><div class="rule"></div>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg>The Resistance</h2><div class="rule"></div>
   </div>
   <div class="wrap">
     <div class="vs">
@@ -315,10 +346,59 @@ section.light .resrc li{border-bottom-color:var(--linel)}
     <h2>Voices of the War</h2><div class="rule"></div>
   </div>
   <div class="wrap quotes">
-    <figure><blockquote>"He who takes arms departs from virtue."</blockquote><figcaption>— Cheikh Saad Bouh, <i>Nasîha</i>, 1906 · the anti-jihad letter to his own brother</figcaption></figure>
-    <figure><blockquote>"Not a matter of permanent occupation… but a police column to purge the country."</blockquote><figcaption>— Col. Henri Gouraud · doctrine of the column war</figcaption></figure>
-    <figure><blockquote>"The friend of the Muslims."</blockquote><figcaption>— Coppolani's tomb epitaph, Tidjikja · in Arabic</figcaption></figure>
-    <figure><blockquote>"Undefeated on Mauritanian soil."</blockquote><figcaption>— on the death of Ma El Aïnin, Tiznit, 23 October 1910</figcaption></figure>
+    <figure><blockquote>"He who takes arms departs from virtue."</blockquote><figcaption><span class="qmark"><svg aria-hidden="true"><use href="#fl-fr"/></svg></span>— Cheikh Saad Bouh, <i>Nasîha</i>, 1906 · the anti-jihad letter to his own brother</figcaption></figure>
+    <figure><blockquote>"Not a matter of permanent occupation… but a police column to purge the country."</blockquote><figcaption><span class="qmark"><svg aria-hidden="true"><use href="#fl-fr"/></svg></span>— Col. Henri Gouraud · doctrine of the column war</figcaption></figure>
+    <figure><blockquote>"The friend of the Muslims."</blockquote><figcaption><span class="qmark"><svg aria-hidden="true"><use href="#fl-fr"/></svg></span>— Coppolani's tomb epitaph, Tidjikja · in Arabic</figcaption></figure>
+    <figure><blockquote>"Undefeated on Mauritanian soil."</blockquote><figcaption><span class="qmark"><svg aria-hidden="true"><use href="#crest"/></svg></span>— on the death of Ma El Aïnin, Tiznit, 23 October 1910</figcaption></figure>
+  </div>
+</section>
+
+<section class="light poets" id="poets">
+  <div class="wrap sec-head">
+    <span class="kicker">The Other Front</span>
+    <h2><svg class="mark" width="26" height="26" aria-hidden="true"><use href="#crest"/></svg>The Poets' War</h2><div class="rule"></div>
+  </div>
+  <div class="wrap">
+    <p class="lead">This war was fought in verse as much as in gunpowder. Hassaniya oral poetry — the <i>kāf</i> — was the era's newspaper: defiance, coded intelligence, mockery and grief, carried by memory from camp to camp. What survives is fragmentary; the great print collections (Norris 1968, 1986) remain unmined — the v2 corpus of this project.</p>
+    <div class="poems">
+      <figure class="poem">
+        <div class="var" lang="ar">والله عظمت السبحان ماني باغي فالدني يوم
+ماه يومي عند أزوان والل يوم البارود إكوم</div>
+        <div class="tr-l">Wa-llāh ʿaẓmat is-subḥān, mā-nī bāghī f ed-dunyā yōm / māh yōmī ʿand azwān, wel-lāl yōm el-bārūd ī-kūm</div>
+        <blockquote>"By God, by His greatness — I want no day of this world: my day is not the day of idle men; my day is the day gunpowder burns."</blockquote>
+        <figcaption><span class="badge a">Attributed — oral tradition</span>Mohamed El Mokhtar ould El Hamed ould Aminouh (al-Kounti) — told Coppolani meant to make him a herder of the French camel corps, he rode out to meet the column instead · c. 1904–05, Tagant</figcaption>
+      </figure>
+      <figure class="poem">
+        <div class="var" lang="ar">مارت عندي عني مكبوظ
+نوكل وحدي كيف امكروظ</div>
+        <div class="tr-l">Mārt ʿandī ʿanī mkabẓ / n-ūkul waḥdī keyf em-karūẓ</div>
+        <blockquote>"Now I am held, bound, and I eat alone like a miser."</blockquote>
+        <blockquote class="gloss">Among the Moors, to eat alone is the mark of a miser. For a host-emir, the solitary plate his jailers served was the deepest humiliation of captivity.</blockquote>
+        <figcaption><span class="badge a">Attributed — oral tradition</span>Emir Sidi Ahmed ould Ahmeddou of the Adrar, taken at Tichit (1912) and jailed in Senegal</figcaption>
+      </figure>
+      <figure class="poem">
+        <div class="var" lang="ar">لخويب اخلات وانكطع موله
+ويلا بتنات انوله</div>
+        <div class="tr-l">Le-khwīb ekh-lāt, an-keṭaʿ mūl-u / w-īla betnāt, an-ūl-u</div>
+        <blockquote>"The khubba — down with it, cut off its owner's stake. And if they raise it again, we'll bring it down again."</blockquote>
+        <figcaption><span class="badge a">Attributed — oral tradition</span>Weld Abduka — the crowd of Oualata sang it as an anthem while pulling down the French post, each time it was rebuilt</figcaption>
+      </figure>
+      <figure class="poem">
+        <div class="var" lang="ar">…ويعتبر انتزاع الطبل في الحروب وأخذه قهراً في عرف القبائل الموريتانية ذات الشوكة من مظاهر الانتصار وإغاظة العدو وإهانته؛ وهو أبلغ عندهم أحياناً من القتل والتنكيل. ويشكل الطبل رمزاً من رموز السيادة… وكان لكل إمارة، بل لكل قبيلة طبلها… ويحتفظ الأمير أو شيخ القبيلة بالطبل ويرثه عنه من يتولى بعده.</div>
+        <blockquote>"To wrest the drum in war and take it by force was, in the custom of the strong tribes, a sign of victory, a goad and humiliation to the enemy — at times weightier to them than killing and slaughter. The drum is a symbol of sovereignty… every emirate, every tribe, had its drum… the one who succeeds him inherits it."</blockquote>
+        <figcaption><span class="badge v">Verified</span>al-Mokhtar ould Hamid, <i>Ḥayāt Mūrītānyā</i> (encyclopedia, events volume) — built on Mauritanian chronicles and French officers' reports</figcaption>
+      </figure>
+      <figure class="poem">
+        <div class="var" lang="ar">ما بان ان اله يمتان
+محمد الحبيب السلطان
+ما ج فيه ألا ج فالصيف
+شتين فالخط أفغان</div>
+        <div class="tr-l">Mā bān en el-hayy yemtān / Muḥammad el-Ḥabīb is-sulṭān / mā jī fīh el-lā jī f eṣ-ṣīf / shtīn fel-khaṭṭ efgān</div>
+        <blockquote>"It seems the sleeping man still sleeps — Muhammad al-Habib, the sultan: he comes only with the summer's coming; winter in the Khaṭṭ, he does not appear."</blockquote>
+        <figcaption><span class="badge v">Verified</span>The people of the Adrar mock a slow counter-raid, 1909 — emirs themselves were targets of this tradition · <i>Tārīkh Mūrītānyā al-ḥadīth</i>, p. 276</figcaption>
+      </figure>
+    </div>
+    <p class="flagnote">Honest gaps: laments for the fall of Smara and the verse of the Char Bouba war survive, if at all, only in print archives — one more reason this history needs more games, not fewer.</p>
   </div>
 </section>
 
@@ -327,7 +407,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 <section class="light" id="colonizer">
   <div class="wrap sec-head">
     <span class="kicker">The Counterpoint — and the Other Half of the Game</span>
-    <h2>The Colonizer's Method</h2><div class="rule"></div>
+    <h2><svg class="mark" width="26" height="17" aria-hidden="true"><use href="#fl-fr"/></svg>The Colonizer's Method</h2><div class="rule"></div>
   </div>
   <div class="wrap">
     <div class="vs">
@@ -438,18 +518,18 @@ section.light .resrc li{border-bottom-color:var(--linel)}
     <h2>The Cast</h2><div class="rule"></div>
   </div>
   <div class="wrap chars">
-    <div class="char res"><img src="art/portraits/ma_el_ainin_hd.png" alt="Portrait of Ma El Aïnin"><div class="body"><h3>Ma El Aïnin</h3><div class="dates">1831 – 1910</div><p>The Saint of Smara. A living banner whose baraka makes nearby units unbreakable — and whose death starts a faction-collapse timer.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char res"><img src="art/portraits/sidi_seghir_hd.png" alt="Portrait of Sidi Seghir"><div class="body"><h3>Sidi Seghir</h3><div class="dates">d. 1905</div><p>The dream-vow assassin. One stealth mission, twenty-seven warriors, a five-minute window at the milk delivery.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char res"><img src="art/portraits/el_hiba_hd.png" alt="Portrait of Ahmed al-Hiba"><div class="body"><h3>Ahmed al-Hiba</h3><div class="dates">c. 1876 – 1919</div><p>The Blue Sultan. Raises mass armies fast and takes Marrakech — then loses two thousand men in an afternoon.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Agdaf"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">AG</text></svg><div class="body"><h3>Agdaf</h3><div class="dates">fl. 1913</div><p>Vengeance of the burned city. After Smara falls, his reprisals killed some forty French — and the year of the three disasters followed.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Emir Sidi Ahmed Ould Ahmed Ayda"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EA</text></svg><div class="body"><h3>Sidi Ahmed Ould Ahmed Ayda</h3><div class="dates">r. 1909 – 1932</div><p>The puppet who defected. His allegiance meter swings the rules of the whole Adrar region — installed, captured, restored, and lost to the desert.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char res"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Merebbi Rebbu"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">MR</text></svg><div class="body"><h3>Merebbi Rebbu</h3><div class="dates">d. after 1919</div><p>Keeper of the remnant. Quest-giver of the late raids — Port-Étienne, and the final 6,000-km grand rezzou.</p><span class="tag res">Resistance</span></div></div>
-    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Saad Bouh"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SB</text></svg><div class="body"><h3>Cheikh Saad Bouh</h3><div class="dates">1848 – 1917</div><p>The other brother. Refuted the jihad in an open letter to the man waging it. One family, one brotherhood — two wars.</p><span class="tag fr">Ally of France</span></div></div>
-    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Sidiya Baba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SIB</text></svg><div class="body"><h3>Cheikh Sidiya Baba</h3><div class="dates">19th – 20th c.</div><p>The kingmaker. Through him flowed the submissions of Trarza, Brakna and Tagant — the "peaceful penetration" tech tree in human form.</p><span class="tag fr">Ally of France</span></div></div>
-    <div class="char fr"><img src="art/portraits/coppolani_hd.png" alt="Portrait of Xavier Coppolani"><div class="body"><h3>Xavier Coppolani</h3><div class="dates">1866 – 1905</div><p>The peaceful conqueror. Converts tribes without firing a shot. His tomb reads, in Arabic: "the friend of the Muslims."</p><span class="tag fr">France</span></div></div>
-    <div class="char fr"><img src="art/portraits/gouraud_hd.png" alt="Portrait of Col. Henri Gouraud"><div class="body"><h3>Col. Henri Gouraud</h3><div class="dates">1867 – 1946</div><p>The Column. Doctrine: "not permanent occupation… but a police column to purge the country." Camel logistics, water discipline, counter-rezzou.</p><span class="tag fr">France</span></div></div>
-    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Capt. Frèrejean"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">FJ</text></svg><div class="body"><h3>Capt. Frèrejean</h3><div class="dates">fl. 1904 – 1909</div><p>Builder of the borj lattice. Planted the post that became Nouakchott; the map of forts is his monument.</p><span class="tag fr">France</span></div></div>
-    <div class="char fr"><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Lt. Etiévent"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EV</text></svg><div class="body"><h3>Lt. Etiévent</h3><div class="dates">fl. 1905</div><p>The avenger. Two revolver shots ended the assassin in the palmery. One cameo, unforgettable.</p><span class="tag fr">France</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><img src="art/portraits/ma_el_ainin_hd.png" alt="Portrait of Ma El Aïnin"><div class="body"><h3>Ma El Aïnin</h3><div class="dates">1831 – 1910</div><p>The Saint of Smara. A living banner whose baraka makes nearby units unbreakable — and whose death starts a faction-collapse timer.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><img src="art/portraits/sidi_seghir_hd.png" alt="Portrait of Sidi Seghir"><div class="body"><h3>Sidi Seghir</h3><div class="dates">d. 1905</div><p>The dream-vow assassin. One stealth mission, twenty-seven warriors, a five-minute window at the milk delivery.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><img src="art/portraits/el_hiba_hd.png" alt="Portrait of Ahmed al-Hiba"><div class="body"><h3>Ahmed al-Hiba</h3><div class="dates">c. 1876 – 1919</div><p>The Blue Sultan. Raises mass armies fast and takes Marrakech — then loses two thousand men in an afternoon.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Agdaf"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">AG</text></svg><div class="body"><h3>Agdaf</h3><div class="dates">fl. 1913</div><p>Vengeance of the burned city. After Smara falls, his reprisals killed some forty French — and the year of the three disasters followed.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Emir Sidi Ahmed Ould Ahmed Ayda"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EA</text></svg><div class="body"><h3>Sidi Ahmed Ould Ahmed Ayda</h3><div class="dates">r. 1909 – 1932</div><p>The puppet who defected. His allegiance meter swings the rules of the whole Adrar region — installed, captured, restored, and lost to the desert.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char res"><i class="chip"><svg aria-hidden="true"><use href="#crest"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Merebbi Rebbu"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">MR</text></svg><div class="body"><h3>Merebbi Rebbu</h3><div class="dates">d. after 1919</div><p>Keeper of the remnant. Quest-giver of the late raids — Port-Étienne, and the final 6,000-km grand rezzou.</p><span class="tag res">Resistance</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Saad Bouh"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SB</text></svg><div class="body"><h3>Cheikh Saad Bouh</h3><div class="dates">1848 – 1917</div><p>The other brother. Refuted the jihad in an open letter to the man waging it. One family, one brotherhood — two wars.</p><span class="tag fr">Ally of France</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Cheikh Sidiya Baba"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">SIB</text></svg><div class="body"><h3>Cheikh Sidiya Baba</h3><div class="dates">19th – 20th c.</div><p>The kingmaker. Through him flowed the submissions of Trarza, Brakna and Tagant — the "peaceful penetration" tech tree in human form.</p><span class="tag fr">Ally of France</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><img src="art/portraits/coppolani_hd.png" alt="Portrait of Xavier Coppolani"><div class="body"><h3>Xavier Coppolani</h3><div class="dates">1866 – 1905</div><p>The peaceful conqueror. Converts tribes without firing a shot. His tomb reads, in Arabic: "the friend of the Muslims."</p><span class="tag fr">France</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><img src="art/portraits/gouraud_hd.png" alt="Portrait of Col. Henri Gouraud"><div class="body"><h3>Col. Henri Gouraud</h3><div class="dates">1867 – 1946</div><p>The Column. Doctrine: "not permanent occupation… but a police column to purge the country." Camel logistics, water discipline, counter-rezzou.</p><span class="tag fr">France</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Capt. Frèrejean"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">FJ</text></svg><div class="body"><h3>Capt. Frèrejean</h3><div class="dates">fl. 1904 – 1909</div><p>Builder of the borj lattice. Planted the post that became Nouakchott; the map of forts is his monument.</p><span class="tag fr">France</span></div></div>
+    <div class="char fr"><i class="chip"><svg aria-hidden="true"><use href="#fl-fr"/></svg></i><svg class="art" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait of Lt. Etiévent"><rect width="300" height="400" fill="url(#phg)"/><path d="M0,330 Q75,290 150,320 Q225,355 300,310 L300,400 L0,400 Z" fill="#101E33" opacity=".55"/><text x="150" y="205" text-anchor="middle" fill="#C8A24B" font-size="88" class="ph-init">EV</text></svg><div class="body"><h3>Lt. Etiévent</h3><div class="dates">fl. 1905</div><p>The avenger. Two revolver shots ended the assassin in the palmery. One cameo, unforgettable.</p><span class="tag fr">France</span></div></div>
   </div>
 </section>
 
@@ -504,6 +584,13 @@ section.light .resrc li{border-bottom-color:var(--linel)}
           <rect x="392" y="566" width="12" height="12"/>
           <rect x="422" y="346" width="12" height="12"/>
         </g>
+        <g>
+          <rect x="64" y="853" width="4" height="3" fill="#1F4788"/><rect x="68" y="853" width="4" height="3" fill="#fff"/><rect x="72" y="853" width="4" height="3" fill="#C8102E"/>
+          <rect x="144" y="670" width="4" height="3" fill="#1F4788"/><rect x="148" y="670" width="4" height="3" fill="#fff"/><rect x="152" y="670" width="4" height="3" fill="#C8102E"/>
+          <rect x="114" y="240" width="4" height="3" fill="#1F4788"/><rect x="118" y="240" width="4" height="3" fill="#fff"/><rect x="122" y="240" width="4" height="3" fill="#C8102E"/>
+          <rect x="392" y="580" width="4" height="3" fill="#1F4788"/><rect x="396" y="580" width="4" height="3" fill="#fff"/><rect x="400" y="580" width="4" height="3" fill="#C8102E"/>
+          <rect x="422" y="360" width="4" height="3" fill="#1F4788"/><rect x="426" y="360" width="4" height="3" fill="#fff"/><rect x="430" y="360" width="4" height="3" fill="#C8102E"/>
+        </g>
         <g fill="#E8DCC3" font-size="13">
           <text x="72" y="832">Saint-Louis</text>
           <text x="164" y="667">Nouakchott</text>
@@ -526,8 +613,8 @@ section.light .resrc li{border-bottom-color:var(--linel)}
         </g>
       </svg>
       <figcaption class="map-legend">
-        <span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" fill="#8FA6C4"/></svg><i>French post / borj</i></span>
-        <span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="11" height="11" fill="#C8A24B" transform="rotate(45 7 7)"/></svg><i>town / zawiya</i></span>
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" fill="#8FA6C4"/></svg><svg width="16" height="10" aria-hidden="true"><use href="#fl-fr"/></svg><i>French posts &amp; columns</i></span>
+        <span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="11" height="11" fill="#C8A24B" transform="rotate(45 7 7)"/></svg><svg width="14" height="14" aria-hidden="true"><use href="#crest"/></svg><i>resistance towns &amp; rezzou corridors</i></span>
         <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#C8A24B" stroke-width="2" stroke-dasharray="6 5"/></svg><i>rezzou corridor</i></span>
         <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#E8DCC3" stroke-width="2" stroke-dasharray="2 6"/></svg><i>azalaï salt caravan</i></span>
         <span><svg width="34" height="8" viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" stroke="#8FA6C4" stroke-width="1.5" stroke-dasharray="8 5"/></svg><i>Spanish Sahara boundary</i></span>
@@ -548,6 +635,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
         <ul>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_campaign_history.md">Campaign history research (1902–1934)</a> — timeline, factions, conflict register</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_precolonial.md">Pre-colonial research (1480–1890)</a> — emirates, Char Bouba, trade economy</li>
+          <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/RESEARCH_poetry.md">Resistance poetry corpus (1902–1934)</a> — the kāf texts behind "The Poets' War"</li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/CHARACTERS.md">Character design bible</a></li>
           <li><a href="https://github.com/scriptssniper/rts-mauritania/blob/main/art/PROMPTS.md">Art prompt notes</a></li>
         </ul>
@@ -583,6 +671,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
     </ul>
     <h3>Contact</h3>
     <p>Questions, corrections (especially from Mauritanian historians) and contributions: open an issue on the <a href="https://github.com/scriptssniper/rts-mauritania">GitHub repository</a>.</p>
+    <p class="flagnote"><svg width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> The tricolor marks the colonial state; <svg width="13" height="13" aria-hidden="true"><use href="#crest"/></svg> the diamond crest honours the resistance — which fought under tribal banners, not a national flag.</p>
   </div>
 </section>
 
