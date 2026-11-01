@@ -4,3 +4,5 @@ rts_research/
 
 art/historical/*
 !art/historical/MANIFEST.md
+
+/audio/

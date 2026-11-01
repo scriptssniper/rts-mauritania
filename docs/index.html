@@ -233,7 +233,12 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 
 /* SVG placeholder text */
 .ph-init{font-family:Georgia,serif;font-weight:600;letter-spacing:.08em}
-</style>
+/* bgm toggle */
+.bgm-btn{display:inline-flex;align-items:center;background:none;border:1px solid rgba(200,162,75,.5);border-radius:2px;color:var(--gold-l);cursor:pointer;padding:3px 6px;margin-left:8px;font:inherit}
+.bgm-btn:hover{color:var(--tod);border-color:var(--gold)}
+.bgm-btn svg{width:15px;height:15px;display:block}
+[dir="rtl"] .bgm-btn{margin-left:0;margin-right:8px}
+.mcred{font-size:.78rem;color:var(--mol);margin-top:12px}</style>
 </head>
 <body>
 
@@ -257,7 +262,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
 </svg>
 
 <header class="hero" id="top">
-  <nav class="lang" aria-label="Language"><b><svg aria-hidden="true"><use href="#fl-en"/></svg>EN</b> · <a href="fr.html"><svg aria-hidden="true"><use href="#fl-fr"/></svg>FR</a> · <a href="ar.html"><svg aria-hidden="true"><use href="#fl-mr"/></svg>عربية</a> · <a href="dossier.html">Dossier</a></nav>
+  <nav class="lang" aria-label="Language"><b><svg aria-hidden="true"><use href="#fl-en"/></svg>EN</b> · <a href="fr.html"><svg aria-hidden="true"><use href="#fl-fr"/></svg>FR</a> · <a href="ar.html"><svg aria-hidden="true"><use href="#fl-mr"/></svg>عربية</a> · <a href="dossier.html">Dossier</a><button id="bgmt" class="bgm-btn" aria-label="Toggle music" title="Toggle music"><svg class="on" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 6h3l4-3v10L5 10H2z"/><path fill="none" stroke="currentColor" stroke-width="1.4" d="M11 5.2a3.6 3.6 0 010 5.6M12.9 3.4a6.2 6.2 0 010 9.2"/></svg><svg class="off" viewBox="0 0 16 16" aria-hidden="true" hidden><path fill="currentColor" d="M2 6h3l4-3v10L5 10H2z"/><path fill="none" stroke="currentColor" stroke-width="1.4" d="M10.5 6l4 4M14.5 6l-4 4"/></svg></button></nav>
   <svg class="duneart" viewBox="0 0 1536 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <rect width="1536" height="760" fill="url(#duneg)"/>
     <circle cx="1150" cy="300" r="105" fill="#C8A24B" opacity=".8"/>
@@ -809,6 +814,7 @@ section.light .resrc li{border-bottom-color:var(--linel)}
     <h3>Contact</h3>
     <p>Questions, corrections (especially from Mauritanian historians) and contributions: open an issue on the <a href="https://github.com/scriptssniper/rts-mauritania">GitHub repository</a>.</p>
     <p class="flagnote"><svg width="14" height="10" aria-hidden="true"><use href="#fl-fr"/></svg> The tricolor marks the colonial state; <svg width="13" height="13" aria-hidden="true"><use href="#crest"/></svg> the diamond crest honours the resistance — which fought under tribal banners, not a national flag.</p>
+    <p class="mcred">Demo soundtrack: <em>Rezzou</em> — battle theme (demo), AI-generated (Suno), non-commercial license.</p>
   </div>
 </section>
 
@@ -818,5 +824,14 @@ section.light .resrc li{border-bottom-color:var(--linel)}
   <div class="fcred">Historical photographs: Wikimedia Commons contributors — full credits in the <a href="art/historical/MANIFEST.md">manifest</a>.</div>
 </footer>
 
+<audio id="bgm" loop preload="auto" src="audio/rezzou_theme.mp3"></audio>
+<script>
+(function(){var b=document.getElementById('bgm'),t=document.getElementById('bgmt');
+if(!b||!t)return;b.volume=.25;
+function ic(){t.querySelector('.on').hidden=!b.paused;t.querySelector('.off').hidden=b.paused}
+function arm(){function f(){b.play().catch(function(){});document.removeEventListener('pointerdown',f);document.removeEventListener('keydown',f)}document.addEventListener('pointerdown',f);document.addEventListener('keydown',f)}
+if(localStorage.getItem('bgmMuted')==='1'){b.pause();ic()}else{b.play().then(ic).catch(function(){ic();arm()})}
+t.addEventListener('click',function(){if(b.paused){b.play().catch(function(){});localStorage.setItem('bgmMuted','0')}else{b.pause();localStorage.setItem('bgmMuted','1')}ic()})})();
+</script>
 </body>
 </html>
